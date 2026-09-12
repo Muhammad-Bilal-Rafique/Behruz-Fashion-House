@@ -20,14 +20,14 @@ export async function compressImage(
   options: CompressionOptions = {}
 ): Promise<File> {
   const {
-    maxWidth = 1600,
-    maxHeight = 1600,
-    quality = 0.82,
-    maxSizeMB = 0.5,
+    maxWidth = 1280,
+    maxHeight = 1280,
+    quality = 0.78,
+    maxSizeMB = 0.3,
   } = options;
 
-  // If not an image or already smaller than 300KB, no need to compress heavily
-  if (!file.type.startsWith("image/") || file.size < 300 * 1024) {
+  // If not an image or already smaller than 180KB, no need to compress
+  if (!file.type.startsWith("image/") || file.size < 180 * 1024) {
     return file;
   }
 

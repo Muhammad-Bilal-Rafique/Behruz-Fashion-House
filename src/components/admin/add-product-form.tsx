@@ -146,17 +146,12 @@ export function AddProductForm() {
     if (rawFiles.length === 0) return;
 
     setIsCompressing(true);
-    const toastId = toast.loading(`Optimizing ${rawFiles.length} photo(s)...`);
 
     try {
       const compressedItems: UploadedImage[] = await Promise.all(
         rawFiles.map(async (file) => {
-          // Compress large photos to max 1600px, 82% quality (shrinks 10MB -> ~300KB)
-          const optimizedFile = await compressImage(file, {
-            maxWidth: 1600,
-            maxHeight: 1600,
-            quality: 0.82,
-          });
+          // Compress large photos silently to max 1280px (shrinks 10MB -> ~140KB)
+          const optimizedFile = await compressImage(file);
           const previewUrl = URL.createObjectURL(optimizedFile);
           return {
             id: `${optimizedFile.name}-${optimizedFile.lastModified}-${Math.random()}`,
@@ -168,11 +163,8 @@ export function AddProductForm() {
 
       setImages((prev) => [...prev, ...compressedItems]);
       setImageError(null);
-      toast.dismiss(toastId);
-      toast.success("Photos added and optimized.");
     } catch (err) {
-      console.error("Image compression error:", err);
-      toast.dismiss(toastId);
+      console.error("Image optimization error:", err);
       // Fallback: use original files
       const fallbackItems: UploadedImage[] = rawFiles.map((file) => ({
         id: `${file.name}-${file.lastModified}-${Math.random()}`,
@@ -283,15 +275,9 @@ export function AddProductForm() {
       formData.append("status", data.status);
       formData.append("isFeatured", String(Boolean(data.isFeatured)));
 
-      // Double-check all images are compressed before sending to prevent exceeding Vercel 4.5MB limit
-      const readyImages = await Promise.all(
-        images.map((img) =>
-          compressImage(img.file, { maxWidth: 1600, maxHeight: 1600, quality: 0.82 })
-        )
-      );
-
-      readyImages.forEach((file) => {
-        formData.append("images", file);
+      // Append already-optimized images directly for instant upload
+      images.forEach((img) => {
+        formData.append("images", img.file);
       });
 
       const res = await fetch("/api/admin/products", {
@@ -369,7 +355,7 @@ export function AddProductForm() {
             {isCompressing ? (
               <>
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                <span>Optimizing...</span>
+                <span>Processing...</span>
               </>
             ) : isUploading ? (
               <>
@@ -1082,7 +1068,7 @@ export function AddProductForm() {
                 {isCompressing ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Optimizing Photos...</span>
+                    <span>Processing Photos...</span>
                   </>
                 ) : isUploading ? (
                   <>

@@ -69,9 +69,10 @@ export async function POST(request: NextRequest) {
   const uploadedCloudinaryImages: { url: string; publicId: string; isCover: boolean }[] = [];
 
   try {
-    await connectDB();
-
-    const formData = await request.formData();
+    const [, formData] = await Promise.all([
+      connectDB(),
+      request.formData(),
+    ]);
 
     const name = (formData.get("name") as string)?.trim();
     const originalPriceStr = formData.get("originalPrice") as string;
