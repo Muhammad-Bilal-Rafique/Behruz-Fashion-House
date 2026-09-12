@@ -158,6 +158,7 @@ export function CartView() {
                   {/* Product Image (3:4 ratio thumbnail) */}
                   <Link
                     href={`/products/${item.productId}`}
+                    prefetch={true}
                     className="relative aspect-[3/4] w-24 sm:w-28 shrink-0 overflow-hidden rounded-xs bg-muted/40 border border-border/60 focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-primary"
                     aria-label={`View ${item.name}`}
                   >
@@ -182,6 +183,7 @@ export function CartView() {
                       <div>
                         <Link
                           href={`/products/${item.productId}`}
+                          prefetch={true}
                           className="font-serif text-base sm:text-lg font-normal text-foreground hover:text-primary transition-colors line-clamp-1"
                         >
                           {item.name}

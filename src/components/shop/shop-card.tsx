@@ -67,6 +67,7 @@ export function ShopCard({ product, priority = false }: ShopCardProps) {
     <article className="group relative flex flex-col w-full">
       <Link
         href={`/products/${product._id}`}
+        prefetch={true}
         className="flex flex-col h-full focus:outline-hidden focus-visible:ring-2 focus-visible:ring-primary rounded-xs transition-shadow"
         aria-label={`View details for ${product.name}, priced at ${formattedDiscountedPrice}`}
       >
