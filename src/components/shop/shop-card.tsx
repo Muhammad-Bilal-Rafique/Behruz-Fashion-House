@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
+import { toast } from "sonner";
 import { calculateDiscountPercentage } from "@/lib/utils";
+import { useWishlistStore, useWishlistHydrated } from "@/lib/wishlist-store";
 
 export interface ShopProductImage {
   url: string;
@@ -35,7 +37,9 @@ interface ShopCardProps {
 }
 
 export function ShopCard({ product, priority = false }: ShopCardProps) {
-  const [isWishlisted, setIsWishlisted] = useState(false);
+  const { isInWishlist } = useWishlistHydrated();
+  const toggleItem = useWishlistStore((s) => s.toggleItem);
+  const isWishlisted = isInWishlist(product._id);
 
   // Cover image logic: find isCover === true, fallback to first image in array
   const coverImage =
@@ -45,7 +49,16 @@ export function ShopCard({ product, priority = false }: ShopCardProps) {
   const handleWishlistToggle = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsWishlisted((prev) => !prev);
+    const added = toggleItem(product);
+    if (added) {
+      toast.success("Saved to Wishlist", {
+        description: `"${product.name}" added to your wishlist.`,
+      });
+    } else {
+      toast.info("Removed from Wishlist", {
+        description: `"${product.name}" removed from wishlist.`,
+      });
+    }
   };
 
   const origPrice = Number(product.originalPrice || 0);

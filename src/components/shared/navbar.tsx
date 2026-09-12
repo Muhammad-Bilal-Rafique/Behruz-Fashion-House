@@ -7,6 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, ShoppingBag, Menu, X, ArrowRight } from "lucide-react";
 import { useCartHydrated } from "@/lib/cart-store";
+import { useWishlistHydrated } from "@/lib/wishlist-store";
 import {
   InstagramIcon,
   TikTokIcon,
@@ -28,12 +29,20 @@ const NAV_LINKS = [
 
 export function Navbar({
   cartCount,
-  wishlistCount = 0,
+  wishlistCount,
   className = "",
 }: NavbarProps) {
-  const { totalQuantity, hasHydrated } = useCartHydrated();
+  const { totalQuantity, hasHydrated: isCartHydrated } = useCartHydrated();
+  const { totalCount: wishlistTotal, hasHydrated: isWishlistHydrated } = useWishlistHydrated();
+
   const effectiveCartCount =
-    cartCount !== undefined ? cartCount : hasHydrated ? totalQuantity : 0;
+    cartCount !== undefined ? cartCount : isCartHydrated ? totalQuantity : 0;
+  const effectiveWishlistCount =
+    wishlistCount !== undefined
+      ? wishlistCount
+      : isWishlistHydrated
+      ? wishlistTotal
+      : 0;
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -193,13 +202,13 @@ export function Navbar({
           <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.94 }}>
             <Link
               href="/wishlist"
-              aria-label={`Wishlist, ${wishlistCount} items`}
+              aria-label={`Wishlist, ${effectiveWishlistCount} items`}
               className="relative p-2 block text-foreground hover:text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded-full"
             >
               <Heart className="w-5 h-5" strokeWidth={1.5} />
-              {wishlistCount > 0 && (
+              {effectiveWishlistCount > 0 && (
                 <span className="absolute 1 top-1 right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground leading-none">
-                  {wishlistCount > 99 ? "99+" : wishlistCount}
+                  {effectiveWishlistCount > 99 ? "99+" : effectiveWishlistCount}
                 </span>
               )}
             </Link>
@@ -281,13 +290,13 @@ export function Navbar({
           <motion.div whileTap={{ scale: 0.92 }}>
             <Link
               href="/wishlist"
-              aria-label={`Wishlist, ${wishlistCount} items`}
+              aria-label={`Wishlist, ${effectiveWishlistCount} items`}
               className="relative p-2 block text-foreground hover:text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded-full"
             >
               <Heart className="w-5 h-5" strokeWidth={1.5} />
-              {wishlistCount > 0 && (
+              {effectiveWishlistCount > 0 && (
                 <span className="absolute top-1 right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground leading-none">
-                  {wishlistCount > 99 ? "99+" : wishlistCount}
+                  {effectiveWishlistCount > 99 ? "99+" : effectiveWishlistCount}
                 </span>
               )}
             </Link>
@@ -494,7 +503,7 @@ export function Navbar({
                     className="flex items-center gap-2 text-xs uppercase tracking-widest text-foreground hover:text-primary transition-colors"
                   >
                     <Heart className="w-4 h-4" strokeWidth={1.5} />
-                    <span>Wishlist ({wishlistCount})</span>
+                    <span>Wishlist ({effectiveWishlistCount})</span>
                   </Link>
                   <div className="w-[1px] h-4 bg-border" />
                   <Link

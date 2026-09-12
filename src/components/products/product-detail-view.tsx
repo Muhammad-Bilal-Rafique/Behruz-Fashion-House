@@ -15,10 +15,13 @@ import {
   Plus,
   ArrowLeft,
   Sparkles,
+  Ruler,
 } from "lucide-react";
 import { toast } from "sonner";
 import { calculateDiscountPercentage } from "@/lib/utils";
 import { useCartStore } from "@/lib/cart-store";
+import { useWishlistStore, useWishlistHydrated } from "@/lib/wishlist-store";
+import { SizeChartModal } from "./size-chart-modal";
 
 export interface ProductDetailImage {
   url: string;
@@ -62,9 +65,12 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
   // Quantity selector: min 1, defaults to 1
   const [quantity, setQuantity] = useState<number>(1);
 
-  // Interaction states
-  const [isWishlisted, setIsWishlisted] = useState<boolean>(false);
+  // Interaction states & stores
+  const { isInWishlist } = useWishlistHydrated();
+  const toggleWishlist = useWishlistStore((s) => s.toggleItem);
+  const isWishlisted = isInWishlist(product._id);
   const [isAddedToBag, setIsAddedToBag] = useState<boolean>(false);
+  const [isSizeChartOpen, setIsSizeChartOpen] = useState<boolean>(false);
 
   // Pricing calculations
   const origPrice = Number(product.originalPrice || 0);
@@ -193,14 +199,15 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
 
   // Wishlist handler
   const handleWishlistToggle = () => {
-    const nextState = !isWishlisted;
-    setIsWishlisted(nextState);
-    if (nextState) {
+    const added = toggleWishlist(product as any);
+    if (added) {
       toast.success("Saved to Wishlist", {
         description: `"${product.name}" is now in your wishlist.`,
       });
     } else {
-      toast.info("Removed from Wishlist");
+      toast.info("Removed from Wishlist", {
+        description: `"${product.name}" removed from wishlist.`,
+      });
     }
   };
 
@@ -399,9 +406,14 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                   </span>
                 )}
               </span>
-              <span className="text-muted-foreground text-[11px]">
-                Pakistani Couture Sizing
-              </span>
+              <button
+                type="button"
+                onClick={() => setIsSizeChartOpen(true)}
+                className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4 decoration-primary/40 hover:decoration-primary cursor-pointer"
+              >
+                <Ruler className="w-3.5 h-3.5" />
+                <span>Size Chart</span>
+              </button>
             </div>
 
             <div
@@ -628,6 +640,12 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
           </div>
         </div>
       </div>
+
+      {/* Luxury Size Chart Modal */}
+      <SizeChartModal
+        isOpen={isSizeChartOpen}
+        onClose={() => setIsSizeChartOpen(false)}
+      />
     </div>
   );
 }
