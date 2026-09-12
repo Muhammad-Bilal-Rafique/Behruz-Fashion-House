@@ -29,6 +29,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { compressImage } from "@/lib/image-compression";
+import { safeParseApiResponse, getFriendlyErrorMessage } from "@/lib/api-helpers";
 
 interface HeroFormValues {
   heading: string;
@@ -177,7 +179,12 @@ export function HeroEditForm() {
       formData.append("button2Text", values.button2Text.trim());
 
       if (selectedFile) {
-        formData.append("image", selectedFile);
+        const optimizedHeroImage = await compressImage(selectedFile, {
+          maxWidth: 1920,
+          maxHeight: 1920,
+          quality: 0.85,
+        });
+        formData.append("image", optimizedHeroImage);
       }
 
       const res = await fetch("/api/admin/hero", {
@@ -185,10 +192,13 @@ export function HeroEditForm() {
         body: formData,
       });
 
-      const result = await res.json();
+      const { success, data: result, error } = await safeParseApiResponse(
+        res,
+        "Failed to update hero section. Please try again."
+      );
 
-      if (!res.ok || !result.success) {
-        throw new Error(result.error || "Failed to update hero section");
+      if (!success || !result?.success) {
+        throw new Error(error || "Failed to update hero section");
       }
 
       // Update state with newly saved hero data
@@ -207,10 +217,12 @@ export function HeroEditForm() {
         description: "Your homepage hero banner and content are now updated.",
       });
     } catch (err: unknown) {
-      const errorMessage =
-        err instanceof Error ? err.message : "An unexpected error occurred";
+      const friendlyMessage = getFriendlyErrorMessage(
+        err,
+        "Failed to update hero section. Please try again."
+      );
       toast.error("Save failed", {
-        description: errorMessage,
+        description: friendlyMessage,
       });
     } finally {
       setIsSaving(false);

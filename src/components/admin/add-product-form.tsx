@@ -38,6 +38,7 @@ import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { calculateDiscountPercentage } from "@/lib/utils";
 import { compressImage } from "@/lib/image-compression";
+import { safeParseApiResponse, getFriendlyErrorMessage } from "@/lib/api-helpers";
 
 export interface ProductFormData {
   name: string;
@@ -298,19 +299,13 @@ export function AddProductForm() {
         body: formData,
       });
 
-      let result: any = null;
-      const text = await res.text();
-      try {
-        result = JSON.parse(text);
-      } catch {
-        if (res.status === 413) {
-          throw new Error("Photos exceed upload size limit (4.5 MB). Please select fewer or smaller photos.");
-        }
-        throw new Error(`Upload failed (Server returned status ${res.status}). Please try again.`);
-      }
+      const { success, data: result, error } = await safeParseApiResponse(
+        res,
+        "Failed to create product. Please try again."
+      );
 
-      if (!res.ok || !result?.success) {
-        throw new Error(result?.error || "Failed to create product.");
+      if (!success || !result?.success) {
+        throw new Error(error || "Failed to create product.");
       }
 
       // Cleanup local preview URLs
@@ -325,11 +320,11 @@ export function AddProductForm() {
       });
     } catch (err: any) {
       console.error("Failed to add product:", err);
-      if (err.message === "Failed to fetch") {
-        toast.error("Network error: Upload timed out or connection was reset. Please ensure you have a stable connection.");
-      } else {
-        toast.error(err.message || "Failed to add product. Please try again.");
-      }
+      const friendlyMessage = getFriendlyErrorMessage(
+        err,
+        "Failed to add product. Please try again."
+      );
+      toast.error(friendlyMessage);
     } finally {
       setIsUploading(false);
     }
