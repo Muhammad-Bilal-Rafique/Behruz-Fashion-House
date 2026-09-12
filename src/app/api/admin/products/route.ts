@@ -4,6 +4,9 @@ import Product from "@/models/Product";
 import { uploadToCloudinary, deleteFromCloudinary } from "@/lib/cloudinary";
 import { calculateDiscountPercentage } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+export const maxDuration = 60;
+
 // GET: Fetch all products (sorted newest first) with derived percentageOff
 export async function GET(request: NextRequest) {
   try {
@@ -154,19 +157,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 1. Upload each image file to Cloudinary
-    for (let i = 0; i < imageFiles.length; i++) {
-      const file = imageFiles[i];
+    // 1. Upload each image file to Cloudinary in parallel
+    const uploadPromises = imageFiles.map(async (file, i) => {
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
 
       const uploaded = await uploadToCloudinary(buffer, "behruz-fashion/products");
-      uploadedCloudinaryImages.push({
+      return {
         url: uploaded.secure_url,
         publicId: uploaded.public_id,
         isCover: i === 0, // First uploaded image is marked as cover
-      });
-    }
+      };
+    });
+
+    const uploadResults = await Promise.all(uploadPromises);
+    uploadedCloudinaryImages.push(...uploadResults);
+
 
     // 2. Save new Product document in MongoDB with sizeStock
     const newProduct = await Product.create({

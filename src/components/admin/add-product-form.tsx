@@ -37,6 +37,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { calculateDiscountPercentage } from "@/lib/utils";
+import { compressImage } from "@/lib/image-compression";
 
 export interface ProductFormData {
   name: string;
@@ -65,8 +66,9 @@ export function AddProductForm() {
   const [isDragging, setIsDragging] = useState(false);
   const [imageError, setImageError] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [isCompressing, setIsCompressing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [sizeStockMap, setSizeStockMap] = useState<Record<string, number>>({
+  const [sizeStockMap, setSizeStockMap] = useState<Record<string, number | string>>({
     S: 10,
     M: 10,
     L: 10,
@@ -125,29 +127,61 @@ export function AddProductForm() {
     setValue("sizes", next, { shouldValidate: true, shouldDirty: true });
   };
 
-  // Handle image files selection
-  const handleFiles = (files: FileList | null) => {
+  // Handle image files selection with automatic client-side compression
+  const handleFiles = async (files: FileList | null) => {
     if (!files || files.length === 0) return;
 
-    const validTypes = ["image/png", "image/jpeg", "image/webp"];
-    const newItems: UploadedImage[] = [];
+    const validTypes = ["image/png", "image/jpeg", "image/webp", "image/jpg"];
+    const rawFiles: File[] = [];
 
     Array.from(files).forEach((file) => {
       if (!validTypes.includes(file.type)) {
         toast.error(`"${file.name}" is not a supported format (PNG, JPG, WEBP).`);
         return;
       }
-      const previewUrl = URL.createObjectURL(file);
-      newItems.push({
-        id: `${file.name}-${file.lastModified}-${Math.random()}`,
-        file,
-        previewUrl,
-      });
+      rawFiles.push(file);
     });
 
-    if (newItems.length > 0) {
-      setImages((prev) => [...prev, ...newItems]);
+    if (rawFiles.length === 0) return;
+
+    setIsCompressing(true);
+    const toastId = toast.loading(`Optimizing ${rawFiles.length} photo(s)...`);
+
+    try {
+      const compressedItems: UploadedImage[] = await Promise.all(
+        rawFiles.map(async (file) => {
+          // Compress large photos to max 1600px, 82% quality (shrinks 10MB -> ~300KB)
+          const optimizedFile = await compressImage(file, {
+            maxWidth: 1600,
+            maxHeight: 1600,
+            quality: 0.82,
+          });
+          const previewUrl = URL.createObjectURL(optimizedFile);
+          return {
+            id: `${optimizedFile.name}-${optimizedFile.lastModified}-${Math.random()}`,
+            file: optimizedFile,
+            previewUrl,
+          };
+        })
+      );
+
+      setImages((prev) => [...prev, ...compressedItems]);
       setImageError(null);
+      toast.dismiss(toastId);
+      toast.success("Photos added and optimized.");
+    } catch (err) {
+      console.error("Image compression error:", err);
+      toast.dismiss(toastId);
+      // Fallback: use original files
+      const fallbackItems: UploadedImage[] = rawFiles.map((file) => ({
+        id: `${file.name}-${file.lastModified}-${Math.random()}`,
+        file,
+        previewUrl: URL.createObjectURL(file),
+      }));
+      setImages((prev) => [...prev, ...fallbackItems]);
+      setImageError(null);
+    } finally {
+      setIsCompressing(false);
     }
   };
 
@@ -248,9 +282,15 @@ export function AddProductForm() {
       formData.append("status", data.status);
       formData.append("isFeatured", String(Boolean(data.isFeatured)));
 
-      // Append raw image files for Cloudinary upload
-      images.forEach((img) => {
-        formData.append("images", img.file);
+      // Double-check all images are compressed before sending to prevent exceeding Vercel 4.5MB limit
+      const readyImages = await Promise.all(
+        images.map((img) =>
+          compressImage(img.file, { maxWidth: 1600, maxHeight: 1600, quality: 0.82 })
+        )
+      );
+
+      readyImages.forEach((file) => {
+        formData.append("images", file);
       });
 
       const res = await fetch("/api/admin/products", {
@@ -258,10 +298,19 @@ export function AddProductForm() {
         body: formData,
       });
 
-      const result = await res.json();
+      let result: any = null;
+      const text = await res.text();
+      try {
+        result = JSON.parse(text);
+      } catch {
+        if (res.status === 413) {
+          throw new Error("Photos exceed upload size limit (4.5 MB). Please select fewer or smaller photos.");
+        }
+        throw new Error(`Upload failed (Server returned status ${res.status}). Please try again.`);
+      }
 
-      if (!res.ok || !result.success) {
-        throw new Error(result.error || "Failed to create product.");
+      if (!res.ok || !result?.success) {
+        throw new Error(result?.error || "Failed to create product.");
       }
 
       // Cleanup local preview URLs
@@ -276,7 +325,11 @@ export function AddProductForm() {
       });
     } catch (err: any) {
       console.error("Failed to add product:", err);
-      toast.error(err.message || "Failed to add product. Please try again.");
+      if (err.message === "Failed to fetch") {
+        toast.error("Network error: Upload timed out or connection was reset. Please ensure you have a stable connection.");
+      } else {
+        toast.error(err.message || "Failed to add product. Please try again.");
+      }
     } finally {
       setIsUploading(false);
     }
@@ -315,10 +368,15 @@ export function AddProductForm() {
           <Button
             type="submit"
             size="sm"
-            disabled={isSubmitting || isUploading}
+            disabled={isSubmitting || isUploading || isCompressing}
             className="text-xs gap-1.5 h-8 bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 shadow-xs"
           >
-            {isUploading ? (
+            {isCompressing ? (
+              <>
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                <span>Optimizing...</span>
+              </>
+            ) : isUploading ? (
               <>
                 <Loader2 className="w-3.5 h-3.5 animate-spin" />
                 <span>Saving to Shop...</span>
@@ -605,12 +663,42 @@ export function AddProductForm() {
                               <div className="flex items-center gap-1.5">
                                 <input
                                   id={`stock-${size}`}
-                                  type="number"
-                                  min="0"
-                                  value={sizeStockMap[size] ?? 0}
+                                  type="text"
+                                  inputMode="numeric"
+                                  pattern="[0-9]*"
+                                  placeholder="0"
+                                  value={
+                                    sizeStockMap[size] !== undefined && sizeStockMap[size] !== null
+                                      ? String(sizeStockMap[size])
+                                      : ""
+                                  }
+                                  onFocus={(e) => {
+                                    if (e.target.value === "0") {
+                                      e.target.select();
+                                    }
+                                  }}
                                   onChange={(e) => {
-                                    const val = Math.max(0, parseInt(e.target.value, 10) || 0);
-                                    setSizeStockMap((prev) => ({ ...prev, [size]: val }));
+                                    let raw = e.target.value.replace(/[^0-9]/g, "");
+                                    // Strip leading zeros if followed by other digits (e.g. "025" -> "25")
+                                    if (raw.length > 1 && raw.startsWith("0")) {
+                                      raw = raw.replace(/^0+/, "") || "0";
+                                    }
+                                    setSizeStockMap((prev) => ({
+                                      ...prev,
+                                      [size]: raw,
+                                    }));
+                                  }}
+                                  onBlur={() => {
+                                    if (
+                                      sizeStockMap[size] === "" ||
+                                      sizeStockMap[size] === undefined ||
+                                      sizeStockMap[size] === null
+                                    ) {
+                                      setSizeStockMap((prev) => ({
+                                        ...prev,
+                                        [size]: 0,
+                                      }));
+                                    }
                                   }}
                                   className="w-20 px-2 py-1 text-xs text-right font-medium rounded-xs border border-border bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                                 />
@@ -993,10 +1081,15 @@ export function AddProductForm() {
             <CardContent className="p-6 space-y-3">
               <Button
                 type="submit"
-                disabled={isSubmitting || isUploading}
+                disabled={isSubmitting || isUploading || isCompressing}
                 className="w-full h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-wide shadow-xs gap-2 cursor-pointer transition-all active:scale-[0.99]"
               >
-                {isUploading ? (
+                {isCompressing ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Optimizing Photos...</span>
+                  </>
+                ) : isUploading ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
                     <span>Saving Product to Shop...</span>
