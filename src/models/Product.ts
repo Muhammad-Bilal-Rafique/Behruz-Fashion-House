@@ -115,13 +115,13 @@ const ProductSchema = new Schema<IProduct>(
   { timestamps: true }
 );
 
-// Clear model cache in development to ensure schema changes are applied immediately
-if (mongoose.models && mongoose.models.Product) {
-  delete mongoose.models.Product;
-}
+// High-performance compound indexes for shop catalog and homepage queries
+ProductSchema.index({ status: 1, createdAt: -1 });
+ProductSchema.index({ status: 1, isFeatured: 1, createdAt: -1 });
 
 export const Product: Model<IProduct> =
-  mongoose.models.Product || mongoose.model<IProduct>("Product", ProductSchema);
+  (mongoose.models.Product as Model<IProduct>) ||
+  mongoose.model<IProduct>("Product", ProductSchema);
 
 export default Product;
 

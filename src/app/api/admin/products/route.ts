@@ -4,22 +4,34 @@ import Product from "@/models/Product";
 import { uploadToCloudinary, deleteFromCloudinary } from "@/lib/cloudinary";
 import { calculateDiscountPercentage } from "@/lib/utils";
 
+import { revalidatePath } from "next/cache";
+
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-// GET: Fetch all products (sorted newest first) with derived percentageOff
+// GET: Fetch all products (sorted newest first) with derived percentageOff, optional limit & exclude
 export async function GET(request: NextRequest) {
   try {
     await connectDB();
     const { searchParams } = new URL(request.url);
     const status = searchParams.get("status");
+    const limit = Math.min(100, Math.max(0, parseInt(searchParams.get("limit") || "0", 10)));
+    const exclude = searchParams.get("exclude");
 
     const query: Record<string, any> = {};
     if (status) {
       query.status = status;
     }
+    if (exclude) {
+      query._id = { $ne: exclude };
+    }
 
-    const rawProducts = await Product.find(query).sort({ createdAt: -1 }).lean();
+    let queryBuilder = Product.find(query).sort({ createdAt: -1 });
+    if (limit > 0) {
+      queryBuilder = queryBuilder.limit(limit);
+    }
+
+    const rawProducts = await queryBuilder.lean();
 
     // Map products to include derived percentageOff and ensure robust fields
     const products = rawProducts.map((p: any) => {
@@ -35,7 +47,14 @@ export async function GET(request: NextRequest) {
       };
     });
 
-    return NextResponse.json({ success: true, products });
+    return NextResponse.json(
+      { success: true, products },
+      {
+        headers: {
+          "Cache-Control": status === "active" ? "public, s-maxage=60, stale-while-revalidate=120" : "no-store",
+        },
+      }
+    );
   } catch (error: any) {
     console.error("Failed to fetch products:", error);
     return NextResponse.json(
@@ -189,6 +208,13 @@ export async function POST(request: NextRequest) {
     });
 
     const percentageOff = calculateDiscountPercentage(originalPrice, discountedPrice);
+
+    try {
+      revalidatePath("/shop");
+      revalidatePath("/");
+    } catch (revalErr) {
+      console.error("Path revalidation error:", revalErr);
+    }
 
     return NextResponse.json(
       {

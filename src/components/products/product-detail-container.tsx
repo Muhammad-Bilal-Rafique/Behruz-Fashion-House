@@ -37,9 +37,7 @@ export function ProductDetailContainer({ id }: ProductDetailContainerProps) {
       }
       setErrorType(null);
 
-      const res = await fetch(`/api/admin/products/${id}`, {
-        cache: "no-store",
-      });
+      const res = await fetch(`/api/admin/products/${id}`);
 
       if (res.status === 404) {
         setErrorType("not-found");
@@ -82,18 +80,15 @@ export function ProductDetailContainer({ id }: ProductDetailContainerProps) {
         isFeatured: Boolean(p.isFeatured),
       });
 
-      // Fetch active related products
+      // Fetch active related products (strictly limited to 4, excluding current product)
       try {
-        const relRes = await fetch("/api/admin/products?status=active", {
-          cache: "no-store",
-        });
+        const relRes = await fetch(
+          `/api/admin/products?status=active&limit=4&exclude=${id}`
+        );
         if (relRes.ok) {
           const relData = await relRes.json();
           if (relData.success && Array.isArray(relData.products)) {
-            const filtered = relData.products
-              .filter((item: ShopProduct) => String(item._id) !== String(id))
-              .slice(0, 4);
-            setRelatedProducts(filtered);
+            setRelatedProducts(relData.products);
           }
         }
       } catch (relErr) {

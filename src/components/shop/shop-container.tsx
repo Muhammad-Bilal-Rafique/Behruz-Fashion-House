@@ -40,9 +40,7 @@ export function ShopContainer() {
         setIsRetrying(true);
       }
 
-      const res = await fetch("/api/admin/products", {
-        cache: "no-store",
-      });
+      const res = await fetch("/api/admin/products?status=active");
 
       if (!res.ok) {
         throw new Error(`Failed to fetch products (status: ${res.status})`);
