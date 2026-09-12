@@ -97,13 +97,13 @@ export function SizeChartModal({ isOpen, onClose }: SizeChartModalProps) {
                     Size
                   </th>
                   <th className="py-3 px-4 font-serif text-xs sm:text-sm font-semibold tracking-wider uppercase border-r border-border">
-                    Chest <span className="text-[10px] font-sans font-normal text-muted-foreground">(in)</span>
+                    Chest <span className="text-[10px] font-sans font-normal text-muted-foreground"></span>
                   </th>
                   <th className="py-3 px-4 font-serif text-xs sm:text-sm font-semibold tracking-wider uppercase border-r border-border">
-                    Waist <span className="text-[10px] font-sans font-normal text-muted-foreground">(in)</span>
+                    Waist <span className="text-[10px] font-sans font-normal text-muted-foreground"></span>
                   </th>
                   <th className="py-3 px-4 font-serif text-xs sm:text-sm font-semibold tracking-wider uppercase">
-                    Hip <span className="text-[10px] font-sans font-normal text-muted-foreground">(in)</span>
+                    Hip <span className="text-[10px] font-sans font-normal text-muted-foreground"></span>
                   </th>
                 </tr>
               </thead>
