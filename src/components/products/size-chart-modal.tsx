@@ -47,84 +47,84 @@ export function SizeChartModal({ isOpen, onClose }: SizeChartModalProps) {
       aria-labelledby="size-chart-title"
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
     >
-      {/* Dark backdrop */}
+      {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/75 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Modal Dialog Content */}
-      <div className="relative w-full max-w-lg bg-[#0F0E0E] text-[#FAFAFA] border border-[#D4AF37]/35 rounded-xs shadow-2xl overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-200">
-        {/* Subtle Luxury Gradient Accent at the top */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37]" />
+      {/* Modal Dialog Content (Matches Behruz Fashion House Clean White & Rose Palette) */}
+      <div className="relative w-full max-w-lg bg-background text-foreground border border-border rounded-xs shadow-2xl overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-200">
+        {/* Brand Rose Accent Bar */}
+        <div className="h-1 w-full bg-[#FF3154]" />
 
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
           aria-label="Close size chart"
-          className="absolute top-4 right-4 text-[#C5A059]/80 hover:text-[#F3E5AB] hover:bg-white/5 rounded-xs p-1.5 transition-colors cursor-pointer"
+          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground hover:bg-muted rounded-xs p-1.5 transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="px-6 pt-6 pb-4 sm:px-8 sm:pt-8 text-center">
-          <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-semibold mb-2">
+          <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.25em] text-[#FF3154] font-semibold mb-2">
             <Sparkles className="w-3 h-3" />
             <span>Behruz Fashion House</span>
             <Sparkles className="w-3 h-3" />
           </div>
           <h2
             id="size-chart-title"
-            className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-[#FFFFFF]"
+            className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-foreground"
           >
             Size Guide & Measurements
           </h2>
-          <p className="mt-1.5 text-xs text-neutral-400 font-light max-w-sm mx-auto">
-            All garment measurements are in <strong>inches</strong>. Crafted to standard luxury Pakistani pret & couture silhouettes.
+          <p className="mt-1.5 text-xs text-muted-foreground font-light max-w-sm mx-auto leading-relaxed">
+            Stitched garment dimensions in <strong>inches</strong> (measured flat). Tailored for standard Pakistani pret & couture silhouettes.
           </p>
         </div>
 
-        {/* Table Container styled with gold luxury borders */}
+        {/* Table Container */}
         <div className="px-6 py-2 sm:px-8">
-          <div className="overflow-hidden rounded-xs border border-[#D4AF37]/40 shadow-inner">
+          <div className="overflow-hidden rounded-xs border border-border bg-card shadow-2xs">
             <table className="w-full text-center border-collapse">
               <thead>
-                <tr className="bg-gradient-to-r from-[#D4AF37]/25 via-[#D4AF37]/35 to-[#D4AF37]/25 border-b border-[#D4AF37]/40 text-[#F5E6BE]">
-                  <th className="py-3 px-4 font-serif text-sm font-semibold tracking-wider uppercase border-r border-[#D4AF37]/30">
+                <tr className="bg-secondary/60 border-b border-border text-foreground">
+                  <th className="py-3 px-4 font-serif text-xs sm:text-sm font-semibold tracking-wider uppercase border-r border-border">
                     Size
                   </th>
-                  <th className="py-3 px-4 font-serif text-sm font-semibold tracking-wider uppercase border-r border-[#D4AF37]/30">
-                    Chest <span className="text-[10px] font-sans font-normal opacity-80">(in)</span>
+                  <th className="py-3 px-4 font-serif text-xs sm:text-sm font-semibold tracking-wider uppercase border-r border-border">
+                    Chest <span className="text-[10px] font-sans font-normal text-muted-foreground">(in)</span>
                   </th>
-                  <th className="py-3 px-4 font-serif text-sm font-semibold tracking-wider uppercase border-r border-[#D4AF37]/30">
-                    Waist <span className="text-[10px] font-sans font-normal opacity-80">(in)</span>
+                  <th className="py-3 px-4 font-serif text-xs sm:text-sm font-semibold tracking-wider uppercase border-r border-border">
+                    Waist <span className="text-[10px] font-sans font-normal text-muted-foreground">(in)</span>
                   </th>
-                  <th className="py-3 px-4 font-serif text-sm font-semibold tracking-wider uppercase">
-                    Hips <span className="text-[10px] font-sans font-normal opacity-80">(in)</span>
+                  <th className="py-3 px-4 font-serif text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                    Hip <span className="text-[10px] font-sans font-normal text-muted-foreground">(in)</span>
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#D4AF37]/25 text-neutral-200">
+              <tbody className="divide-y divide-border text-foreground">
                 {SIZE_DATA.map((row, index) => (
                   <tr
                     key={row.size}
-                    className={`transition-colors hover:bg-white/[0.04] ${
-                      index % 2 === 1 ? "bg-white/[0.015]" : ""
+                    className={`transition-colors hover:bg-muted/40 ${
+                      index % 2 === 1 ? "bg-muted/15" : "bg-background"
                     }`}
                   >
-                    <td className="py-3.5 px-4 font-serif text-sm font-medium text-[#F3E5AB] border-r border-[#D4AF37]/25">
+                    <td className="py-3.5 px-4 font-serif text-sm font-medium text-foreground border-r border-border">
                       {row.size}
                     </td>
-                    <td className="py-3.5 px-4 text-sm font-mono tracking-wide text-neutral-100 border-r border-[#D4AF37]/25">
+                    <td className="py-3.5 px-4 text-sm font-medium text-foreground border-r border-border">
                       {row.chest}
                     </td>
-                    <td className="py-3.5 px-4 text-sm font-mono tracking-wide text-neutral-100 border-r border-[#D4AF37]/25">
+                    <td className="py-3.5 px-4 text-sm font-medium text-foreground border-r border-border">
                       {row.waist}
                     </td>
-                    <td className="py-3.5 px-4 text-sm font-mono tracking-wide text-neutral-100">
+                    <td className="py-3.5 px-4 text-sm font-medium text-foreground">
                       {row.hips}
                     </td>
                   </tr>
@@ -134,31 +134,34 @@ export function SizeChartModal({ isOpen, onClose }: SizeChartModalProps) {
           </div>
         </div>
 
-        {/* Measurement Tips / Helper */}
-        <div className="px-6 py-5 sm:px-8 text-xs text-neutral-400 space-y-2 border-t border-neutral-800/80 mt-4 bg-black/40">
-          <div className="flex items-center gap-1.5 text-[#D4AF37] font-medium tracking-wide uppercase text-[11px]">
-            <Ruler className="w-3.5 h-3.5" />
-            <span>How to Measure</span>
+        {/* Ethical, Modest Garment Measurement Guide */}
+        <div className="px-6 py-4 sm:px-8 text-xs text-muted-foreground space-y-2 border-t border-border mt-4 bg-muted/20">
+          <div className="flex items-center gap-1.5 text-foreground font-semibold tracking-wider uppercase text-[11px]">
+            <Ruler className="w-3.5 h-3.5 text-[#FF3154]" />
+            <span>Garment Sizing Guidelines</span>
           </div>
-          <ul className="space-y-1 text-[11px] text-neutral-400 leading-relaxed list-disc list-inside">
-            <li>
-              <strong className="text-neutral-200 font-medium">Chest:</strong> Measure across the fullest part of the bust (armhole to armhole).
+          <ul className="space-y-1.5 text-[11px] text-muted-foreground leading-relaxed">
+            <li className="flex items-start gap-1.5">
+              <span className="font-semibold text-foreground min-w-14">Chest:</span>
+              <span>Garment width measured 1 inch below the armhole across the front.</span>
             </li>
-            <li>
-              <strong className="text-neutral-200 font-medium">Waist:</strong> Measure across the narrowest natural waist point.
+            <li className="flex items-start gap-1.5">
+              <span className="font-semibold text-foreground min-w-14">Waist:</span>
+              <span>Garment width measured across the waistline.</span>
             </li>
-            <li>
-              <strong className="text-neutral-200 font-medium">Hips:</strong> Measure across the fullest part of the hip line.
+            <li className="flex items-start gap-1.5">
+              <span className="font-semibold text-foreground min-w-14">Hip:</span>
+              <span>Garment width measured across the shirt flare for a graceful, comfortable drape.</span>
             </li>
           </ul>
         </div>
 
         {/* Modal Footer CTA */}
-        <div className="px-6 py-4 sm:px-8 bg-black/60 border-t border-neutral-800/80 flex items-center justify-end">
+        <div className="px-6 py-4 sm:px-8 bg-muted/30 border-t border-border flex items-center justify-end">
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] bg-[#D4AF37] hover:bg-[#F3E5AB] text-[#0A0A0A] rounded-xs transition-colors shadow-xs cursor-pointer"
+            className="w-full sm:w-auto px-7 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] bg-[#FF3154] hover:bg-[#FF3154]/90 text-white rounded-xs transition-colors shadow-xs cursor-pointer"
           >
             Got It
           </button>
