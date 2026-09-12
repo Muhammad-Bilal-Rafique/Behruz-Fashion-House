@@ -9,14 +9,22 @@ import type { ShopProduct } from "@/components/shop/shop-card";
 
 interface ProductDetailContainerProps {
   id: string;
+  initialProduct?: ProductDetailData | null;
+  initialRelatedProducts?: ShopProduct[];
 }
 
-export function ProductDetailContainer({ id }: ProductDetailContainerProps) {
-  const [product, setProduct] = useState<ProductDetailData | null>(null);
-  const [relatedProducts, setRelatedProducts] = useState<ShopProduct[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export function ProductDetailContainer({
+  id,
+  initialProduct = null,
+  initialRelatedProducts = [],
+}: ProductDetailContainerProps) {
+  const [product, setProduct] = useState<ProductDetailData | null>(initialProduct);
+  const [relatedProducts, setRelatedProducts] = useState<ShopProduct[]>(initialRelatedProducts);
+  const [isLoading, setIsLoading] = useState<boolean>(initialProduct === undefined);
   const [isRetrying, setIsRetrying] = useState<boolean>(false);
-  const [errorType, setErrorType] = useState<"not-found" | "error" | null>(null);
+  const [errorType, setErrorType] = useState<"not-found" | "error" | null>(
+    initialProduct === null ? "not-found" : null
+  );
 
   const productRef = useRef<ProductDetailData | null>(null);
   productRef.current = product;
@@ -104,8 +112,11 @@ export function ProductDetailContainer({ id }: ProductDetailContainerProps) {
   }, [id]);
 
   useEffect(() => {
-    fetchProduct();
-  }, [fetchProduct]);
+    // Only fetch client-side if initialProduct was not provided by the server
+    if (initialProduct === undefined) {
+      fetchProduct();
+    }
+  }, [fetchProduct, initialProduct]);
 
   // 1. Loading State
   if (isLoading) {

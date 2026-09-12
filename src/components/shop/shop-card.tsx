@@ -21,6 +21,7 @@ export interface ShopProduct {
   fabric?: string;
   description: string;
   sizes: string[];
+  sizeStock?: { size: string; stock: number }[];
   images: ShopProductImage[];
   status: "active" | "draft";
   isFeatured?: boolean;

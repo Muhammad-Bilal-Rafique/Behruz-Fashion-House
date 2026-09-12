@@ -9,12 +9,18 @@ import { ShopSkeleton } from "./shop-skeleton";
 import { ShopEmptyState, ShopErrorState } from "./shop-states";
 import { ShopBenefits } from "./shop-benefits";
 
-export function ShopContainer() {
+interface ShopContainerProps {
+  initialProducts?: ShopProduct[];
+}
+
+export function ShopContainer({ initialProducts }: ShopContainerProps = {}) {
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get("q") || searchParams.get("search") || "";
 
-  const [products, setProducts] = useState<ShopProduct[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [products, setProducts] = useState<ShopProduct[]>(initialProducts || []);
+  const [isLoading, setIsLoading] = useState<boolean>(
+    !initialProducts || initialProducts.length === 0
+  );
   const [error, setError] = useState<string | null>(null);
   const [isRetrying, setIsRetrying] = useState<boolean>(false);
 
@@ -69,8 +75,11 @@ export function ShopContainer() {
   }, []);
 
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    // Only fetch if initialProducts were not provided by the server
+    if (!initialProducts || initialProducts.length === 0) {
+      fetchProducts();
+    }
+  }, [fetchProducts, initialProducts]);
 
   // Filter active products by Featured (when selected) and Search Query (name, description, fabric)
   const filteredProducts = useMemo(() => {

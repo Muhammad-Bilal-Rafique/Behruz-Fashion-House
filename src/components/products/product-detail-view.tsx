@@ -65,7 +65,6 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
   // Interaction states
   const [isWishlisted, setIsWishlisted] = useState<boolean>(false);
   const [isAddedToBag, setIsAddedToBag] = useState<boolean>(false);
-  const [isCheckingStock, setIsCheckingStock] = useState<boolean>(false);
 
   // Pricing calculations
   const origPrice = Number(product.originalPrice || 0);
@@ -137,30 +136,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
       return;
     }
 
-    setIsCheckingStock(true);
-    let availableStock = getSizeStock(selectedSize);
-
-    // Live check against database right before adding to cart
-    try {
-      const res = await fetch(`/api/admin/products/${product._id}`, {
-        cache: "no-store",
-      });
-      if (res.ok) {
-        const data = await res.json();
-        if (data.success && Array.isArray(data.product?.sizeStock)) {
-          const freshItem = data.product.sizeStock.find(
-            (item: any) => item.size.toLowerCase() === selectedSize.toLowerCase()
-          );
-          if (freshItem !== undefined) {
-            availableStock = Number(freshItem.stock) || 0;
-          }
-        }
-      }
-    } catch {
-      // If network error, fall back to local loaded stock
-    } finally {
-      setIsCheckingStock(false);
-    }
+    const availableStock = getSizeStock(selectedSize);
 
     if (availableStock <= 0) {
       toast.error("Out of stock", {
@@ -514,13 +490,11 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             {/* Primary Add to Cart CTA */}
             <button
               type="button"
-              disabled={isCheckingStock || (Boolean(selectedSize) && selectedSizeStock <= 0)}
+              disabled={Boolean(selectedSize) && selectedSizeStock <= 0}
               onClick={handleAddToCart}
               className="w-full h-12 bg-[#FF3154] hover:bg-[#FF3154]/90 disabled:opacity-50 disabled:cursor-not-allowed text-[#FFFFFF] text-xs font-semibold tracking-widest uppercase rounded-xs transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF3154] focus-visible:ring-offset-2"
             >
-              {isCheckingStock ? (
-                <span>Checking Stock...</span>
-              ) : selectedSize && selectedSizeStock <= 0 ? (
+              {selectedSize && selectedSizeStock <= 0 ? (
                 <span>Out of Stock</span>
               ) : isAddedToBag ? (
                 <>
