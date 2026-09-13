@@ -22,7 +22,7 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/admin/dashboard";
 
-  const [email, setEmail] = useState("fahadmailk8689@gmail.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -90,7 +90,7 @@ function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isPending}
-            placeholder="fahadmailk8689@gmail.com"
+            placeholder="admin@example.com"
             className="w-full pl-10 pr-3.5 py-2.5 bg-background/60 border border-border/80 focus:border-primary focus:ring-1 focus:ring-primary rounded-xs text-xs sm:text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors duration-150 outline-none"
             required
           />
