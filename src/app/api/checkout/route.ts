@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import connectDB from "@/lib/connect";
 import Product from "@/models/Product";
 import Order from "@/models/Order";
+import { getStoreSettings } from "@/lib/store-settings-server";
 
 interface CheckoutRequestBody {
   customer: {
@@ -23,11 +24,20 @@ interface CheckoutRequestBody {
 
 export async function POST(request: NextRequest) {
   try {
-    const body: CheckoutRequestBody = await request.json();
-    const { customer, items } = body;
+    const body: any = await request.json();
+    const customer = body.customer || {
+      fullName: body.fullName,
+      phone: body.phone,
+      email: body.email,
+      country: body.country,
+      province: body.province,
+      city: body.city,
+      address: body.address,
+    };
+    const items = body.items;
 
     // 1. Validate Customer Data
-    if (!customer) {
+    if (!customer || (!customer.fullName && !body.fullName)) {
       return NextResponse.json(
         { success: false, error: "Customer information is required." },
         { status: 400 }
@@ -198,22 +208,28 @@ export async function POST(request: NextRequest) {
 
     // 5. Calculate Shipping & Delivery Time
     const isPakistan = country.toLowerCase() === "pakistan";
+    const settings = await getStoreSettings();
     let shippingFee = 0;
     let shippingType: "punjab" | "pakistan_other" | "international_weight_based" =
       "pakistan_other";
-    let deliveryEstimate = "3–5 business days";
+    let deliveryEstimate = settings.deliveryEstimate || "3–5 business days";
     let paymentMethod: "cash_on_delivery" | "international_pending" = "cash_on_delivery";
 
     if (isPakistan) {
       const isPunjab = province.toLowerCase().includes("punjab");
-      if (isPunjab) {
-        shippingFee = 350;
-        shippingType = "punjab";
+      const isFreeShipping =
+        settings.freeShippingThreshold > 0 &&
+        subtotal >= settings.freeShippingThreshold;
+
+      shippingType = isPunjab ? "punjab" : "pakistan_other";
+      if (isFreeShipping) {
+        shippingFee = 0;
+      } else if (isPunjab) {
+        shippingFee = settings.punjabShippingFee;
       } else {
-        shippingFee = 450;
-        shippingType = "pakistan_other";
+        shippingFee = settings.otherPakistanShippingFee;
       }
-      deliveryEstimate = "3–5 business days";
+      deliveryEstimate = settings.deliveryEstimate || "3–5 business days";
       paymentMethod = "cash_on_delivery";
     } else {
       // International shipping is weight-based and calculated separately
@@ -273,6 +289,11 @@ export async function POST(request: NextRequest) {
     const randomSuffix = Math.floor(1000 + Math.random() * 9000);
     const orderNumber = `BFH-${dateStr}-${randomSuffix}`;
 
+    const advanceAmount = settings.advancePaymentAmount;
+    const remainingAmount = isPakistan
+      ? Math.max(0, total - advanceAmount)
+      : Math.max(0, subtotal - advanceAmount);
+
     const newOrder = await Order.create({
       orderNumber,
       customer: {
@@ -290,6 +311,8 @@ export async function POST(request: NextRequest) {
         shippingFee,
         shippingType,
         total,
+        advanceAmount,
+        remainingAmount,
       },
       shipping: {
         country,
@@ -300,8 +323,10 @@ export async function POST(request: NextRequest) {
       payment: {
         method: paymentMethod,
         status: "pending",
+        advanceAmount,
+        advancePaymentStatus: "pending",
       },
-      orderStatus: "confirmed",
+      orderStatus: "awaiting_advance",
     });
 
     return NextResponse.json({
@@ -313,6 +338,7 @@ export async function POST(request: NextRequest) {
         pricing: newOrder.pricing,
         shipping: newOrder.shipping,
         payment: newOrder.payment,
+        orderStatus: newOrder.orderStatus,
         items: newOrder.items,
         createdAt: newOrder.createdAt,
       },

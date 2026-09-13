@@ -3,25 +3,28 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { useCartHydrated } from "@/lib/cart-store";
 import { CheckoutForm, type CheckoutFormData } from "@/components/checkout/checkout-form";
-import {
-  CheckoutSummary,
-  type StockValidationItem,
-} from "@/components/checkout/checkout-summary";
+import { type StockValidationItem } from "@/components/checkout/checkout-summary";
 import {
   ShieldCheck,
   Truck,
   ArrowRight,
   CheckCircle2,
-  Phone,
+  Clock,
   ArrowLeft,
   AlertCircle,
   ShoppingBag,
   Sparkles,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/shared/social-icons";
+import {
+  useStoreSettings,
+  generateWhatsAppProofUrl,
+} from "@/components/providers/store-settings-provider";
 import { toast } from "sonner";
 
 interface ConfirmedOrderData {
@@ -61,15 +64,12 @@ interface ConfirmedOrderData {
 }
 
 export default function CheckoutPage() {
+  const router = useRouter();
+  const settings = useStoreSettings();
   const { items, hasHydrated, subtotal, clearCart } = useCartHydrated();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [confirmedOrder, setConfirmedOrder] = useState<ConfirmedOrderData | null>(null);
-
-  // Dynamic shipping state from form
-  const [shippingFee, setShippingFee] = useState<number>(350);
-  const [isInternational, setIsInternational] = useState<boolean>(false);
-  const [selectedProvince, setSelectedProvince] = useState<string>("Punjab");
 
   // Stock pre-validation state
   const [stockValidationMap, setStockValidationMap] = useState<
@@ -98,77 +98,104 @@ export default function CheckoutPage() {
 
       if (!res.ok) return;
 
-      const data = await res.json();
-      if (data.success && Array.isArray(data.items)) {
-        const newMap = new Map<string, StockValidationItem>();
-        data.items.forEach((validated: StockValidationItem) => {
-          newMap.set(`${validated.productId}-${validated.size}`, validated);
-        });
-        setStockValidationMap(newMap);
-        setHasStockIssues(Boolean(data.hasIssues));
+      let data: any = null;
+      try {
+        const text = await res.text();
+        data = text ? JSON.parse(text) : null;
+      } catch {
+        return;
       }
-    } catch (err) {
-      console.error("Error checking stock:", err);
+
+      if (data && data.validationMap) {
+        const map = new Map<string, StockValidationItem>();
+        let issuesFound = false;
+
+        Object.entries(data.validationMap).forEach(([key, val]: [string, any]) => {
+          map.set(key, val);
+          if (val.status !== "valid") {
+            issuesFound = true;
+          }
+        });
+
+        setStockValidationMap(map);
+        setHasStockIssues(issuesFound);
+      }
+    } catch {
+      // Non-blocking on network failure
     } finally {
       setIsValidatingStock(false);
     }
   }, [items]);
 
   useEffect(() => {
-    if (hasHydrated && items.length > 0) {
-      validateCartStock();
-    }
-  }, [hasHydrated, items.length, validateCartStock]);
-
-  const handleShippingChange = useCallback(
-    (fee: number, intl: boolean, province: string) => {
-      setShippingFee(fee);
-      setIsInternational(intl);
-      setSelectedProvince(province);
-    },
-    []
-  );
+    validateCartStock();
+  }, [validateCartStock]);
 
   // Handle Order Placement
   const handlePlaceOrder = async (formData: CheckoutFormData) => {
-    if (items.length === 0) {
-      toast.error("Your cart is empty.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
     try {
+      setIsSubmitting(true);
+
+      const payload = {
+        customer: {
+          fullName: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          country: formData.country,
+          province: formData.province,
+          city: formData.city,
+          address: formData.address,
+        },
+        fullName: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        country: formData.country,
+        province: formData.province,
+        city: formData.city,
+        address: formData.address,
+        items: items.map((item) => ({
+          productId: item.productId,
+          size: item.size,
+          quantity: item.quantity,
+        })),
+      };
+
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          customer: formData,
-          items: items.map((i) => ({
-            productId: i.productId,
-            size: i.size,
-            quantity: i.quantity,
-          })),
-        }),
+        body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
+      let data: any = null;
+      try {
+        const text = await res.text();
+        data = text ? JSON.parse(text) : null;
+      } catch {
+        throw new Error("Unable to parse checkout response.");
+      }
 
-      if (!res.ok || !data.success) {
-        toast.error("Order Could Not Be Placed", {
-          description: data.error || "Please check your details and try again.",
+      if (!res.ok) {
+        if (res.status === 409) {
+          toast.error("Stock Unavailable", {
+            description: data?.error || "Some items are no longer available in the requested quantities.",
+          });
+          await validateCartStock();
+          return;
+        }
+
+        toast.error("Checkout Failed", {
+          description: data?.error || "Unable to process your order. Please try again.",
         });
-        // Re-validate stock to reflect what is now sold out
-        await validateCartStock();
         return;
       }
 
       // Successful order
       setConfirmedOrder(data.order);
       clearCart();
-      toast.success("Order Placed Successfully!", {
-        description: `Order #${data.order.orderNumber} has been received.`,
+      toast.success("Order Received!", {
+        description: `Order #${data.order.orderNumber} placed. Redirecting to payment instructions...`,
       });
+      router.push(`/order-success/${data.order.orderId}`);
     } catch (err) {
       console.error("Checkout network error:", err);
       toast.error("Network connection issue. Please check your internet connection.");
@@ -192,20 +219,14 @@ export default function CheckoutPage() {
     );
   }
 
-  // Generate WhatsApp confirmation URL
-  const whatsappNumber = "923354623733";
-  const whatsappMessage = confirmedOrder
-    ? encodeURIComponent(
-        `Hello Behruz Fashion House! I would like to confirm my order:\n\n` +
-          `Order #: ${confirmedOrder.orderNumber}\n` +
-          `Name: ${confirmedOrder.customer.name}\n` +
-          `Phone: ${confirmedOrder.customer.phone}\n` +
-          `City: ${confirmedOrder.customer.city}, ${confirmedOrder.customer.province}\n` +
-          `Total: PKR ${confirmedOrder.pricing.total.toLocaleString()}\n\n` +
-          `Please share tracking updates as soon as it's dispatched.`
+  // Generate WhatsApp confirmation URL with advance payment proof message
+  const whatsappUrl = confirmedOrder
+    ? generateWhatsAppProofUrl(
+        confirmedOrder.orderNumber,
+        confirmedOrder.customer.name,
+        settings
       )
     : "";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-primary/20 selection:text-primary">
@@ -218,141 +239,65 @@ export default function CheckoutPage() {
           /* ======================================================== */
           <div className="max-w-2xl mx-auto py-8">
             <div className="border border-border bg-card p-6 sm:p-10 rounded-xs shadow-xs text-center space-y-6">
-              {/* Success Badge */}
-              <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
-                <CheckCircle2 className="w-8 h-8 stroke-[1.5]" />
-              </div>
-
               <div>
-                <span className="text-[11px] uppercase tracking-[0.25em] text-primary font-semibold block mb-1">
-                  Order Received
+                <span className="inline-block px-3 py-0.5 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold bg-[#FF3154] text-white mb-3">
+                  Order Received — Advance Payment Required
                 </span>
-                <h1 className="font-serif text-3xl sm:text-4xl font-normal tracking-tight text-foreground">
-                  Thank You for Your Order!
+                <h1 className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-foreground">
+                  PKR {settings.advancePaymentAmount.toLocaleString()} Advance Payment Required
                 </h1>
                 <p className="text-xs text-muted-foreground mt-2 max-w-md mx-auto leading-relaxed">
-                  Your order has been recorded. Our team will prepare and dispatch your couture pieces promptly.
+                  Your order has been received successfully. A PKR {settings.advancePaymentAmount.toLocaleString()} advance payment is required to confirm your order.
                 </p>
               </div>
 
-              {/* Order Number Box */}
-              <div className="p-4 rounded-xs bg-secondary/50 border border-primary/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
+              {/* Order Status Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3.5 bg-muted/20 border border-border rounded-xs text-center text-xs">
+                <div className="space-y-0.5 border-b sm:border-b-0 sm:border-r border-border/70 pb-2 sm:pb-0">
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground block">
+                    Advance Amount
+                  </span>
+                  <span className="font-sans text-sm sm:text-base font-bold text-primary tabular-nums">
+                    PKR {settings.advancePaymentAmount.toLocaleString()}
+                  </span>
+                </div>
+                <div className="space-y-0.5 border-b sm:border-b-0 sm:border-r border-border/70 pb-2 sm:pb-0">
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground block">
+                    Payment Status
+                  </span>
+                  <span className="inline-block font-sans text-xs sm:text-sm font-bold text-amber-600 uppercase">
+                    Pending Verification
+                  </span>
+                </div>
+                <div className="space-y-0.5">
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground block">
+                    Order Status
+                  </span>
+                  <span className="font-sans text-xs sm:text-sm font-bold text-foreground uppercase">
+                    Awaiting Advance Payment
+                  </span>
+                </div>
+              </div>
+
+              {/* Order Reference Box */}
+              <div className="p-3.5 rounded-xs bg-secondary/50 border border-border flex items-center justify-between gap-3 text-left">
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground block">
                     Order Reference
                   </span>
-                  <span className="font-mono text-base sm:text-lg font-bold text-foreground">
-                    {confirmedOrder.orderNumber}
+                  <span className="font-mono text-sm sm:text-base font-bold text-foreground">
+                    #{confirmedOrder.orderNumber}
                   </span>
                 </div>
-                <div className="sm:text-right">
+                <div className="text-right">
                   <span className="text-[10px] uppercase tracking-widest text-muted-foreground block">
-                    Payment Method
+                    Total Amount
                   </span>
-                  <span className="text-xs font-semibold text-primary uppercase">
-                    {confirmedOrder.payment.method === "cash_on_delivery"
-                      ? "Cash on Delivery"
-                      : "International Pending"}
+                  <span className="font-sans text-sm sm:text-base font-bold text-foreground tabular-nums">
+                    PKR {confirmedOrder.pricing.total.toLocaleString()}
                   </span>
                 </div>
               </div>
-
-              {/* Order Details & Summary Card */}
-              <div className="border border-border rounded-xs text-left divide-y divide-border/60 text-xs">
-                {/* Customer Snapshot */}
-                <div className="p-4 space-y-1.5 bg-muted/15">
-                  <h3 className="font-semibold text-foreground uppercase tracking-wider text-[11px] mb-2">
-                    Shipping & Recipient
-                  </h3>
-                  <p>
-                    <strong className="text-foreground">Name:</strong> {confirmedOrder.customer.name}
-                  </p>
-                  <p>
-                    <strong className="text-foreground">Phone:</strong> {confirmedOrder.customer.phone}
-                  </p>
-                  {confirmedOrder.customer.email && (
-                    <p>
-                      <strong className="text-foreground">Email:</strong> {confirmedOrder.customer.email}
-                    </p>
-                  )}
-                  <p>
-                    <strong className="text-foreground">Address:</strong> {confirmedOrder.customer.address},{" "}
-                    {confirmedOrder.customer.city}, {confirmedOrder.customer.province},{" "}
-                    {confirmedOrder.customer.country}
-                  </p>
-                  <p className="text-primary font-medium pt-1">
-                    Estimated Delivery: {confirmedOrder.shipping.deliveryEstimate}
-                  </p>
-                </div>
-
-                {/* Items Purchased Snapshot */}
-                <div className="p-4 space-y-3">
-                  <h3 className="font-semibold text-foreground uppercase tracking-wider text-[11px]">
-                    Items in Order ({confirmedOrder.items.length})
-                  </h3>
-                  {confirmedOrder.items.map((item, idx) => (
-                    <div key={idx} className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="relative w-12 aspect-[3/4] rounded-xs overflow-hidden bg-muted/40 border border-border shrink-0">
-                          {item.image && (
-                            <Image
-                              src={item.image}
-                              alt={item.name}
-                              fill
-                              sizes="48px"
-                              className="object-cover"
-                            />
-                          )}
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground line-clamp-1">{item.name}</p>
-                          <p className="text-[11px] text-muted-foreground">
-                            Size: <span className="font-semibold">{item.size}</span> · Qty: {item.quantity}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="font-mono font-semibold text-foreground">
-                        PKR {item.itemTotal.toLocaleString()}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Price Breakdown */}
-                <div className="p-4 space-y-2 bg-muted/15">
-                  <div className="flex justify-between text-muted-foreground">
-                    <span>Subtotal</span>
-                    <span className="font-mono text-foreground">
-                      PKR {confirmedOrder.pricing.subtotal.toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="flex justify-between text-muted-foreground">
-                    <span>Delivery Fee</span>
-                    <span className="font-mono text-foreground">
-                      {confirmedOrder.pricing.shippingType === "international_weight_based"
-                        ? "Calculated based on weight"
-                        : `PKR ${confirmedOrder.pricing.shippingFee.toLocaleString()}`}
-                    </span>
-                  </div>
-                  <div className="flex justify-between pt-2 border-t border-border font-bold text-sm text-foreground">
-                    <span>Total Amount</span>
-                    <span className="font-mono text-base text-primary">
-                      PKR {confirmedOrder.pricing.total.toLocaleString()}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Special Instructions Note */}
-              {confirmedOrder.payment.method === "cash_on_delivery" ? (
-                <div className="p-3 rounded-xs bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 text-left">
-                  <strong>Cash on Delivery:</strong> Please keep the exact payable amount ready when the courier arrives at your address.
-                </div>
-              ) : (
-                <div className="p-3 rounded-xs bg-amber-50 border border-amber-200 text-xs text-amber-900 text-left">
-                  <strong>International Shipping:</strong> Since charges depend on the package weight, our concierge will contact you via WhatsApp/Email to confirm the final shipping fee.
-                </div>
-              )}
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
@@ -360,10 +305,10 @@ export default function CheckoutPage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 text-xs uppercase tracking-[0.2em] font-medium bg-[#25D366] text-white hover:bg-[#25D366]/90 transition-colors shadow-xs"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 text-xs uppercase tracking-[0.2em] font-medium bg-[#25D366] text-white hover:bg-[#25D366]/90 transition-colors shadow-xs gap-2"
                 >
-                  <Phone className="mr-2 w-4 h-4" />
-                  <span>Confirm on WhatsApp</span>
+                  <WhatsAppIcon className="w-4 h-4 fill-current shrink-0" />
+                  <span>Send Payment Screenshot on WhatsApp</span>
                 </a>
 
                 <Link
@@ -438,30 +383,16 @@ export default function CheckoutPage() {
               </div>
             )}
 
-            {/* Responsive Grid: Left (Customer Info) & Right (Order Summary) */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-              {/* LEFT: Customer & Shipping Information (7 cols) */}
-              <div className="lg:col-span-7">
-                <CheckoutForm
-                  isSubmitting={isSubmitting}
-                  hasStockIssues={hasStockIssues}
-                  onSubmit={handlePlaceOrder}
-                  onShippingChange={handleShippingChange}
-                />
-              </div>
-
-              {/* RIGHT: Order Summary (5 cols) */}
-              <div className="lg:col-span-5">
-                <CheckoutSummary
-                  items={items}
-                  subtotal={subtotal}
-                  shippingFee={shippingFee}
-                  isInternational={isInternational}
-                  stockValidationMap={stockValidationMap}
-                  isValidatingStock={isValidatingStock}
-                />
-              </div>
-            </div>
+            {/* Checkout Form & Order Summary */}
+            <CheckoutForm
+              items={items}
+              subtotal={subtotal}
+              isSubmitting={isSubmitting}
+              hasStockIssues={hasStockIssues}
+              stockValidationMap={stockValidationMap}
+              isValidatingStock={isValidatingStock}
+              onSubmit={handlePlaceOrder}
+            />
           </div>
         )}
       </main>

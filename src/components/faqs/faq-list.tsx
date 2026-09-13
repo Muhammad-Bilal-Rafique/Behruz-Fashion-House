@@ -16,6 +16,12 @@ interface FaqItem {
 
 const FAQS_DATA: FaqItem[] = [
   {
+    id: "faq-advance",
+    question: "Is an advance payment required?",
+    answer:
+      "Yes. A PKR 1,000 advance payment is required to confirm every order. After placing your order, payment instructions will be provided. Please send your payment proof via WhatsApp. Your order will be confirmed after the payment is manually verified.",
+  },
+  {
     id: "faq-1",
     question: "How can I place an order?",
     answer:
@@ -25,7 +31,7 @@ const FAQS_DATA: FaqItem[] = [
     id: "faq-2",
     question: "Do you offer Cash on Delivery?",
     answer:
-      "Yes. Cash on Delivery is available for orders within Pakistan. Delivery charges are paid in advance, while the remaining amount is paid through Cash on Delivery.",
+      "Yes. Cash on Delivery is available for orders within Pakistan. A PKR 1,000 advance payment is required to confirm your order, while the remaining balance is paid through Cash on Delivery upon delivery.",
   },
   {
     id: "faq-3",

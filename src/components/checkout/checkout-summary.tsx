@@ -4,7 +4,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { type CartItem } from "@/lib/cart-store";
-import { AlertCircle, CheckCircle2, ShieldCheck, Truck, Sparkles } from "lucide-react";
+import { AlertCircle } from "lucide-react";
+
+import { useStoreSettings } from "@/components/providers/store-settings-provider";
 
 export interface StockValidationItem {
   productId: string;
@@ -34,10 +36,13 @@ export function CheckoutSummary({
   stockValidationMap,
   isValidatingStock = false,
 }: CheckoutSummaryProps) {
+  const settings = useStoreSettings();
   const total = subtotal + (isInternational ? 0 : shippingFee);
+  const advanceAmount = settings.advancePaymentAmount;
+  const remainingBalance = Math.max(0, total - advanceAmount);
 
   return (
-    <div className="border border-border rounded-xs bg-card shadow-2xs overflow-hidden sticky top-24">
+    <div className="border border-border rounded-xs bg-card shadow-2xs overflow-hidden">
       {/* Header */}
       <div className="p-6 pb-4 border-b border-border bg-muted/20">
         <div className="flex items-center justify-between">
@@ -97,10 +102,10 @@ export function CheckoutSummary({
                 </div>
 
                 <div className="mt-1.5 flex items-baseline justify-between gap-2">
-                  <span className="text-xs text-muted-foreground font-mono">
+                  <span className="text-xs text-muted-foreground font-sans tabular-nums">
                     PKR {item.price.toLocaleString()} each
                   </span>
-                  <span className="text-xs font-semibold text-foreground font-mono">
+                  <span className="text-xs font-semibold text-foreground font-sans tabular-nums">
                     PKR {(item.price * item.quantity).toLocaleString()}
                   </span>
                 </div>
@@ -122,7 +127,7 @@ export function CheckoutSummary({
       <div className="p-6 bg-muted/10 border-t border-border space-y-3 text-xs">
         <div className="flex items-center justify-between text-muted-foreground">
           <span>Subtotal</span>
-          <span className="font-mono text-foreground font-medium">
+          <span className="font-sans text-foreground font-semibold tabular-nums">
             PKR {subtotal.toLocaleString()}
           </span>
         </div>
@@ -142,7 +147,7 @@ export function CheckoutSummary({
                 To be calculated
               </span>
             ) : (
-              <span className="font-mono text-foreground font-medium">
+              <span className="font-sans text-foreground font-semibold tabular-nums">
                 PKR {shippingFee.toLocaleString()}
               </span>
             )}
@@ -152,7 +157,7 @@ export function CheckoutSummary({
         <div className="pt-3 border-t border-border flex items-baseline justify-between">
           <div>
             <span className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Total Amount
+              Total Order Amount
             </span>
             {isInternational && (
               <span className="block text-[10px] text-muted-foreground">
@@ -161,29 +166,41 @@ export function CheckoutSummary({
             )}
           </div>
           <div className="text-right">
-            <span className="font-serif text-lg sm:text-xl font-semibold text-foreground font-mono">
+            <span className="font-sans text-lg sm:text-xl font-bold text-foreground tabular-nums tracking-tight">
               PKR {total.toLocaleString()}
-            </span>
-            <span className="block text-[10px] text-muted-foreground uppercase tracking-widest">
-              PKR Net Payable
             </span>
           </div>
         </div>
-      </div>
 
-      {/* Trust & Guarantee Perks */}
-      <div className="p-4 bg-muted/30 border-t border-border text-[11px] text-muted-foreground space-y-2">
-        <div className="flex items-center gap-2">
-          <Truck className="w-3.5 h-3.5 text-primary shrink-0" />
-          <span>
-            {isInternational
-              ? "Worldwide shipping (approx. 10 business days)"
-              : "Express dispatch (3–5 business days across Pakistan)"}
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <ShieldCheck className="w-3.5 h-3.5 text-primary shrink-0" />
-          <span>100% Authentic Pakistani Handcrafted Couture</span>
+        {/* Advance Payment Breakdown */}
+        <div className="pt-3 border-t border-border/70 space-y-2">
+          <div className="flex items-start justify-between">
+            <div>
+              <span className="font-semibold text-primary block">
+                Advance Payment
+              </span>
+              <span className="text-[10px] text-muted-foreground">
+                Required to confirm your order.
+              </span>
+            </div>
+            <span className="font-sans font-bold text-primary tabular-nums text-sm">
+              PKR {advanceAmount.toLocaleString()}
+            </span>
+          </div>
+
+          <div className="flex items-start justify-between text-muted-foreground pt-1.5 border-t border-border/40">
+            <div>
+              <span className="block">Remaining Balance</span>
+              <span className="text-[10px] text-muted-foreground">
+                {isInternational
+                  ? "Handled per payment instructions"
+                  : "Payable on delivery (COD)"}
+              </span>
+            </div>
+            <span className="font-sans font-semibold text-foreground tabular-nums">
+              PKR {remainingBalance.toLocaleString()}
+            </span>
+          </div>
         </div>
       </div>
     </div>

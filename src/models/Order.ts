@@ -25,6 +25,8 @@ export interface IOrderPricing {
   shippingFee: number;
   shippingType: "punjab" | "pakistan_other" | "international_weight_based";
   total: number;
+  advanceAmount: number;
+  remainingAmount: number;
 }
 
 export interface IOrderShipping {
@@ -36,7 +38,12 @@ export interface IOrderShipping {
 
 export interface IOrderPayment {
   method: "cash_on_delivery" | "international_pending";
-  status: "pending" | "paid" | "failed";
+  status: "pending" | "verified" | "rejected";
+  advanceAmount: number;
+  advancePaymentStatus: "pending" | "verified" | "rejected";
+  verifiedAt?: Date;
+  rejectedAt?: Date;
+  rejectionReason?: string;
 }
 
 export interface IOrder extends Document {
@@ -46,7 +53,13 @@ export interface IOrder extends Document {
   pricing: IOrderPricing;
   shipping: IOrderShipping;
   payment: IOrderPayment;
-  orderStatus: "pending" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled";
+  orderStatus:
+    | "awaiting_advance"
+    | "confirmed"
+    | "processing"
+    | "dispatched"
+    | "delivered"
+    | "cancelled";
   createdAt: Date;
   updatedAt: Date;
 }
@@ -87,6 +100,8 @@ const OrderPricingSchema = new Schema<IOrderPricing>(
       required: true,
     },
     total: { type: Number, required: true, min: 0 },
+    advanceAmount: { type: Number, required: true, default: 1000 },
+    remainingAmount: { type: Number, required: true, default: 0 },
   },
   { _id: false }
 );
@@ -114,9 +129,24 @@ const OrderPaymentSchema = new Schema<IOrderPayment>(
     },
     status: {
       type: String,
-      enum: ["pending", "paid", "failed"],
+      enum: ["pending", "verified", "rejected"],
       default: "pending",
+      index: true,
     },
+    advanceAmount: {
+      type: Number,
+      required: true,
+      default: 1000,
+    },
+    advancePaymentStatus: {
+      type: String,
+      enum: ["pending", "verified", "rejected"],
+      default: "pending",
+      index: true,
+    },
+    verifiedAt: { type: Date },
+    rejectedAt: { type: Date },
+    rejectionReason: { type: String, trim: true },
   },
   { _id: false }
 );
@@ -144,8 +174,17 @@ const OrderSchema = new Schema<IOrder>(
     payment: { type: OrderPaymentSchema, required: true },
     orderStatus: {
       type: String,
-      enum: ["pending", "confirmed", "processing", "shipped", "delivered", "cancelled"],
-      default: "pending",
+      enum: [
+        "awaiting_advance",
+        "pending",
+        "confirmed",
+        "processing",
+        "shipped",
+        "dispatched",
+        "delivered",
+        "cancelled",
+      ],
+      default: "awaiting_advance",
       index: true,
     },
   },
@@ -153,6 +192,11 @@ const OrderSchema = new Schema<IOrder>(
     timestamps: true,
   }
 );
+
+// Prevent Next.js HMR from retaining stale schema enums
+if (mongoose.models && (mongoose.models as any).Order) {
+  delete (mongoose.models as any).Order;
+}
 
 export const Order: Model<IOrder> =
   mongoose.models.Order || mongoose.model<IOrder>("Order", OrderSchema);

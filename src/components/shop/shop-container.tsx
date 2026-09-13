@@ -8,6 +8,9 @@ import { ShopCard, type ShopProduct } from "./shop-card";
 import { ShopSkeleton } from "./shop-skeleton";
 import { ShopEmptyState, ShopErrorState } from "./shop-states";
 import { ShopBenefits } from "./shop-benefits";
+import { ShopPagination } from "./shop-pagination";
+
+const ITEMS_PER_PAGE = 12;
 
 interface ShopContainerProps {
   initialProducts?: ShopProduct[];
@@ -27,11 +30,18 @@ export function ShopContainer({ initialProducts }: ShopContainerProps = {}) {
   // Filter and sort state - initialized from URL if present
   const [searchQuery, setSearchQuery] = useState<string>(urlQuery);
   const [sortBy, setSortBy] = useState<SortOption>("newest");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const gridTopRef = useRef<HTMLDivElement>(null);
 
   // Keep searchQuery in sync if user navigates with different search params
   useEffect(() => {
     setSearchQuery(urlQuery);
   }, [urlQuery]);
+
+  // Reset to page 1 whenever search query or sort option changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, sortBy]);
 
   const productsRef = useRef<ShopProduct[]>([]);
   productsRef.current = products;
@@ -143,6 +153,21 @@ export function ShopContainer({ initialProducts }: ShopContainerProps = {}) {
     }
   }, [filteredProducts, sortBy]);
 
+  // Calculate pagination
+  const totalPages = Math.ceil(sortedProducts.length / ITEMS_PER_PAGE);
+  const safeCurrentPage = Math.min(Math.max(1, currentPage), Math.max(1, totalPages));
+  const startIndex = (safeCurrentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedProducts = sortedProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage < 1 || newPage > totalPages) return;
+    setCurrentPage(newPage);
+    if (gridTopRef.current) {
+      const top = gridTopRef.current.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }
+  };
+
 
   return (
     <div className="w-full">
@@ -199,20 +224,34 @@ export function ShopContainer({ initialProducts }: ShopContainerProps = {}) {
             />
           )}
 
+        {/* Target anchor for smooth scroll on pagination */}
+        <div ref={gridTopRef} />
+
         {/* 5. Product Grid: Desktop 4-col, Tablet 3-col, Mobile 2-col */}
         {!isLoading && !error && sortedProducts.length > 0 && (
-          <div
-            aria-label="Products Catalogue"
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
-          >
-            {sortedProducts.map((product, index) => (
-              <ShopCard
-                key={product._id}
-                product={product}
-                priority={index < 4}
-              />
-            ))}
-          </div>
+          <>
+            <div
+              aria-label="Products Catalogue"
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
+            >
+              {paginatedProducts.map((product, index) => (
+                <ShopCard
+                  key={product._id}
+                  product={product}
+                  priority={index < 4}
+                />
+              ))}
+            </div>
+
+            {/* Shop Pagination */}
+            <ShopPagination
+              currentPage={safeCurrentPage}
+              totalPages={totalPages}
+              totalItems={sortedProducts.length}
+              itemsPerPage={ITEMS_PER_PAGE}
+              onPageChange={handlePageChange}
+            />
+          </>
         )}
 
         {/* 6. Shop Benefit & Trust Cards */}

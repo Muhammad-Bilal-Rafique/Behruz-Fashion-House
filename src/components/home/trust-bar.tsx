@@ -16,7 +16,7 @@ const MARQUEE_ITEMS: MarqueeItem[] = [
   },
   {
     icon: CreditCard,
-    label: "Cash on Delivery",
+    label: "COD (PKR 1k Advance)",
   },
   {
     icon: MessageCircle,

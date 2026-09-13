@@ -11,6 +11,7 @@ import {
   TikTokIcon,
   FacebookIcon,
 } from "@/components/shared/social-icons";
+import { useStoreSettings } from "@/components/providers/store-settings-provider";
 
 interface FooterLink {
   label: string;
@@ -37,6 +38,8 @@ const HELP_LINKS: FooterLink[] = [
 
 export function Footer() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const settings = useStoreSettings();
 
   const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -196,22 +199,22 @@ export function Footer() {
             <ul className="space-y-3 text-xs text-muted-foreground font-light">
               <li>
                 <a
-                  href="tel:+923354623733"
+                  href={`tel:+${settings.whatsappNumber.replace(/\D/g, "")}`}
                   className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-200"
-                  aria-label="Call +92 335 462 3733"
+                  aria-label={`Call ${settings.whatsappDisplayNumber || settings.whatsappNumber}`}
                 >
                   <Phone className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={1.5} />
-                  <span>+92 335 462 3733</span>
+                  <span>{settings.whatsappDisplayNumber || settings.whatsappNumber}</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:fahadmalik8689@gmail.com"
+                  href={`mailto:${settings.supportEmail}`}
                   className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-200"
-                  aria-label="Email fahadmalik8689@gmail.com"
+                  aria-label={`Email ${settings.supportEmail}`}
                 >
                   <Mail className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={1.5} />
-                  <span>fahadmalik8689@gmail.com</span>
+                  <span>{settings.supportEmail}</span>
                 </a>
               </li>
               <li className="inline-flex items-center gap-2 text-muted-foreground">

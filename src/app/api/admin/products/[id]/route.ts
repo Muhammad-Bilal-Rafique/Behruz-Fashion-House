@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import mongoose from "mongoose";
 import connectDB from "@/lib/connect";
 import Product from "@/models/Product";
@@ -215,6 +216,15 @@ export async function PUT(
     const finalDisc = Number(p.discountedPrice ?? finalOrig);
     const percentageOff = calculateDiscountPercentage(finalOrig, finalDisc);
 
+    try {
+      revalidatePath("/shop");
+      revalidatePath("/");
+      revalidatePath("/admin/products");
+      revalidatePath(`/products/${id}`);
+    } catch (revalErr) {
+      console.error("Path revalidation error:", revalErr);
+    }
+
     return NextResponse.json({
       success: true,
       message: "Product updated successfully",
@@ -270,6 +280,15 @@ export async function DELETE(
     }
 
     await Product.findByIdAndDelete(id);
+
+    try {
+      revalidatePath("/shop");
+      revalidatePath("/");
+      revalidatePath("/admin/products");
+      revalidatePath(`/products/${id}`);
+    } catch (revalErr) {
+      console.error("Path revalidation error:", revalErr);
+    }
 
     return NextResponse.json({
       success: true,

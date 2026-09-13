@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import TopProgressBar from "@/components/shared/top-progress-bar";
+import { getStoreSettings } from "@/lib/store-settings-server";
+import { StoreSettingsProvider } from "@/components/providers/store-settings-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,20 +22,27 @@ export const metadata: Metadata = {
     "Timeless Pakistani fashion crafted for every occasion. Discover handcrafted bridal, luxury festive, and contemporary pret collections.",
 };
 
-export default function RootLayout({
+export const dynamic = "force-dynamic";
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const settings = await getStoreSettings();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <TopProgressBar />
-        {children}
-        <Toaster position="top-right" richColors closeButton />
+        <StoreSettingsProvider initialSettings={settings}>
+          <TopProgressBar />
+          {children}
+          <Toaster position="bottom-right" richColors closeButton />
+        </StoreSettingsProvider>
       </body>
     </html>
   );
 }
+

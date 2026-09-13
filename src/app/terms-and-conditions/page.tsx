@@ -74,14 +74,14 @@ export default function TermsAndConditionsPage() {
               </p>
             </LegalSection>
 
-            {/* Section 4: Cash on Delivery */}
+            {/* Section 4: Payment Policy & Cash on Delivery */}
             <LegalSection
               id="cash-on-delivery"
               index={4}
-              title="Cash on Delivery"
+              title="Payment Policy & Cash on Delivery"
             >
               <p>
-                Cash on Delivery is available for orders within Pakistan. Delivery charges are paid in advance, while the remaining amount is paid through Cash on Delivery upon receipt of the parcel.
+                A PKR 1,000 advance payment is mandatory to confirm every order. After placing an order, payment instructions are provided to the customer to submit the advance payment. For orders within Pakistan, the remaining balance is paid through Cash on Delivery upon receipt of the parcel. Orders are processed and dispatched only after the PKR 1,000 advance payment is manually verified.
               </p>
             </LegalSection>
 

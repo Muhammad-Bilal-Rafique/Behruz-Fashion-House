@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { useStoreSettings } from "@/components/providers/store-settings-provider";
 
 interface LegalContactCardProps {
   showButton?: boolean;
@@ -17,6 +20,8 @@ export function LegalContactCard({
   className = "",
   showAddress = true,
 }: LegalContactCardProps) {
+  const settings = useStoreSettings();
+
   return (
     <div
       className={`mt-6 p-6 sm:p-8 bg-muted/30 border border-border/80 rounded-none ${className}`}
@@ -28,11 +33,11 @@ export function LegalContactCard({
             PHONE / WHATSAPP
           </span>
           <a
-            href="tel:+923354623733"
+            href={`tel:+${settings.whatsappNumber.replace(/\D/g, "")}`}
             className="inline-flex items-center gap-2 text-sm font-normal text-foreground hover:text-primary transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={1.5} />
-            <span>+92 335 462 3733</span>
+            <span>{settings.whatsappDisplayNumber || settings.whatsappNumber}</span>
           </a>
           <p className="text-xs text-muted-foreground font-light">
             Available for inquiries and order assistance.
@@ -45,11 +50,11 @@ export function LegalContactCard({
             EMAIL
           </span>
           <a
-            href="mailto:fahadmalik8689@gmail.com"
+            href={`mailto:${settings.supportEmail}`}
             className="inline-flex items-center gap-2 text-sm font-normal text-foreground hover:text-primary transition-colors break-all"
           >
             <Mail className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={1.5} />
-            <span>fahadmalik8689@gmail.com</span>
+            <span>{settings.supportEmail}</span>
           </a>
           <p className="text-xs text-muted-foreground font-light">
             We respond to written inquiries promptly.
@@ -66,8 +71,7 @@ export function LegalContactCard({
               <MapPin className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
               <address className="not-italic text-xs leading-relaxed text-muted-foreground font-light">
                 <span className="font-normal text-foreground block">Behruz Fashion House</span>
-                City Tower, Shop 3<br />
-                Gulshan-e-Ravi, Lahore, Pakistan
+                {settings.shopAddress}
               </address>
             </div>
           </div>

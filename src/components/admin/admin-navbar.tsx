@@ -9,7 +9,6 @@ import {
   PackagePlus,
   ShoppingBag,
   Globe,
-  BarChart3,
   Settings,
   ExternalLink,
   Menu,
@@ -49,11 +48,6 @@ const ADMIN_NAV_ITEMS: NavItem[] = [
     label: "Edit Website",
     href: "/admin/edit-website",
     icon: Globe,
-  },
-  {
-    label: "Analytics",
-    href: "/admin/analytics",
-    icon: BarChart3,
   },
   {
     label: "Settings",
@@ -136,13 +130,13 @@ export function AdminNavbar() {
               variant="outline"
               size="sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden h-8 w-8 p-0"
-              aria-label="Toggle admin menu"
+              className="md:hidden h-10 w-10 p-0 border-border/80 hover:border-primary/60 hover:bg-primary/5 text-foreground transition-all rounded-xs shadow-2xs"
+              aria-label="Toggle admin navigation menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-4 h-4" />
+                <X className="w-6 h-6 stroke-[2.2] text-primary" />
               ) : (
-                <Menu className="w-4 h-4" />
+                <Menu className="w-6 h-6 stroke-[2.2] text-foreground" />
               )}
             </Button>
           </div>
