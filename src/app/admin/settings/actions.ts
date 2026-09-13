@@ -177,3 +177,28 @@ export async function updateSettingsAction(
     };
   }
 }
+
+/**
+ * Server action to update admin login password in MongoDB
+ */
+export async function changeAdminPasswordAction(
+  currentPassword: string,
+  newPassword: string
+): Promise<{ success: boolean; message: string }> {
+  try {
+    const { changeAdminPassword } = await import("@/lib/admin-service");
+    const { getCurrentAdminSession } = await import("@/app/admin/login/actions");
+    const session = await getCurrentAdminSession();
+    const result = await changeAdminPassword(session.email, currentPassword, newPassword);
+    return {
+      success: result.success,
+      message: result.message || (result.success ? "Password updated successfully." : "Failed to update password."),
+    };
+  } catch (err: any) {
+    return {
+      success: false,
+      message: err?.message || "Failed to update password.",
+    };
+  }
+}
+

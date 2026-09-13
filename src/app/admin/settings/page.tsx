@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { AdminNavbar } from "@/components/admin/admin-navbar";
 import { SettingsForm } from "@/components/admin/settings/settings-form";
+import { AdminSecurityCard } from "@/components/admin/settings/admin-security-card";
 import { getSettingsAction } from "./actions";
 
 export const metadata: Metadata = {
@@ -33,8 +34,11 @@ export default async function AdminSettingsPage() {
           </p>
         </div>
 
-        {/* Settings Form */}
+        {/* Store Operations & Payment Settings Form */}
         <SettingsForm initialSettings={settings} />
+
+        {/* Admin Security & Password Change Card */}
+        <AdminSecurityCard />
       </main>
     </div>
   );

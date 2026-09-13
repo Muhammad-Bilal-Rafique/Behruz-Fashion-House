@@ -13,8 +13,10 @@ import {
   ExternalLink,
   Menu,
   X,
+  LogOut,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { logoutAdminAction } from "@/app/admin/login/actions";
 
 interface NavItem {
   label: string;
@@ -117,7 +119,7 @@ export function AdminNavbar() {
               <Button
                 variant="outline"
                 size="sm"
-                className="gap-2 text-xs h-8 border-border hover:border-primary/40 text-muted-foreground hover:text-foreground"
+                className="gap-2 text-xs h-8 border-border hover:border-primary/40 text-muted-foreground hover:text-foreground cursor-pointer"
               >
                 <Globe className="w-3.5 h-3.5 text-primary" />
                 <span>Live Store</span>
@@ -125,12 +127,23 @@ export function AdminNavbar() {
               </Button>
             </Link>
 
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => logoutAdminAction()}
+              className="hidden sm:inline-flex gap-1.5 text-xs h-8 text-muted-foreground hover:text-destructive hover:bg-destructive/10 cursor-pointer"
+              title="Sign Out of Admin"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span>Logout</span>
+            </Button>
+
             {/* Mobile Hamburger Toggle */}
             <Button
               variant="outline"
               size="sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden h-10 w-10 p-0 border-border/80 hover:border-primary/60 hover:bg-primary/5 text-foreground transition-all rounded-xs shadow-2xs"
+              className="md:hidden h-10 w-10 p-0 border-border/80 hover:border-primary/60 hover:bg-primary/5 text-foreground transition-all rounded-xs shadow-2xs cursor-pointer"
               aria-label="Toggle admin navigation menu"
             >
               {mobileMenuOpen ? (
@@ -171,7 +184,7 @@ export function AdminNavbar() {
               );
             })}
 
-            <div className="pt-2 border-t border-border/60">
+            <div className="pt-2 border-t border-border/60 space-y-1">
               <Link
                 href="/"
                 target="_blank"
@@ -184,6 +197,14 @@ export function AdminNavbar() {
                 </div>
                 <ExternalLink className="w-3.5 h-3.5 text-muted-foreground" />
               </Link>
+              <button
+                type="button"
+                onClick={() => logoutAdminAction()}
+                className="w-full flex items-center gap-2.5 px-3 py-2 text-xs text-destructive hover:bg-destructive/10 rounded-xs transition-colors text-left cursor-pointer"
+              >
+                <LogOut className="w-4 h-4" />
+                <span>Sign Out</span>
+              </button>
             </div>
           </div>
         )}
