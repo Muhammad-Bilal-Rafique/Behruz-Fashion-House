@@ -8,6 +8,7 @@ import {
   verifyAdminSessionToken,
 } from "@/lib/admin-token";
 import { authenticateAdmin } from "@/lib/admin-service";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export interface LoginActionResult {
   success: boolean;
@@ -25,6 +26,20 @@ export async function loginAdminAction(
   const emailOrIdentifier = (formData.get("email") as string) || "";
   const password = (formData.get("password") as string) || "";
   const callbackUrl = (formData.get("callbackUrl") as string) || "/admin/dashboard";
+
+  // Rate limit: 5 attempts per 15 minutes per email/identifier
+  const rateLimit = checkRateLimit(
+    `login_${emailOrIdentifier.trim().toLowerCase() || "anon"}`,
+    5,
+    15 * 60 * 1000
+  );
+  if (!rateLimit.allowed) {
+    const minsLeft = Math.ceil(rateLimit.resetInMs / 60000);
+    return {
+      success: false,
+      message: `Too many failed login attempts. Please try again in ${minsLeft} minute(s).`,
+    };
+  }
 
   const authResult = await authenticateAdmin(emailOrIdentifier, password);
 

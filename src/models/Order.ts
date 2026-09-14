@@ -60,6 +60,8 @@ export interface IOrder extends Document {
     | "dispatched"
     | "delivered"
     | "cancelled";
+  customerAccessToken?: string;
+  isStockRestocked?: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -159,6 +161,15 @@ const OrderSchema = new Schema<IOrder>(
       unique: true,
       index: true,
       trim: true,
+    },
+    customerAccessToken: {
+      type: String,
+      index: true,
+      default: null,
+    },
+    isStockRestocked: {
+      type: Boolean,
+      default: false,
     },
     customer: { type: OrderCustomerSchema, required: true },
     items: {

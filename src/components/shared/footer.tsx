@@ -31,6 +31,7 @@ const COMPANY_LINKS: FooterLink[] = [
 ];
 
 const HELP_LINKS: FooterLink[] = [
+  { label: "Track Order", href: "/track-order" },
   { label: "Shipping Policy", href: "/shipping-policy" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },

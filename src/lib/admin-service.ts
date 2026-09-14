@@ -2,39 +2,53 @@ import bcrypt from "bcryptjs";
 import connectDB from "@/lib/connect";
 import Admin, { IAdmin } from "@/models/Admin";
 
-const DEFAULT_ADMIN_EMAIL = "fahadmailk8689@gmail.com";
-const DEFAULT_ADMIN_PASSWORD = "admin";
-
 /**
  * Normalizes email or admin identifier.
  */
 function normalizeIdentifier(identifier: string): string {
-  const clean = identifier.trim().toLowerCase();
-  // Allow user to log in with "admin" or common variations
-  if (clean === "admin" || clean === "fahad" || clean === "fahadmalik8689@gmail.com") {
-    return DEFAULT_ADMIN_EMAIL;
-  }
-  return clean;
+  return identifier.trim().toLowerCase();
 }
 
 /**
  * Ensures at least one initial admin exists in the database.
+ * Uses ADMIN_INITIAL_EMAIL and ADMIN_INITIAL_PASSWORD from environment.
+ * Never creates an insecure default account with a hardcoded password in production.
  */
-export async function ensureAdminSeeded(): Promise<IAdmin> {
+export async function ensureAdminSeeded(): Promise<IAdmin | null> {
   await connectDB();
   let admin = await Admin.findOne().sort({ createdAt: 1 });
 
-  if (!admin) {
-    const passwordHash = await bcrypt.hash(DEFAULT_ADMIN_PASSWORD, 10);
-    admin = await Admin.create({
-      email: DEFAULT_ADMIN_EMAIL,
-      passwordHash,
-      name: "Fahad Malik",
-    });
-    console.log("Seeded default admin account:", DEFAULT_ADMIN_EMAIL);
+  if (admin) {
+    return admin;
   }
 
-  return admin;
+  const initialEmail = process.env.ADMIN_INITIAL_EMAIL?.trim().toLowerCase();
+  const initialPassword = process.env.ADMIN_INITIAL_PASSWORD;
+
+  if (initialEmail && initialPassword) {
+    const passwordHash = await bcrypt.hash(initialPassword, 10);
+    admin = await Admin.create({
+      email: initialEmail,
+      passwordHash,
+      name: "Store Administrator",
+    });
+    console.log("Successfully seeded initial admin account from environment:", initialEmail);
+    return admin;
+  }
+
+  if (process.env.NODE_ENV === "production") {
+    console.error(
+      "CRITICAL: No admin account exists in MongoDB and ADMIN_INITIAL_EMAIL / ADMIN_INITIAL_PASSWORD are not configured. " +
+      "Refusing to seed insecure default credentials in production."
+    );
+    return null;
+  }
+
+  // Development-only fallback warning
+  console.warn(
+    "Warning (Dev Only): No admin found. Please define ADMIN_INITIAL_EMAIL and ADMIN_INITIAL_PASSWORD in .env.local."
+  );
+  return null;
 }
 
 /**
@@ -48,15 +62,19 @@ export async function authenticateAdmin(
     return { success: false, message: "Email and password are required." };
   }
 
+  if (password.length < 8) {
+    return { success: false, message: "Invalid email or password." };
+  }
+
   try {
     await connectDB();
     await ensureAdminSeeded();
 
     const normalized = normalizeIdentifier(identifier);
 
-    // Search by exact email or fallback to any existing admin if logging in with alias
+    // Search by exact email or fallback to any existing admin if single-admin
     let admin = await Admin.findOne({ email: normalized });
-    if (!admin && (normalized === DEFAULT_ADMIN_EMAIL || identifier.toLowerCase().trim() === "admin")) {
+    if (!admin) {
       admin = await Admin.findOne().sort({ createdAt: 1 });
     }
 
@@ -88,8 +106,8 @@ export async function changeAdminPassword(
     return { success: false, message: "Current password and new password are required." };
   }
 
-  if (newPassword.length < 4) {
-    return { success: false, message: "New password must be at least 4 characters long." };
+  if (newPassword.length < 8) {
+    return { success: false, message: "New password must be at least 8 characters long." };
   }
 
   try {

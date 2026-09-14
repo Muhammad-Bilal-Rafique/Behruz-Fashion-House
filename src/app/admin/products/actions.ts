@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import connectDB from "@/lib/connect";
 import Product from "@/models/Product";
 import { deleteFromCloudinary } from "@/lib/cloudinary";
+import { getCurrentAdminSession } from "@/app/admin/login/actions";
 
 function isValidObjectId(id: string): boolean {
   return mongoose.Types.ObjectId.isValid(id);
@@ -15,6 +16,11 @@ function isValidObjectId(id: string): boolean {
  */
 export async function deleteProductAction(id: string): Promise<{ success: boolean; error?: string }> {
   try {
+    const session = await getCurrentAdminSession();
+    if (!session || !session.authenticated) {
+      return { success: false, error: "Unauthorized. Admin session required." };
+    }
+
     if (!id || !isValidObjectId(id)) {
       return { success: false, error: "Invalid product ID." };
     }
@@ -62,6 +68,11 @@ export async function toggleProductStatusAction(
   newStatus: "active" | "draft"
 ): Promise<{ success: boolean; error?: string; status?: "active" | "draft" }> {
   try {
+    const session = await getCurrentAdminSession();
+    if (!session || !session.authenticated) {
+      return { success: false, error: "Unauthorized. Admin session required." };
+    }
+
     if (!id || !isValidObjectId(id)) {
       return { success: false, error: "Invalid product ID." };
     }
@@ -102,6 +113,11 @@ export async function toggleProductFeaturedAction(
   newFeatured: boolean
 ): Promise<{ success: boolean; error?: string; isFeatured?: boolean }> {
   try {
+    const session = await getCurrentAdminSession();
+    if (!session || !session.authenticated) {
+      return { success: false, error: "Unauthorized. Admin session required." };
+    }
+
     if (!id || !isValidObjectId(id)) {
       return { success: false, error: "Invalid product ID." };
     }

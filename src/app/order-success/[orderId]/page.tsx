@@ -88,7 +88,11 @@ export default function OrderSuccessPage({
     async function fetchOrder() {
       try {
         setLoading(true);
-        const res = await fetch(`/api/orders/${orderId}`);
+        const searchParams = new URLSearchParams(window.location.search);
+        const token = searchParams.get("token");
+        const tokenQuery = token ? `?token=${encodeURIComponent(token)}` : "";
+
+        const res = await fetch(`/api/orders/${orderId}${tokenQuery}`);
         const data = await res.json();
 
         if (!res.ok || !data.success) {

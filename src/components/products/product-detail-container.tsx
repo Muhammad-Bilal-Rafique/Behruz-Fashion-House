@@ -45,7 +45,7 @@ export function ProductDetailContainer({
       }
       setErrorType(null);
 
-      const res = await fetch(`/api/admin/products/${id}`);
+      const res = await fetch(`/api/products/${id}`);
 
       if (res.status === 404) {
         setErrorType("not-found");

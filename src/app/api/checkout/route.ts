@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose from "mongoose";
+import crypto from "crypto";
 import connectDB from "@/lib/connect";
 import Product from "@/models/Product";
 import Order from "@/models/Order";
 import { getStoreSettings } from "@/lib/store-settings-server";
+import { checkRateLimit } from "@/lib/rate-limit";
+import {
+  sendOrderPlacedCustomerEmail,
+  sendOrderPlacedAdminNotification,
+} from "@/lib/email";
 
 interface CheckoutRequestBody {
   customer: {
@@ -23,7 +29,22 @@ interface CheckoutRequestBody {
 }
 
 export async function POST(request: NextRequest) {
+  let reservedItems: { productId: string; size: string; quantity: number }[] = [];
   try {
+    // 0. Rate limiting (10 checkout attempts per 10 minutes per IP)
+    const clientIp =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "checkout_client";
+    const rateLimit = checkRateLimit(`checkout_${clientIp}`, 10, 10 * 60 * 1000);
+    if (!rateLimit.allowed) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Too many checkout attempts. Please wait a few minutes before trying again.",
+        },
+        { status: 429 }
+      );
+    }
+
     const body: any = await request.json();
     const customer = body.customer || {
       fullName: body.fullName,
@@ -68,33 +89,33 @@ export async function POST(request: NextRequest) {
 
     if (!country) {
       return NextResponse.json(
-        { success: false, error: "Please select your country." },
+        { success: false, error: "Country is required." },
         { status: 400 }
       );
     }
 
     if (!province) {
       return NextResponse.json(
-        { success: false, error: "Please select or enter your province/state." },
+        { success: false, error: "Province/State is required." },
         { status: 400 }
       );
     }
 
-    if (!city || city.length < 2) {
+    if (!city) {
       return NextResponse.json(
-        { success: false, error: "Please enter your city." },
+        { success: false, error: "City is required." },
         { status: 400 }
       );
     }
 
     if (!address || address.length < 5) {
       return NextResponse.json(
-        { success: false, error: "Please enter your complete delivery address." },
+        { success: false, error: "Please provide a detailed shipping address." },
         { status: 400 }
       );
     }
 
-    // 2. Validate Cart Items
+    // 2. Validate Items Array
     if (!Array.isArray(items) || items.length === 0) {
       return NextResponse.json(
         { success: false, error: "Your bag is empty. Please add items to checkout." },
@@ -243,8 +264,6 @@ export async function POST(request: NextRequest) {
 
     // 6. Concurrency-Safe Atomic Stock Decrement
     // If any item cannot be decremented atomically (e.g. purchased simultaneously), rollback and abort.
-    const reservedItems: { productId: string; size: string; quantity: number }[] = [];
-
     for (const item of sanitizedItems) {
       const updateResult = await Product.updateOne(
         {
@@ -284,10 +303,23 @@ export async function POST(request: NextRequest) {
       reservedItems.push(item);
     }
 
-    // 7. Generate Order Number & Persist Order Document
+    // 7. Generate Collision-Resistant Order Number & Access Token
     const dateStr = new Date().toISOString().slice(2, 7).replace("-", ""); // e.g. "2609"
-    const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-    const orderNumber = `BFH-${dateStr}-${randomSuffix}`;
+    let orderNumber = "";
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const hexSuffix = crypto.randomBytes(3).toString("hex").toUpperCase();
+      const candidate = `BFH-${dateStr}-${hexSuffix}`;
+      const existing = await Order.findOne({ orderNumber: candidate });
+      if (!existing) {
+        orderNumber = candidate;
+        break;
+      }
+    }
+    if (!orderNumber) {
+      orderNumber = `BFH-${dateStr}-${Date.now().toString(36).toUpperCase().slice(-6)}`;
+    }
+
+    const customerAccessToken = crypto.randomBytes(24).toString("hex");
 
     const advanceAmount = settings.advancePaymentAmount;
     const remainingAmount = isPakistan
@@ -296,6 +328,8 @@ export async function POST(request: NextRequest) {
 
     const newOrder = await Order.create({
       orderNumber,
+      customerAccessToken,
+      isStockRestocked: false,
       customer: {
         name: fullName,
         phone,
@@ -329,11 +363,49 @@ export async function POST(request: NextRequest) {
       orderStatus: "awaiting_advance",
     });
 
+    // 8. Trigger Email Notifications Asynchronously (Non-blocking)
+    const emailData = {
+      orderNumber: newOrder.orderNumber,
+      customer: {
+        name: newOrder.customer.name,
+        phone: newOrder.customer.phone,
+        email: newOrder.customer.email,
+        country: newOrder.customer.country,
+        province: newOrder.customer.province,
+        city: newOrder.customer.city,
+        address: newOrder.customer.address,
+      },
+      pricing: {
+        subtotal: newOrder.pricing.subtotal,
+        shippingFee: newOrder.pricing.shippingFee,
+        shippingType: newOrder.pricing.shippingType,
+        total: newOrder.pricing.total,
+        advanceAmount: newOrder.pricing.advanceAmount,
+        remainingAmount: newOrder.pricing.remainingAmount,
+      },
+      shipping: {
+        deliveryEstimate: newOrder.shipping.deliveryEstimate,
+      },
+      items: newOrder.items.map((it: any) => ({
+        name: it.name,
+        size: it.size,
+        quantity: it.quantity,
+        price: it.price,
+        itemTotal: it.itemTotal,
+      })),
+    };
+
+    Promise.allSettled([
+      sendOrderPlacedCustomerEmail(emailData),
+      sendOrderPlacedAdminNotification(emailData),
+    ]).catch((err) => console.error("Error dispatching checkout emails:", err));
+
     return NextResponse.json({
       success: true,
       order: {
         orderId: String(newOrder._id),
         orderNumber: newOrder.orderNumber,
+        customerAccessToken: newOrder.customerAccessToken,
         customer: newOrder.customer,
         pricing: newOrder.pricing,
         shipping: newOrder.shipping,
@@ -345,6 +417,21 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error("Error creating order:", error);
+
+    // Concurrency / crash stock rollback
+    if (Array.isArray(reservedItems) && reservedItems.length > 0) {
+      for (const reserved of reservedItems) {
+        try {
+          await Product.updateOne(
+            { _id: reserved.productId, "sizeStock.size": reserved.size },
+            { $inc: { "sizeStock.$.stock": reserved.quantity } }
+          );
+        } catch (rollbackErr) {
+          console.error("Failed to rollback stock for item:", reserved, rollbackErr);
+        }
+      }
+    }
+
     return NextResponse.json(
       {
         success: false,

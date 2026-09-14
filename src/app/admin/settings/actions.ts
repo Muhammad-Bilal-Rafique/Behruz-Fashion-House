@@ -8,6 +8,7 @@ import {
   DEFAULT_STORE_SETTINGS,
 } from "@/config/settings";
 import { clearStoreSettingsCache } from "@/lib/store-settings-server";
+import { getCurrentAdminSession } from "@/app/admin/login/actions";
 
 /**
  * Fetch existing settings from MongoDB, creating default document if it doesn't exist yet.
@@ -84,6 +85,11 @@ export async function updateSettingsAction(
   data: Partial<SerializedSettings>
 ): Promise<{ success: boolean; error?: string; settings?: SerializedSettings }> {
   try {
+    const session = await getCurrentAdminSession();
+    if (!session || !session.authenticated) {
+      return { success: false, error: "Unauthorized. Admin session required." };
+    }
+
     await connectDB();
 
     // Basic sanitization & validations

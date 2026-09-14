@@ -6,6 +6,8 @@ import { Phone, Mail, Globe, ArrowRight, MapPin } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useStoreSettings } from "@/components/providers/store-settings-provider";
+import { submitContactAction } from "@/app/contact/actions";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import {
@@ -57,20 +59,29 @@ export function ContactSection() {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-
-    // Frontend UI only - simulate prompt response and toast
-    setTimeout(() => {
-      toast.success("Thanks for reaching out. We'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
-      setErrors({ name: "", email: "", message: "" });
+    try {
+      const res = await submitContactAction(formData);
+      if (res.success) {
+        toast.success("Thank you for reaching out! Your message has been sent to our team.");
+        setFormData({ name: "", email: "", message: "" });
+        setErrors({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Failed to send message", {
+          description: res.error || "Please try again or contact us directly on WhatsApp.",
+        });
+      }
+    } catch (err) {
+      console.error("Contact form error:", err);
+      toast.error("An error occurred. Please contact us via WhatsApp.");
+    } finally {
       setIsSubmitting(false);
-    }, 400);
+    }
   };
 
   return (

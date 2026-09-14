@@ -195,7 +195,10 @@ export default function CheckoutPage() {
       toast.success("Order Received!", {
         description: `Order #${data.order.orderNumber} placed. Redirecting to payment instructions...`,
       });
-      router.push(`/order-success/${data.order.orderId}`);
+      const tokenParam = data.order.customerAccessToken
+        ? `?token=${encodeURIComponent(data.order.customerAccessToken)}`
+        : "";
+      router.push(`/order-success/${data.order.orderId}${tokenParam}`);
     } catch (err) {
       console.error("Checkout network error:", err);
       toast.error("Network connection issue. Please check your internet connection.");

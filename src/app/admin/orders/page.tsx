@@ -75,31 +75,37 @@ export default async function AdminOrdersPage({ searchParams }: AdminOrdersPageP
     dispatchedCount = dispatched;
     deliveredCount = delivered;
 
-    // 2. Build filtered MongoDB query
-    const query: Record<string, any> = {};
+    // 2. Build filtered MongoDB query with $and composition
+    const andClauses: any[] = [];
 
     if (statusFilter && statusFilter !== "all") {
-      query.orderStatus = statusFilter;
+      andClauses.push({ orderStatus: statusFilter });
     }
 
     if (paymentStatusFilter && paymentStatusFilter !== "all") {
-      query.$or = [
-        { "payment.status": paymentStatusFilter },
-        { "payment.advancePaymentStatus": paymentStatusFilter },
-      ];
+      andClauses.push({
+        $or: [
+          { "payment.status": paymentStatusFilter },
+          { "payment.advancePaymentStatus": paymentStatusFilter },
+        ],
+      });
     }
 
     if (search) {
       const escaped = escapeRegex(search);
       const searchRegex = { $regex: escaped, $options: "i" };
-      query.$or = [
-        { orderNumber: searchRegex },
-        { "customer.name": searchRegex },
-        { "customer.phone": searchRegex },
-        { "customer.email": searchRegex },
-        { "customer.city": searchRegex },
-      ];
+      andClauses.push({
+        $or: [
+          { orderNumber: searchRegex },
+          { "customer.name": searchRegex },
+          { "customer.phone": searchRegex },
+          { "customer.email": searchRegex },
+          { "customer.city": searchRegex },
+        ],
+      });
     }
+
+    const query = andClauses.length > 0 ? { $and: andClauses } : {};
 
     // 3. Count matching documents for pagination
     matchingCount = await Order.countDocuments(query);

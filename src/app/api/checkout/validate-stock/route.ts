@@ -112,10 +112,22 @@ export async function POST(request: NextRequest) {
       };
     });
 
+    const validationMap: Record<string, any> = {};
+    for (const v of validatedItems) {
+      validationMap[`${v.productId}-${v.size}`] = {
+        inStock: v.status === "valid",
+        availableStock: v.availableStock,
+        requested: v.requestedQuantity,
+        status: v.status,
+        message: v.message,
+      };
+    }
+
     return NextResponse.json({
       success: true,
       hasIssues,
       items: validatedItems,
+      validationMap,
     });
   } catch (error) {
     console.error("Error in validate-stock route:", error);

@@ -5,11 +5,32 @@
 
 export const ADMIN_COOKIE_NAME = "bfh_admin_session";
 
-// Fallback secret if ADMIN_SESSION_SECRET is not configured
-const FALLBACK_SECRET = "bfh-couture-admin-secure-auth-secret-key-2026";
+// Ephemeral development-only secret if not configured in .env.local
+let devEphemeralSecret: string | null = null;
 
 function getSecretKey(): string {
-  return process.env.ADMIN_SESSION_SECRET || FALLBACK_SECRET;
+  const envSecret = process.env.ADMIN_SESSION_SECRET?.trim();
+  if (envSecret) {
+    return envSecret;
+  }
+
+  if (process.env.NODE_ENV === "production") {
+    throw new Error(
+      "CRITICAL: ADMIN_SESSION_SECRET environment variable is missing in production. " +
+      "Admin session tokens cannot be created or verified without this secret."
+    );
+  }
+
+  if (!devEphemeralSecret) {
+    // Generate an ephemeral random key for this dev server session
+    devEphemeralSecret = `dev_secret_${Math.random().toString(36).substring(2)}_${Date.now()}`;
+    console.warn(
+      "Warning (Dev Only): ADMIN_SESSION_SECRET is not set in .env.local. " +
+      "Using a temporary in-memory key for this development session."
+    );
+  }
+
+  return devEphemeralSecret;
 }
 
 // Helper to convert string to Uint8Array
