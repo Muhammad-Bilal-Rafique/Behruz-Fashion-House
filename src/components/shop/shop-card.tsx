@@ -117,6 +117,13 @@ export function ShopCard({ product, priority = false }: ShopCardProps) {
             )}
           </div>
 
+          {/* Bottom-Left Fabric Badge (Matching Admin Card Preview) */}
+          {product.fabric && product.fabric.trim() && (
+            <div className="absolute bottom-2.5 left-2.5 z-10 bg-black/70 backdrop-blur-xs text-white text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-xs pointer-events-none font-medium">
+              {product.fabric}
+            </div>
+          )}
+
           {/* Wishlist Button (Circular floating action) */}
           <button
             type="button"
@@ -154,13 +161,6 @@ export function ShopCard({ product, priority = false }: ShopCardProps) {
               </p>
             )}
           </div>
-
-          {/* Fabric indicator (if provided) */}
-          {product.fabric && (
-            <p className="text-[11px] text-muted-foreground/80 truncate font-light">
-              {product.fabric}
-            </p>
-          )}
 
           {/* Available Sizes */}
           {sizesText && (

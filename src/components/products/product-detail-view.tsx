@@ -36,6 +36,7 @@ export interface ProductDetailData {
   discountedPrice: number;
   percentageOff?: number;
   description: string;
+  fabric?: string;
   sizes: string[];
   sizeStock?: { size: string; stock: number }[];
   images: ProductDetailImage[];
@@ -303,6 +304,13 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               )}
             </div>
 
+            {/* Bottom-Left Fabric Badge */}
+            {product.fabric && product.fabric.trim() && (
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 bg-black/70 backdrop-blur-xs text-white text-[11px] sm:text-xs uppercase tracking-wider px-2.5 sm:px-3 py-1 rounded-xs pointer-events-none font-medium">
+                {product.fabric}
+              </div>
+            )}
+
             {/* Top-Right Floating Wishlist Button */}
             <button
               type="button"
@@ -364,6 +372,12 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
         <div className="lg:col-span-5 space-y-6">
           {/* Product Name */}
           <div>
+            {product.fabric && product.fabric.trim() && (
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-widest uppercase px-2.5 py-1 mb-2.5 bg-muted text-foreground/80 rounded-xs border border-border/60">
+                <Sparkles className="w-3 h-3 text-[#FF3154]" />
+                Fabric: {product.fabric}
+              </span>
+            )}
             <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-foreground tracking-tight leading-tight">
               {product.name}
             </h1>
@@ -566,13 +580,24 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
             </button>
           </div>
 
-          {/* Section 9: Clean Product Details Information (NO color, NO fabric) */}
+          {/* Section 9: Clean Product Details Information */}
           <div className="space-y-4 pt-2">
             <h3 className="text-xs uppercase tracking-[0.2em] font-semibold text-foreground">
               Product Details
             </h3>
 
             <div className="space-y-2.5 text-xs text-muted-foreground">
+              {product.fabric && product.fabric.trim() && (
+                <div>
+                  <span className="font-semibold text-foreground block mb-0.5">
+                    Fabric Composition
+                  </span>
+                  <p className="leading-relaxed font-medium text-foreground capitalize">
+                    {product.fabric}
+                  </p>
+                </div>
+              )}
+
               <div>
                 <span className="font-semibold text-foreground block mb-0.5">
                   Description

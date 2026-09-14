@@ -53,6 +53,7 @@ export default async function EditProductPage({ params }: EditProductPageProps) 
     originalPrice: Number(p.originalPrice ?? p.price ?? 0),
     discountedPrice: Number(p.discountedPrice ?? p.price ?? p.originalPrice ?? 0),
     description: p.description || "",
+    fabric: p.fabric || "",
     sizes: Array.isArray(p.sizes) ? p.sizes : [],
     sizeStock: Array.isArray(p.sizeStock)
       ? p.sizeStock.map((s: any) => ({ size: String(s.size), stock: Number(s.stock) || 0 }))

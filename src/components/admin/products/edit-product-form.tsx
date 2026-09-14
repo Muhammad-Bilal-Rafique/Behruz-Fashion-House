@@ -32,6 +32,7 @@ interface EditFormData {
   originalPrice: string;
   discountedPrice: string;
   description: string;
+  fabric?: string;
   sizes: string[];
   status: "active" | "draft";
   isFeatured: boolean;
@@ -65,6 +66,7 @@ export function EditProductForm({ product }: EditProductFormProps) {
       originalPrice: String(product.originalPrice),
       discountedPrice: String(product.discountedPrice),
       description: product.description,
+      fabric: product.fabric || "",
       sizes: product.sizes,
       status: product.status,
       isFeatured: product.isFeatured,
@@ -142,6 +144,7 @@ export function EditProductForm({ product }: EditProductFormProps) {
         originalPrice: origPrice,
         discountedPrice: discPrice,
         description: data.description.trim(),
+        fabric: (data.fabric || "").trim(),
         sizes: data.sizes,
         sizeStock: sizeStockArray,
         status: data.status,
@@ -233,6 +236,19 @@ export function EditProductForm({ product }: EditProductFormProps) {
                   id="name"
                   {...register("name", { required: "Product name is required" })}
                   placeholder="e.g. Maria Lawn Luxury Stitched"
+                  className="rounded-xs text-xs h-9"
+                />
+              </div>
+
+              {/* Fabric Composition */}
+              <div className="space-y-1.5">
+                <Label htmlFor="fabric" className="text-xs font-semibold text-foreground">
+                  Fabric Composition <span className="text-muted-foreground text-xs font-normal">(Optional)</span>
+                </Label>
+                <Input
+                  id="fabric"
+                  {...register("fabric")}
+                  placeholder="e.g. Pure Chiffon, Shamoz Silk, Organza, Raw Silk..."
                   className="rounded-xs text-xs h-9"
                 />
               </div>

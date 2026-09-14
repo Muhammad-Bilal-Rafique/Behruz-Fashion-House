@@ -31,6 +31,7 @@ export interface SerializedProduct {
   originalPrice: number;
   discountedPrice: number;
   description: string;
+  fabric?: string;
   sizes: string[];
   sizeStock?: { size: string; stock: number }[];
   images: { url: string; publicId: string; isCover: boolean }[];
