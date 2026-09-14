@@ -47,7 +47,7 @@ export function EditProductForm({ product }: EditProductFormProps) {
   const initialStockMap: Record<string, number> = {};
   AVAILABLE_SIZES.forEach((size) => {
     const existing = product.sizeStock?.find((st) => st.size === size);
-    initialStockMap[size] = existing ? existing.stock : 10;
+    initialStockMap[size] = existing ? existing.stock : 5;
   });
 
   const [sizeStockMap, setSizeStockMap] = useState<Record<string, number>>(initialStockMap);

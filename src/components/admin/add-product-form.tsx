@@ -70,10 +70,10 @@ export function AddProductForm() {
   const [isCompressing, setIsCompressing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [sizeStockMap, setSizeStockMap] = useState<Record<string, number | string>>({
-    S: 10,
-    M: 10,
-    L: 10,
-    XL: 10,
+    S: 5,
+    M: 5,
+    L: 5,
+    XL: 5,
   });
 
   // React Hook Form initialization
@@ -298,7 +298,7 @@ export function AddProductForm() {
       images.forEach((img) => URL.revokeObjectURL(img.previewUrl));
       setImages([]);
       reset();
-      setSizeStockMap({ S: 10, M: 10, L: 10, XL: 10 });
+      setSizeStockMap({ S: 5, M: 5, L: 5, XL: 5 });
 
       toast.success("Product added successfully!", {
         description: `"${result.product.name}" is now saved in your catalogue.`,

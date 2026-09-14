@@ -114,7 +114,7 @@ export async function POST(request: NextRequest) {
 
     // Ensure all selected sizes have a corresponding stock entry
     if (sizeStock.length === 0 && sizes.length > 0) {
-      sizeStock = sizes.map((s) => ({ size: s, stock: 10 }));
+      sizeStock = sizes.map((s) => ({ size: s, stock: 5 }));
     }
 
     // Handle uploaded image files

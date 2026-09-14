@@ -89,15 +89,15 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
   // Helper to determine available inventory for any size
   const getSizeStock = (size: string): number => {
     if (!product.sizeStock || product.sizeStock.length === 0) {
-      return 10; // Safe default for unmigrated products so sizes are never broken
+      return 5; // Safe default for unmigrated products so sizes are never broken
     }
     const found = product.sizeStock.find(
       (item) => item.size.toLowerCase() === size.toLowerCase()
     );
-    return found !== undefined ? Number(found.stock) : 10;
+    return found !== undefined ? Number(found.stock) : 5;
   };
 
-  const selectedSizeStock = selectedSize ? getSizeStock(selectedSize) : 10;
+  const selectedSizeStock = selectedSize ? getSizeStock(selectedSize) : 5;
 
   // Handle size selection and clamp quantity if necessary
   const handleSelectSize = (size: string) => {

@@ -56,7 +56,7 @@ export default async function EditProductPage({ params }: EditProductPageProps) 
     sizes: Array.isArray(p.sizes) ? p.sizes : [],
     sizeStock: Array.isArray(p.sizeStock)
       ? p.sizeStock.map((s: any) => ({ size: String(s.size), stock: Number(s.stock) || 0 }))
-      : (p.sizes || []).map((s: string) => ({ size: s, stock: 10 })),
+      : (p.sizes || []).map((s: string) => ({ size: s, stock: 5 })),
     images: Array.isArray(p.images)
       ? p.images.map((img: any) => ({
           url: img.url,
