@@ -99,12 +99,20 @@ function LoginForm() {
 
       {/* Password Field */}
       <div className="space-y-1.5">
-        <label
-          htmlFor="password"
-          className="text-xs font-semibold tracking-wider uppercase text-foreground/80 block"
-        >
-          Password
-        </label>
+        <div className="flex items-center justify-between">
+          <label
+            htmlFor="password"
+            className="text-xs font-semibold tracking-wider uppercase text-foreground/80 block"
+          >
+            Password
+          </label>
+          <Link
+            href="/admin/forgot-password"
+            className="text-[11px] font-medium text-primary hover:text-primary/80 transition-colors tracking-wide"
+          >
+            Forgot password?
+          </Link>
+        </div>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted-foreground">
             <Lock className="w-4 h-4" />

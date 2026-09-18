@@ -11,13 +11,13 @@ export async function middleware(request: NextRequest) {
   const sessionCookie = request.cookies.get(ADMIN_COOKIE_NAME)?.value;
   const { valid } = await verifyAdminSessionToken(sessionCookie);
 
-  // 1. Handle login page access
-  if (pathname === "/admin/login") {
+  // 1. Handle public admin auth pages (login, forgot password)
+  if (pathname === "/admin/login" || pathname === "/admin/forgot-password") {
     if (valid) {
       // If already authenticated, redirect straight to dashboard
       return NextResponse.redirect(new URL("/admin/dashboard", request.url));
     }
-    // Allow unauthenticated admin to view login page
+    // Allow unauthenticated admin to view login or forgot password page
     return NextResponse.next();
   }
 

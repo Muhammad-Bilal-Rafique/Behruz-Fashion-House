@@ -486,3 +486,76 @@ export async function sendContactInquiryEmail(inquiry: {
     return false;
   }
 }
+
+/**
+ * 8. Admin Password Reset Code Email
+ * Sends a 6-digit one-time security code to reset the admin portal password.
+ */
+export async function sendAdminPasswordResetCodeEmail({
+  toEmail,
+  resetCode,
+  expiryMinutes = 15,
+}: {
+  toEmail: string;
+  resetCode: string;
+  expiryMinutes?: number;
+}): Promise<{ success: boolean; error?: string }> {
+  if (!resend) {
+    console.error("Resend is not initialized. Please configure RESEND_API_KEY in .env.local.");
+    return { success: false, error: "Email service is not configured on server." };
+  }
+
+  const { finalRecipient, isTestOverride } = resolveRecipient(toEmail);
+
+  try {
+    const body = `
+      <h2 style="font-size:20px;font-family:Georgia,serif;font-weight:400;margin:0 0 12px;color:#111827;text-align:center;">
+        Admin Password Reset Code
+      </h2>
+      <p style="font-size:13px;line-height:1.6;color:#4b5563;margin:0 0 24px;text-align:center;">
+        We received a request to reset your password for the <strong>Behruz Fashion House</strong> Administrative Portal. Use the one-time verification code below:
+      </p>
+
+      <!-- Verification Code Display Box -->
+      <div style="background-color:#fff5f7;border:1.5px dashed #FF3154;border-radius:6px;padding:24px 16px;text-align:center;margin:0 auto 24px;max-width:380px;">
+        <span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#6b7280;font-weight:600;margin-bottom:8px;">
+          One-Time Security Code
+        </span>
+        <div style="font-size:36px;font-weight:700;letter-spacing:10px;color:#FF3154;font-family:'Courier New',Courier,monospace;padding-left:10px;">
+          ${resetCode}
+        </div>
+        <span style="display:block;font-size:11px;color:#9ca3af;margin-top:10px;">
+          Valid for ${expiryMinutes} minutes
+        </span>
+      </div>
+
+      <div style="background-color:#f9fafb;border:1px solid #e5e7eb;border-radius:4px;padding:14px 16px;font-size:12px;color:#4b5563;line-height:1.5;margin-bottom:20px;">
+        <strong style="color:#111827;display:block;margin-bottom:4px;">Security Notice:</strong>
+        Never share this code with anyone. Behruz Fashion House staff will never ask for your verification code. If you did not request this password reset, please ignore this email.
+      </div>
+    `;
+
+    const subjectPrefix = isTestOverride ? `[Test Admin] ` : "";
+
+    const { error } = await resend.emails.send({
+      from: getFromEmail(),
+      to: finalRecipient,
+      subject: `${subjectPrefix}Your Admin Password Reset Code: ${resetCode} — Behruz Fashion House`,
+      html: emailTemplateWrapper(body, {
+        intendedRecipient: toEmail,
+        isTestOverride,
+      }),
+    });
+
+    if (error) {
+      console.error("Resend API returned error:", error);
+      return { success: false, error: error.message };
+    }
+
+    return { success: true };
+  } catch (error: any) {
+    console.error("Failed to send admin password reset email:", error);
+    return { success: false, error: error?.message || "Failed to send reset code email." };
+  }
+}
+

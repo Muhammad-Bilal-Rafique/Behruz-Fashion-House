@@ -4,6 +4,9 @@ export interface IAdmin extends Document {
   email: string;
   passwordHash: string;
   name?: string;
+  resetPasswordCode?: string;
+  resetPasswordExpires?: Date;
+  resetPasswordAttempts?: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -24,6 +27,18 @@ const AdminSchema = new Schema<IAdmin>(
     name: {
       type: String,
       default: "Admin",
+    },
+    resetPasswordCode: {
+      type: String,
+      default: null,
+    },
+    resetPasswordExpires: {
+      type: Date,
+      default: null,
+    },
+    resetPasswordAttempts: {
+      type: Number,
+      default: 0,
     },
   },
   {
