@@ -1,0 +1,755 @@
+{
+  "migrationTimestamp": "2026-09-18T00:54:31.718Z",
+  "oldCloudName": "ih90snat",
+  "newCloudName": "vbgy6mta",
+  "totalMigrated": 83,
+  "mapping": [
+    {
+      "publicId": "behruz-fashion/products/flhja7di9nelfrmifp2t",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789410887/behruz-fashion/products/flhja7di9nelfrmifp2t.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692760/behruz-fashion/products/flhja7di9nelfrmifp2t.jpg",
+      "version": 1789692760,
+      "format": "jpg",
+      "bytes": 175918,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/ebxmopbesktyb8cyjs4l",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789410927/behruz-fashion/products/ebxmopbesktyb8cyjs4l.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692761/behruz-fashion/products/ebxmopbesktyb8cyjs4l.jpg",
+      "version": 1789692761,
+      "format": "jpg",
+      "bytes": 159386,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/rpjqkod6o4hohvay9gu6",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789410952/behruz-fashion/products/rpjqkod6o4hohvay9gu6.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692762/behruz-fashion/products/rpjqkod6o4hohvay9gu6.jpg",
+      "version": 1789692762,
+      "format": "jpg",
+      "bytes": 138021,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/c00bx4ehjjjm6h55yvze",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789410976/behruz-fashion/products/c00bx4ehjjjm6h55yvze.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692763/behruz-fashion/products/c00bx4ehjjjm6h55yvze.jpg",
+      "version": 1789692763,
+      "format": "jpg",
+      "bytes": 150711,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/zhjxelzvyl1rzcdpywnw",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411003/behruz-fashion/products/zhjxelzvyl1rzcdpywnw.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692764/behruz-fashion/products/zhjxelzvyl1rzcdpywnw.jpg",
+      "version": 1789692764,
+      "format": "jpg",
+      "bytes": 120747,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/llgi1f7npi7cbgiojsws",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411028/behruz-fashion/products/llgi1f7npi7cbgiojsws.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692765/behruz-fashion/products/llgi1f7npi7cbgiojsws.jpg",
+      "version": 1789692765,
+      "format": "jpg",
+      "bytes": 161554,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/lti66jmoahtsjaqkjrrr",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411569/behruz-fashion/products/lti66jmoahtsjaqkjrrr.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692766/behruz-fashion/products/lti66jmoahtsjaqkjrrr.jpg",
+      "version": 1789692766,
+      "format": "jpg",
+      "bytes": 90953,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/c4tmbwf6g1tekiamwaaa",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411598/behruz-fashion/products/c4tmbwf6g1tekiamwaaa.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692767/behruz-fashion/products/c4tmbwf6g1tekiamwaaa.jpg",
+      "version": 1789692767,
+      "format": "jpg",
+      "bytes": 109600,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/hicedl99cntqqe5csbyz",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411622/behruz-fashion/products/hicedl99cntqqe5csbyz.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692768/behruz-fashion/products/hicedl99cntqqe5csbyz.jpg",
+      "version": 1789692768,
+      "format": "jpg",
+      "bytes": 104625,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/h9xlqlfxgtbizdfsyxti",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411666/behruz-fashion/products/h9xlqlfxgtbizdfsyxti.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692769/behruz-fashion/products/h9xlqlfxgtbizdfsyxti.jpg",
+      "version": 1789692769,
+      "format": "jpg",
+      "bytes": 106379,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/wwgezpglvp6ruhlurmj1",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411691/behruz-fashion/products/wwgezpglvp6ruhlurmj1.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692770/behruz-fashion/products/wwgezpglvp6ruhlurmj1.jpg",
+      "version": 1789692770,
+      "format": "jpg",
+      "bytes": 107736,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/dfelf6wraav37vbvdozi",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411724/behruz-fashion/products/dfelf6wraav37vbvdozi.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692771/behruz-fashion/products/dfelf6wraav37vbvdozi.jpg",
+      "version": 1789692771,
+      "format": "jpg",
+      "bytes": 87670,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/jewt0a66wcapu1f5mspw",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411750/behruz-fashion/products/jewt0a66wcapu1f5mspw.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692771/behruz-fashion/products/jewt0a66wcapu1f5mspw.jpg",
+      "version": 1789692771,
+      "format": "jpg",
+      "bytes": 84022,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/hctqcxwcjwgjfnkcbisw",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411900/behruz-fashion/products/hctqcxwcjwgjfnkcbisw.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692772/behruz-fashion/products/hctqcxwcjwgjfnkcbisw.jpg",
+      "version": 1789692772,
+      "format": "jpg",
+      "bytes": 114844,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/dkdr75jnfv3prsh6xzsp",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411944/behruz-fashion/products/dkdr75jnfv3prsh6xzsp.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692773/behruz-fashion/products/dkdr75jnfv3prsh6xzsp.jpg",
+      "version": 1789692773,
+      "format": "jpg",
+      "bytes": 166521,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/cmw8yldnbh9uyzerd84w",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789411970/behruz-fashion/products/cmw8yldnbh9uyzerd84w.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692774/behruz-fashion/products/cmw8yldnbh9uyzerd84w.jpg",
+      "version": 1789692774,
+      "format": "jpg",
+      "bytes": 175437,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/qt7tffvrmvfvh3kikbjl",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789412019/behruz-fashion/products/qt7tffvrmvfvh3kikbjl.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692775/behruz-fashion/products/qt7tffvrmvfvh3kikbjl.jpg",
+      "version": 1789692775,
+      "format": "jpg",
+      "bytes": 176645,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/vxfb67jdnqryofvoxnuj",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789412321/behruz-fashion/products/vxfb67jdnqryofvoxnuj.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692776/behruz-fashion/products/vxfb67jdnqryofvoxnuj.jpg",
+      "version": 1789692776,
+      "format": "jpg",
+      "bytes": 137083,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/szf0gglc9rfg4sygshae",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789412361/behruz-fashion/products/szf0gglc9rfg4sygshae.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692777/behruz-fashion/products/szf0gglc9rfg4sygshae.jpg",
+      "version": 1789692777,
+      "format": "jpg",
+      "bytes": 142217,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/apczqcmdja9xcfyehxok",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789412531/behruz-fashion/products/apczqcmdja9xcfyehxok.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692778/behruz-fashion/products/apczqcmdja9xcfyehxok.jpg",
+      "version": 1789692778,
+      "format": "jpg",
+      "bytes": 162841,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/d1xzi7y5fvogqryyqqqs",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789412569/behruz-fashion/products/d1xzi7y5fvogqryyqqqs.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692779/behruz-fashion/products/d1xzi7y5fvogqryyqqqs.jpg",
+      "version": 1789692779,
+      "format": "jpg",
+      "bytes": 118096,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/ybuhltbf2afytri1mvni",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789412621/behruz-fashion/products/ybuhltbf2afytri1mvni.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692780/behruz-fashion/products/ybuhltbf2afytri1mvni.jpg",
+      "version": 1789692780,
+      "format": "jpg",
+      "bytes": 131532,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/fyfkeojt29ptljpxa08w",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789412656/behruz-fashion/products/fyfkeojt29ptljpxa08w.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692781/behruz-fashion/products/fyfkeojt29ptljpxa08w.jpg",
+      "version": 1789692781,
+      "format": "jpg",
+      "bytes": 83391,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/qm0qx5skwd3oapy5yuuv",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413104/behruz-fashion/products/qm0qx5skwd3oapy5yuuv.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692782/behruz-fashion/products/qm0qx5skwd3oapy5yuuv.jpg",
+      "version": 1789692782,
+      "format": "jpg",
+      "bytes": 155240,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/bihbrtn1e7wskek1vl07",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413148/behruz-fashion/products/bihbrtn1e7wskek1vl07.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692783/behruz-fashion/products/bihbrtn1e7wskek1vl07.jpg",
+      "version": 1789692783,
+      "format": "jpg",
+      "bytes": 165468,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/csqp7i9gvn9ehhzq8haw",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413182/behruz-fashion/products/csqp7i9gvn9ehhzq8haw.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692784/behruz-fashion/products/csqp7i9gvn9ehhzq8haw.jpg",
+      "version": 1789692784,
+      "format": "jpg",
+      "bytes": 124422,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/edptzxudc9vbrp0f34gl",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413217/behruz-fashion/products/edptzxudc9vbrp0f34gl.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692785/behruz-fashion/products/edptzxudc9vbrp0f34gl.jpg",
+      "version": 1789692785,
+      "format": "jpg",
+      "bytes": 110759,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/zlxbtvnxh60laibp4qhl",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413243/behruz-fashion/products/zlxbtvnxh60laibp4qhl.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692786/behruz-fashion/products/zlxbtvnxh60laibp4qhl.jpg",
+      "version": 1789692786,
+      "format": "jpg",
+      "bytes": 115973,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/pikdsqiyh4il48esn6so",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413400/behruz-fashion/products/pikdsqiyh4il48esn6so.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692787/behruz-fashion/products/pikdsqiyh4il48esn6so.jpg",
+      "version": 1789692787,
+      "format": "jpg",
+      "bytes": 118429,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/op8tgchqdgyjlywv8lwq",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413431/behruz-fashion/products/op8tgchqdgyjlywv8lwq.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692788/behruz-fashion/products/op8tgchqdgyjlywv8lwq.jpg",
+      "version": 1789692788,
+      "format": "jpg",
+      "bytes": 162602,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/p04alfbxcvqre77p5qla",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413452/behruz-fashion/products/p04alfbxcvqre77p5qla.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692789/behruz-fashion/products/p04alfbxcvqre77p5qla.jpg",
+      "version": 1789692789,
+      "format": "jpg",
+      "bytes": 165498,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/yhdui9rwvwe49is14ln4",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413477/behruz-fashion/products/yhdui9rwvwe49is14ln4.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692790/behruz-fashion/products/yhdui9rwvwe49is14ln4.jpg",
+      "version": 1789692790,
+      "format": "jpg",
+      "bytes": 157861,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/dherzoxrtyj8odutqj3c",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413617/behruz-fashion/products/dherzoxrtyj8odutqj3c.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692791/behruz-fashion/products/dherzoxrtyj8odutqj3c.jpg",
+      "version": 1789692791,
+      "format": "jpg",
+      "bytes": 134285,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/dhq7uvtqqvwqsykylrlj",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789413659/behruz-fashion/products/dhq7uvtqqvwqsykylrlj.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692791/behruz-fashion/products/dhq7uvtqqvwqsykylrlj.jpg",
+      "version": 1789692791,
+      "format": "jpg",
+      "bytes": 134440,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/njqjfnw4qfgwcyb5wpeq",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414044/behruz-fashion/products/njqjfnw4qfgwcyb5wpeq.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692792/behruz-fashion/products/njqjfnw4qfgwcyb5wpeq.jpg",
+      "version": 1789692792,
+      "format": "jpg",
+      "bytes": 148435,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/g3e8uyjl3fxpgxsyofzz",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414077/behruz-fashion/products/g3e8uyjl3fxpgxsyofzz.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692793/behruz-fashion/products/g3e8uyjl3fxpgxsyofzz.jpg",
+      "version": 1789692793,
+      "format": "jpg",
+      "bytes": 99833,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/pi2wl1khaingyni7kfrs",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414331/behruz-fashion/products/pi2wl1khaingyni7kfrs.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692794/behruz-fashion/products/pi2wl1khaingyni7kfrs.jpg",
+      "version": 1789692794,
+      "format": "jpg",
+      "bytes": 155160,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/kxr6nuanepyek5t04yrn",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414375/behruz-fashion/products/kxr6nuanepyek5t04yrn.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692795/behruz-fashion/products/kxr6nuanepyek5t04yrn.jpg",
+      "version": 1789692795,
+      "format": "jpg",
+      "bytes": 164960,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/osbh5ubzuqcugvzyryza",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414548/behruz-fashion/products/osbh5ubzuqcugvzyryza.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692796/behruz-fashion/products/osbh5ubzuqcugvzyryza.jpg",
+      "version": 1789692796,
+      "format": "jpg",
+      "bytes": 140604,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/gldzztuqwxfqyfosqfap",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414640/behruz-fashion/products/gldzztuqwxfqyfosqfap.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692797/behruz-fashion/products/gldzztuqwxfqyfosqfap.jpg",
+      "version": 1789692797,
+      "format": "jpg",
+      "bytes": 145118,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/aui61jk4pkcn1ey3kowo",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414671/behruz-fashion/products/aui61jk4pkcn1ey3kowo.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692798/behruz-fashion/products/aui61jk4pkcn1ey3kowo.jpg",
+      "version": 1789692798,
+      "format": "jpg",
+      "bytes": 150250,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/re82tdswxun69sucwbng",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414801/behruz-fashion/products/re82tdswxun69sucwbng.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692799/behruz-fashion/products/re82tdswxun69sucwbng.jpg",
+      "version": 1789692799,
+      "format": "jpg",
+      "bytes": 108322,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/fnxbya1w3ws2vdximsfy",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414852/behruz-fashion/products/fnxbya1w3ws2vdximsfy.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692800/behruz-fashion/products/fnxbya1w3ws2vdximsfy.jpg",
+      "version": 1789692800,
+      "format": "jpg",
+      "bytes": 132398,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/vtjlru83p8p5pee0iinu",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414878/behruz-fashion/products/vtjlru83p8p5pee0iinu.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692801/behruz-fashion/products/vtjlru83p8p5pee0iinu.jpg",
+      "version": 1789692801,
+      "format": "jpg",
+      "bytes": 91972,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/yw1dgsqsmvlgkudgtqh4",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414910/behruz-fashion/products/yw1dgsqsmvlgkudgtqh4.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692802/behruz-fashion/products/yw1dgsqsmvlgkudgtqh4.jpg",
+      "version": 1789692802,
+      "format": "jpg",
+      "bytes": 181276,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/wogoqd5utkblkp0hniqe",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789414931/behruz-fashion/products/wogoqd5utkblkp0hniqe.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692804/behruz-fashion/products/wogoqd5utkblkp0hniqe.jpg",
+      "version": 1789692804,
+      "format": "jpg",
+      "bytes": 99594,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/ic2raq9vuu7djyj5mkmy",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789415120/behruz-fashion/products/ic2raq9vuu7djyj5mkmy.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692805/behruz-fashion/products/ic2raq9vuu7djyj5mkmy.jpg",
+      "version": 1789692805,
+      "format": "jpg",
+      "bytes": 116788,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/ipvirvhwtiwtxoojvu4i",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789415252/behruz-fashion/products/ipvirvhwtiwtxoojvu4i.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692806/behruz-fashion/products/ipvirvhwtiwtxoojvu4i.jpg",
+      "version": 1789692806,
+      "format": "jpg",
+      "bytes": 169090,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/seuaphmsdsuhloryhdfu",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789415252/behruz-fashion/products/seuaphmsdsuhloryhdfu.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692807/behruz-fashion/products/seuaphmsdsuhloryhdfu.jpg",
+      "version": 1789692807,
+      "format": "jpg",
+      "bytes": 136865,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/dpo6w67vo5mrrcdivqdp",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789439792/behruz-fashion/products/dpo6w67vo5mrrcdivqdp.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692808/behruz-fashion/products/dpo6w67vo5mrrcdivqdp.jpg",
+      "version": 1789692808,
+      "format": "jpg",
+      "bytes": 167627,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/rgwivxzqrm7tmophhdvf",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789439792/behruz-fashion/products/rgwivxzqrm7tmophhdvf.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692808/behruz-fashion/products/rgwivxzqrm7tmophhdvf.jpg",
+      "version": 1789692808,
+      "format": "jpg",
+      "bytes": 176565,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/hhsn0m8vuzcnvuqk6cye",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789439826/behruz-fashion/products/hhsn0m8vuzcnvuqk6cye.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692809/behruz-fashion/products/hhsn0m8vuzcnvuqk6cye.jpg",
+      "version": 1789692809,
+      "format": "jpg",
+      "bytes": 181928,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/tn6ltp3taoxk9hwhckcm",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789440068/behruz-fashion/products/tn6ltp3taoxk9hwhckcm.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692810/behruz-fashion/products/tn6ltp3taoxk9hwhckcm.jpg",
+      "version": 1789692810,
+      "format": "jpg",
+      "bytes": 173661,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/r1a6lyighohm8ewfez32",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789440116/behruz-fashion/products/r1a6lyighohm8ewfez32.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692811/behruz-fashion/products/r1a6lyighohm8ewfez32.jpg",
+      "version": 1789692811,
+      "format": "jpg",
+      "bytes": 163170,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/nbhe8ugiai06cwe3sygk",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789440270/behruz-fashion/products/nbhe8ugiai06cwe3sygk.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692813/behruz-fashion/products/nbhe8ugiai06cwe3sygk.jpg",
+      "version": 1789692813,
+      "format": "jpg",
+      "bytes": 176662,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/egdsgqif58p2wykuexza",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789440540/behruz-fashion/products/egdsgqif58p2wykuexza.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692814/behruz-fashion/products/egdsgqif58p2wykuexza.jpg",
+      "version": 1789692814,
+      "format": "jpg",
+      "bytes": 161793,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/rfffadaxlrikkmfxkca4",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789440564/behruz-fashion/products/rfffadaxlrikkmfxkca4.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692815/behruz-fashion/products/rfffadaxlrikkmfxkca4.jpg",
+      "version": 1789692815,
+      "format": "jpg",
+      "bytes": 115909,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/luevqv86gvhzs7otc7mt",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789440589/behruz-fashion/products/luevqv86gvhzs7otc7mt.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692816/behruz-fashion/products/luevqv86gvhzs7otc7mt.jpg",
+      "version": 1789692816,
+      "format": "jpg",
+      "bytes": 137627,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/alnudt7bovyynqr2rh9u",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789440621/behruz-fashion/products/alnudt7bovyynqr2rh9u.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692817/behruz-fashion/products/alnudt7bovyynqr2rh9u.jpg",
+      "version": 1789692817,
+      "format": "jpg",
+      "bytes": 157485,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/qsprj25cbqylvkqwdpwh",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789450633/behruz-fashion/products/qsprj25cbqylvkqwdpwh.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692818/behruz-fashion/products/qsprj25cbqylvkqwdpwh.jpg",
+      "version": 1789692818,
+      "format": "jpg",
+      "bytes": 159318,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/pom2ox1odpjghiqnu16b",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789450658/behruz-fashion/products/pom2ox1odpjghiqnu16b.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692820/behruz-fashion/products/pom2ox1odpjghiqnu16b.jpg",
+      "version": 1789692820,
+      "format": "jpg",
+      "bytes": 139948,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/nqsm1qe3yviqxttv4bow",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789450680/behruz-fashion/products/nqsm1qe3yviqxttv4bow.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692821/behruz-fashion/products/nqsm1qe3yviqxttv4bow.jpg",
+      "version": 1789692821,
+      "format": "jpg",
+      "bytes": 162175,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/u59wrjqwr9fyyvovydkv",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789450703/behruz-fashion/products/u59wrjqwr9fyyvovydkv.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692822/behruz-fashion/products/u59wrjqwr9fyyvovydkv.jpg",
+      "version": 1789692822,
+      "format": "jpg",
+      "bytes": 140976,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/qdakgwzeyh3rl5icp5uh",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789450925/behruz-fashion/products/qdakgwzeyh3rl5icp5uh.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692824/behruz-fashion/products/qdakgwzeyh3rl5icp5uh.jpg",
+      "version": 1789692824,
+      "format": "jpg",
+      "bytes": 176160,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/kogsdshlaqipvpfdkxiu",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789450956/behruz-fashion/products/kogsdshlaqipvpfdkxiu.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692825/behruz-fashion/products/kogsdshlaqipvpfdkxiu.jpg",
+      "version": 1789692825,
+      "format": "jpg",
+      "bytes": 177299,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/um8mbtxjkrasylsnn2ko",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789451040/behruz-fashion/products/um8mbtxjkrasylsnn2ko.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692826/behruz-fashion/products/um8mbtxjkrasylsnn2ko.jpg",
+      "version": 1789692826,
+      "format": "jpg",
+      "bytes": 172852,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/xnnnncd3hrqjetpsvhtx",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789451414/behruz-fashion/products/xnnnncd3hrqjetpsvhtx.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692827/behruz-fashion/products/xnnnncd3hrqjetpsvhtx.jpg",
+      "version": 1789692827,
+      "format": "jpg",
+      "bytes": 190165,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/ldietagz2olim16xudlb",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789451449/behruz-fashion/products/ldietagz2olim16xudlb.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692828/behruz-fashion/products/ldietagz2olim16xudlb.jpg",
+      "version": 1789692828,
+      "format": "jpg",
+      "bytes": 159420,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/ofony4ylj5kdwnqmqg3c",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789452042/behruz-fashion/products/ofony4ylj5kdwnqmqg3c.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692829/behruz-fashion/products/ofony4ylj5kdwnqmqg3c.jpg",
+      "version": 1789692829,
+      "format": "jpg",
+      "bytes": 164012,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/w316vja0k9tggvik9zyi",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789452104/behruz-fashion/products/w316vja0k9tggvik9zyi.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692830/behruz-fashion/products/w316vja0k9tggvik9zyi.jpg",
+      "version": 1789692830,
+      "format": "jpg",
+      "bytes": 153704,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/z2qylyr76fjqkq4ozreh",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789452130/behruz-fashion/products/z2qylyr76fjqkq4ozreh.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692831/behruz-fashion/products/z2qylyr76fjqkq4ozreh.jpg",
+      "version": 1789692831,
+      "format": "jpg",
+      "bytes": 136877,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/gkbdvfzohrwdenyy5zch",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789452366/behruz-fashion/products/gkbdvfzohrwdenyy5zch.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692832/behruz-fashion/products/gkbdvfzohrwdenyy5zch.jpg",
+      "version": 1789692832,
+      "format": "jpg",
+      "bytes": 157875,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/xbblvpcrsbiluefv6kbj",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789457757/behruz-fashion/products/xbblvpcrsbiluefv6kbj.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692833/behruz-fashion/products/xbblvpcrsbiluefv6kbj.jpg",
+      "version": 1789692833,
+      "format": "jpg",
+      "bytes": 177652,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/xzkxhkfggc7aif11i2mb",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789457787/behruz-fashion/products/xzkxhkfggc7aif11i2mb.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692834/behruz-fashion/products/xzkxhkfggc7aif11i2mb.jpg",
+      "version": 1789692834,
+      "format": "jpg",
+      "bytes": 138497,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/vlzmuxjmq104mwsjq8vb",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789457813/behruz-fashion/products/vlzmuxjmq104mwsjq8vb.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692835/behruz-fashion/products/vlzmuxjmq104mwsjq8vb.jpg",
+      "version": 1789692835,
+      "format": "jpg",
+      "bytes": 154893,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/qk0cfxchppizs6zdeyvm",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789458165/behruz-fashion/products/qk0cfxchppizs6zdeyvm.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692836/behruz-fashion/products/qk0cfxchppizs6zdeyvm.jpg",
+      "version": 1789692836,
+      "format": "jpg",
+      "bytes": 132685,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/wib85qmnxyl3m3oxrubq",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789458218/behruz-fashion/products/wib85qmnxyl3m3oxrubq.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692837/behruz-fashion/products/wib85qmnxyl3m3oxrubq.jpg",
+      "version": 1789692837,
+      "format": "jpg",
+      "bytes": 179256,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/jqblctkotj8mm4byzg15",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789458335/behruz-fashion/products/jqblctkotj8mm4byzg15.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692838/behruz-fashion/products/jqblctkotj8mm4byzg15.jpg",
+      "version": 1789692838,
+      "format": "jpg",
+      "bytes": 146410,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/imcgqb9vbkvhzs8bsyg2",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789459255/behruz-fashion/products/imcgqb9vbkvhzs8bsyg2.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692839/behruz-fashion/products/imcgqb9vbkvhzs8bsyg2.jpg",
+      "version": 1789692839,
+      "format": "jpg",
+      "bytes": 147150,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/py5gvgg7yium9u03enyr",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789459339/behruz-fashion/products/py5gvgg7yium9u03enyr.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692840/behruz-fashion/products/py5gvgg7yium9u03enyr.jpg",
+      "version": 1789692840,
+      "format": "jpg",
+      "bytes": 150315,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/fkjqpvoopqn4tbbebce5",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789459591/behruz-fashion/products/fkjqpvoopqn4tbbebce5.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692841/behruz-fashion/products/fkjqpvoopqn4tbbebce5.jpg",
+      "version": 1789692841,
+      "format": "jpg",
+      "bytes": 93793,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/r4yugiilzfsgouks3x36",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789459618/behruz-fashion/products/r4yugiilzfsgouks3x36.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692842/behruz-fashion/products/r4yugiilzfsgouks3x36.jpg",
+      "version": 1789692842,
+      "format": "jpg",
+      "bytes": 131850,
+      "verified": true
+    },
+    {
+      "publicId": "behruz-fashion/products/i8cn6skbnv1imemdmopx",
+      "oldUrl": "https://res.cloudinary.com/ih90snat/image/upload/v1789459646/behruz-fashion/products/i8cn6skbnv1imemdmopx.jpg",
+      "newUrl": "https://res.cloudinary.com/vbgy6mta/image/upload/v1789692843/behruz-fashion/products/i8cn6skbnv1imemdmopx.jpg",
+      "version": 1789692843,
+      "format": "jpg",
+      "bytes": 137881,
+      "verified": true
+    }
+  ]
+}

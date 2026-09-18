@@ -3,6 +3,7 @@ import { AdminNavbar } from "@/components/admin/admin-navbar";
 import { SettingsForm } from "@/components/admin/settings/settings-form";
 import { AdminSecurityCard } from "@/components/admin/settings/admin-security-card";
 import { getSettingsAction } from "./actions";
+import { getCurrentAdminSession } from "@/app/admin/login/actions";
 
 export const metadata: Metadata = {
   title: "Store Settings | Admin | Behruz Fashion House",
@@ -13,6 +14,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminSettingsPage() {
   const settings = await getSettingsAction();
+  const session = await getCurrentAdminSession();
 
   return (
     <div className="min-h-screen bg-muted/20 pb-20">
@@ -38,7 +40,7 @@ export default async function AdminSettingsPage() {
         <SettingsForm initialSettings={settings} />
 
         {/* Admin Security & Password Change Card */}
-        <AdminSecurityCard />
+        <AdminSecurityCard adminEmail={session.email || "behruzfashionhouse@gmail.com"} />
       </main>
     </div>
   );

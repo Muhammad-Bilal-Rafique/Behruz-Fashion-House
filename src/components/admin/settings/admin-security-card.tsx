@@ -17,7 +17,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { changeAdminPasswordAction } from "@/app/admin/settings/actions";
 
-export function AdminSecurityCard() {
+interface AdminSecurityCardProps {
+  adminEmail?: string;
+}
+
+export function AdminSecurityCard({
+  adminEmail = "behruzfashionhouse@gmail.com",
+}: AdminSecurityCardProps = {}) {
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -115,7 +121,7 @@ export function AdminSecurityCard() {
             Admin Email Address
           </Label>
           <Input
-            value="fahadmailk8689@gmail.com"
+            value={adminEmail}
             disabled
             className="text-xs rounded-xs bg-muted/50 cursor-not-allowed opacity-80"
           />

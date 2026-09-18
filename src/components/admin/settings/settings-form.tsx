@@ -456,7 +456,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
               type="email"
               value={formData.supportEmail}
               onChange={handleChange}
-              placeholder="support@behruzfashion.com"
+              placeholder="behruzfashionhouse@gmail.com"
               className="text-xs rounded-xs"
             />
             <p className="text-[11px] text-muted-foreground">

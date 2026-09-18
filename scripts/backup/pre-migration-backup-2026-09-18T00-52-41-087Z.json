@@ -1,0 +1,3891 @@
+{
+  "backupDate": "2026-09-18T00:52:41.088Z",
+  "database": "behruz-fashion-house",
+  "documents": [
+    {
+      "collection": "products",
+      "docId": "6aa83e4801b650c5c0616d5d",
+      "fullDoc": {
+        "_id": "6aa83e4801b650c5c0616d5d",
+        "name": "Jazmine Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 7000,
+        "description": "Jazmine Inspired Thread Sequence Work three piece stitched Dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789410887/behruz-fashion/products/flhja7di9nelfrmifp2t.jpg",
+            "publicId": "behruz-fashion/products/flhja7di9nelfrmifp2t",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T18:34:48.802Z",
+        "updatedAt": "2026-09-14T18:34:48.802Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa83e70a34c45495ecddfd5",
+      "fullDoc": {
+        "_id": "6aa83e70a34c45495ecddfd5",
+        "name": "Jazmine Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 7000,
+        "description": "Jazmine Inspired Thread Sequence Work three piece stitched Dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789410927/behruz-fashion/products/ebxmopbesktyb8cyjs4l.jpg",
+            "publicId": "behruz-fashion/products/ebxmopbesktyb8cyjs4l",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T18:35:28.429Z",
+        "updatedAt": "2026-09-14T18:35:28.429Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa83e89a34c45495ecddfd6",
+      "fullDoc": {
+        "_id": "6aa83e89a34c45495ecddfd6",
+        "name": "Jazmine Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 7000,
+        "description": "Jazmine Inspired Thread Sequence Work three piece stitched Dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789410952/behruz-fashion/products/rpjqkod6o4hohvay9gu6.jpg",
+            "publicId": "behruz-fashion/products/rpjqkod6o4hohvay9gu6",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T18:35:53.589Z",
+        "updatedAt": "2026-09-14T18:35:53.589Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa83ea1a34c45495ecddfd7",
+      "fullDoc": {
+        "_id": "6aa83ea1a34c45495ecddfd7",
+        "name": "Jazmine Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 7000,
+        "description": "Jazmine Inspired Thread Sequence Work three piece stitched Dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789410976/behruz-fashion/products/c00bx4ehjjjm6h55yvze.jpg",
+            "publicId": "behruz-fashion/products/c00bx4ehjjjm6h55yvze",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T18:36:17.234Z",
+        "updatedAt": "2026-09-14T18:36:17.234Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa83ebba34c45495ecddfd8",
+      "fullDoc": {
+        "_id": "6aa83ebba34c45495ecddfd8",
+        "name": "Jazmine Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 7000,
+        "description": "Jazmine Inspired Thread Sequence Work three piece stitched Dress.",
+        "sizes": [
+          "S",
+          "L",
+          "M",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411003/behruz-fashion/products/zhjxelzvyl1rzcdpywnw.jpg",
+            "publicId": "behruz-fashion/products/zhjxelzvyl1rzcdpywnw",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T18:36:43.926Z",
+        "updatedAt": "2026-09-14T18:36:43.926Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa83ed4a34c45495ecddfd9",
+      "fullDoc": {
+        "_id": "6aa83ed4a34c45495ecddfd9",
+        "name": "Jazmine Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 7000,
+        "description": "Jazmine Inspired Thread Sequence Work three piece stitched Dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411028/behruz-fashion/products/llgi1f7npi7cbgiojsws.jpg",
+            "publicId": "behruz-fashion/products/llgi1f7npi7cbgiojsws",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T18:37:08.838Z",
+        "updatedAt": "2026-09-14T18:37:08.838Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa840f3569311319cf8a5c8",
+      "fullDoc": {
+        "_id": "6aa840f3569311319cf8a5c8",
+        "name": "Hania Amir Inspired Viral Kaftan",
+        "originalPrice": 5400,
+        "discountedPrice": 4800,
+        "description": "Kaftan three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411569/behruz-fashion/products/lti66jmoahtsjaqkjrrr.jpg",
+            "publicId": "behruz-fashion/products/lti66jmoahtsjaqkjrrr",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "",
+        "createdAt": "2026-09-14T18:46:11.418Z",
+        "updatedAt": "2026-09-14T18:46:11.418Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8410f569311319cf8a5c9",
+      "fullDoc": {
+        "_id": "6aa8410f569311319cf8a5c9",
+        "name": "Hania Amir Inspired Viral Kaftan",
+        "originalPrice": 5400,
+        "discountedPrice": 4800,
+        "description": "Kaftan three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411598/behruz-fashion/products/c4tmbwf6g1tekiamwaaa.jpg",
+            "publicId": "behruz-fashion/products/c4tmbwf6g1tekiamwaaa",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "",
+        "createdAt": "2026-09-14T18:46:39.446Z",
+        "updatedAt": "2026-09-14T18:46:39.446Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84128569311319cf8a5ca",
+      "fullDoc": {
+        "_id": "6aa84128569311319cf8a5ca",
+        "name": "Hania Amir Inspired Viral Kaftan",
+        "originalPrice": 5400,
+        "discountedPrice": 4800,
+        "description": "Kaftan three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411622/behruz-fashion/products/hicedl99cntqqe5csbyz.jpg",
+            "publicId": "behruz-fashion/products/hicedl99cntqqe5csbyz",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "",
+        "createdAt": "2026-09-14T18:47:04.729Z",
+        "updatedAt": "2026-09-14T18:47:04.729Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84153569311319cf8a5cb",
+      "fullDoc": {
+        "_id": "6aa84153569311319cf8a5cb",
+        "name": "Hania Amir Inspired Viral Kaftan",
+        "originalPrice": 5400,
+        "discountedPrice": 4800,
+        "description": "Kaftan three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411666/behruz-fashion/products/h9xlqlfxgtbizdfsyxti.jpg",
+            "publicId": "behruz-fashion/products/h9xlqlfxgtbizdfsyxti",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "",
+        "createdAt": "2026-09-14T18:47:47.748Z",
+        "updatedAt": "2026-09-14T18:47:47.748Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8416d569311319cf8a5cc",
+      "fullDoc": {
+        "_id": "6aa8416d569311319cf8a5cc",
+        "name": "Hania Amir Inspired Viral Kaftan",
+        "originalPrice": 5400,
+        "discountedPrice": 4800,
+        "description": "Kaftan three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411691/behruz-fashion/products/wwgezpglvp6ruhlurmj1.jpg",
+            "publicId": "behruz-fashion/products/wwgezpglvp6ruhlurmj1",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "",
+        "createdAt": "2026-09-14T18:48:13.153Z",
+        "updatedAt": "2026-09-14T18:48:13.153Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8418d569311319cf8a5cd",
+      "fullDoc": {
+        "_id": "6aa8418d569311319cf8a5cd",
+        "name": "Hania Amir Inspired Viral Kaftan",
+        "originalPrice": 5400,
+        "discountedPrice": 4800,
+        "description": "Kaftan three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411724/behruz-fashion/products/dfelf6wraav37vbvdozi.jpg",
+            "publicId": "behruz-fashion/products/dfelf6wraav37vbvdozi",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "",
+        "createdAt": "2026-09-14T18:48:45.507Z",
+        "updatedAt": "2026-09-14T18:48:45.507Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa841a7569311319cf8a5ce",
+      "fullDoc": {
+        "_id": "6aa841a7569311319cf8a5ce",
+        "name": "Hania Amir Inspired Viral Kaftan",
+        "originalPrice": 5400,
+        "discountedPrice": 4800,
+        "description": "Kaftan three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411750/behruz-fashion/products/jewt0a66wcapu1f5mspw.jpg",
+            "publicId": "behruz-fashion/products/jewt0a66wcapu1f5mspw",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "",
+        "createdAt": "2026-09-14T18:49:11.458Z",
+        "updatedAt": "2026-09-14T18:49:11.458Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8423d569311319cf8a5cf",
+      "fullDoc": {
+        "_id": "6aa8423d569311319cf8a5cf",
+        "name": "Crush Silk Kaftan",
+        "originalPrice": 8000,
+        "discountedPrice": 6000,
+        "description": "Beautiful launched Crush silk designer article.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411900/behruz-fashion/products/hctqcxwcjwgjfnkcbisw.jpg",
+            "publicId": "behruz-fashion/products/hctqcxwcjwgjfnkcbisw",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Crush Silk",
+        "createdAt": "2026-09-14T18:51:41.261Z",
+        "updatedAt": "2026-09-14T18:51:41.261Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8426a569311319cf8a5d0",
+      "fullDoc": {
+        "_id": "6aa8426a569311319cf8a5d0",
+        "name": "Crush Silk Kaftan",
+        "originalPrice": 8000,
+        "discountedPrice": 6000,
+        "description": "Beautiful launched Crush silk designer article.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411944/behruz-fashion/products/dkdr75jnfv3prsh6xzsp.jpg",
+            "publicId": "behruz-fashion/products/dkdr75jnfv3prsh6xzsp",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Crush Silk",
+        "createdAt": "2026-09-14T18:52:26.098Z",
+        "updatedAt": "2026-09-14T18:52:26.098Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84283569311319cf8a5d1",
+      "fullDoc": {
+        "_id": "6aa84283569311319cf8a5d1",
+        "name": "Crush Silk Kaftan",
+        "originalPrice": 8000,
+        "discountedPrice": 6000,
+        "description": "Beautiful launched Crush silk designer article.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789411970/behruz-fashion/products/cmw8yldnbh9uyzerd84w.jpg",
+            "publicId": "behruz-fashion/products/cmw8yldnbh9uyzerd84w",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Crush Silk",
+        "createdAt": "2026-09-14T18:52:51.142Z",
+        "updatedAt": "2026-09-14T18:52:51.142Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa842b4569311319cf8a5d2",
+      "fullDoc": {
+        "_id": "6aa842b4569311319cf8a5d2",
+        "name": "Crush Silk Kaftan",
+        "originalPrice": 8000,
+        "discountedPrice": 6000,
+        "description": "Beautiful launched Crush silk designer article.",
+        "sizes": [
+          "S",
+          "M",
+          "XL",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789412019/behruz-fashion/products/qt7tffvrmvfvh3kikbjl.jpg",
+            "publicId": "behruz-fashion/products/qt7tffvrmvfvh3kikbjl",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Crush Silk",
+        "createdAt": "2026-09-14T18:53:40.275Z",
+        "updatedAt": "2026-09-14T18:53:40.275Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa843e2569311319cf8a5d3",
+      "fullDoc": {
+        "_id": "6aa843e2569311319cf8a5d3",
+        "name": "Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 5500,
+        "description": "Best seller kaftan  Beautiful premium silk embroidered long kaftan three piece stitched.",
+        "sizes": [
+          "S",
+          "M",
+          "XL",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789412321/behruz-fashion/products/vxfb67jdnqryofvoxnuj.jpg",
+            "publicId": "behruz-fashion/products/vxfb67jdnqryofvoxnuj",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Premium",
+        "createdAt": "2026-09-14T18:58:42.829Z",
+        "updatedAt": "2026-09-14T18:58:42.829Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8440b569311319cf8a5d4",
+      "fullDoc": {
+        "_id": "6aa8440b569311319cf8a5d4",
+        "name": "Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 5500,
+        "description": "Best seller kaftan  Beautiful premium silk embroidered long kaftan three piece stitched.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789412361/behruz-fashion/products/szf0gglc9rfg4sygshae.jpg",
+            "publicId": "behruz-fashion/products/szf0gglc9rfg4sygshae",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Premium",
+        "createdAt": "2026-09-14T18:59:23.745Z",
+        "updatedAt": "2026-09-14T18:59:23.745Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa844b4569311319cf8a5d5",
+      "fullDoc": {
+        "_id": "6aa844b4569311319cf8a5d5",
+        "name": "Agha Noor Inspired",
+        "originalPrice": 6800,
+        "discountedPrice": 4800,
+        "description": "Beautiful embroidered silk dress party wear 3 piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789412531/behruz-fashion/products/apczqcmdja9xcfyehxok.jpg",
+            "publicId": "behruz-fashion/products/apczqcmdja9xcfyehxok",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Premium",
+        "createdAt": "2026-09-14T19:02:12.280Z",
+        "updatedAt": "2026-09-14T19:02:12.280Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa844da569311319cf8a5d6",
+      "fullDoc": {
+        "_id": "6aa844da569311319cf8a5d6",
+        "name": "Agha noor inspired",
+        "originalPrice": 6800,
+        "discountedPrice": 4800,
+        "description": "beautiful embroidered silk dress party wear  3 piece stitched dress.",
+        "sizes": [
+          "L",
+          "M",
+          "S"
+        ],
+        "sizeStock": [
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "S",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789412569/behruz-fashion/products/d1xzi7y5fvogqryyqqqs.jpg",
+            "publicId": "behruz-fashion/products/d1xzi7y5fvogqryyqqqs",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Premium",
+        "createdAt": "2026-09-14T19:02:50.148Z",
+        "updatedAt": "2026-09-14T19:02:50.148Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8450e569311319cf8a5d7",
+      "fullDoc": {
+        "_id": "6aa8450e569311319cf8a5d7",
+        "name": "Agha noor inspired",
+        "originalPrice": 6800,
+        "discountedPrice": 4800,
+        "description": "beautiful embroidered silk dress party wear  3 piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789412621/behruz-fashion/products/ybuhltbf2afytri1mvni.jpg",
+            "publicId": "behruz-fashion/products/ybuhltbf2afytri1mvni",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Premium",
+        "createdAt": "2026-09-14T19:03:42.592Z",
+        "updatedAt": "2026-09-14T19:04:58.928Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84531569311319cf8a5d8",
+      "fullDoc": {
+        "_id": "6aa84531569311319cf8a5d8",
+        "name": "Agha noor inspired",
+        "originalPrice": 6800,
+        "discountedPrice": 4800,
+        "description": "beautiful embroidered silk dress party wear  3 piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789412656/behruz-fashion/products/fyfkeojt29ptljpxa08w.jpg",
+            "publicId": "behruz-fashion/products/fyfkeojt29ptljpxa08w",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Premium",
+        "createdAt": "2026-09-14T19:04:17.300Z",
+        "updatedAt": "2026-09-14T19:04:17.300Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa846f18c6a8c6ef3a4d9c8",
+      "fullDoc": {
+        "_id": "6aa846f18c6a8c6ef3a4d9c8",
+        "name": "Baroque inspired",
+        "originalPrice": 7500,
+        "discountedPrice": 6500,
+        "description": "Beautiful Chiffon Special Embroidered Anarkali special Partywear and Wedding special.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413104/behruz-fashion/products/qm0qx5skwd3oapy5yuuv.jpg",
+            "publicId": "behruz-fashion/products/qm0qx5skwd3oapy5yuuv",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:11:45.817Z",
+        "updatedAt": "2026-09-14T19:11:45.817Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8471d8c6a8c6ef3a4d9c9",
+      "fullDoc": {
+        "_id": "6aa8471d8c6a8c6ef3a4d9c9",
+        "name": "Baroque inspired",
+        "originalPrice": 7500,
+        "discountedPrice": 6500,
+        "description": "Beautiful Chiffon Special Embroidered Anarkali special Partywear and Wedding special.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413148/behruz-fashion/products/bihbrtn1e7wskek1vl07.jpg",
+            "publicId": "behruz-fashion/products/bihbrtn1e7wskek1vl07",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:12:29.475Z",
+        "updatedAt": "2026-09-14T19:12:29.475Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa847408c6a8c6ef3a4d9ca",
+      "fullDoc": {
+        "_id": "6aa847408c6a8c6ef3a4d9ca",
+        "name": "Baroque inspired",
+        "originalPrice": 7500,
+        "discountedPrice": 6500,
+        "description": "Beautiful Chiffon Special Embroidered Anarkali special Partywear and Wedding special.",
+        "sizes": [
+          "M",
+          "L",
+          "XL",
+          "S"
+        ],
+        "sizeStock": [
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "S",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413182/behruz-fashion/products/csqp7i9gvn9ehhzq8haw.jpg",
+            "publicId": "behruz-fashion/products/csqp7i9gvn9ehhzq8haw",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:13:04.004Z",
+        "updatedAt": "2026-09-14T19:13:04.004Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa847628c6a8c6ef3a4d9cb",
+      "fullDoc": {
+        "_id": "6aa847628c6a8c6ef3a4d9cb",
+        "name": "Baroque inspired",
+        "originalPrice": 7500,
+        "discountedPrice": 6000,
+        "description": "Beautiful Chiffon Special Embroidered Anarkali special Partywear and Wedding special.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413217/behruz-fashion/products/edptzxudc9vbrp0f34gl.jpg",
+            "publicId": "behruz-fashion/products/edptzxudc9vbrp0f34gl",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:13:38.353Z",
+        "updatedAt": "2026-09-14T19:13:38.353Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8477c8c6a8c6ef3a4d9cc",
+      "fullDoc": {
+        "_id": "6aa8477c8c6a8c6ef3a4d9cc",
+        "name": "Baroque inspired",
+        "originalPrice": 7500,
+        "discountedPrice": 6500,
+        "description": "Beautiful Chiffon Special Embroidered Anarkali special Partywear and Wedding special.",
+        "sizes": [
+          "S",
+          "M",
+          "XL",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413243/behruz-fashion/products/zlxbtvnxh60laibp4qhl.jpg",
+            "publicId": "behruz-fashion/products/zlxbtvnxh60laibp4qhl",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:14:04.523Z",
+        "updatedAt": "2026-09-14T19:14:04.523Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa848198c6a8c6ef3a4d9cd",
+      "fullDoc": {
+        "_id": "6aa848198c6a8c6ef3a4d9cd",
+        "name": "Wedding & Party Wear Special",
+        "originalPrice": 8000,
+        "discountedPrice": 7000,
+        "description": "Three Piece Stitched Dress Chiffon Embroidered with Farshi Shalwar.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413400/behruz-fashion/products/pikdsqiyh4il48esn6so.jpg",
+            "publicId": "behruz-fashion/products/pikdsqiyh4il48esn6so",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:16:41.724Z",
+        "updatedAt": "2026-09-14T19:16:41.724Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa848388c6a8c6ef3a4d9ce",
+      "fullDoc": {
+        "_id": "6aa848388c6a8c6ef3a4d9ce",
+        "name": "Wedding & Party Wear Special",
+        "originalPrice": 8000,
+        "discountedPrice": 7000,
+        "description": "Three Piece Stitched Dress Chiffon Embroidered with Farshi Shalwar.",
+        "sizes": [
+          "M",
+          "L",
+          "S"
+        ],
+        "sizeStock": [
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "S",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413431/behruz-fashion/products/op8tgchqdgyjlywv8lwq.jpg",
+            "publicId": "behruz-fashion/products/op8tgchqdgyjlywv8lwq",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "chiffon",
+        "createdAt": "2026-09-14T19:17:12.481Z",
+        "updatedAt": "2026-09-14T19:17:12.481Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8484e8c6a8c6ef3a4d9cf",
+      "fullDoc": {
+        "_id": "6aa8484e8c6a8c6ef3a4d9cf",
+        "name": "Wedding & Party Wear Special",
+        "originalPrice": 8000,
+        "discountedPrice": 7000,
+        "description": "Three Piece Stitched Dress Chiffon Embroidered with Farshi Shalwar.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413452/behruz-fashion/products/p04alfbxcvqre77p5qla.jpg",
+            "publicId": "behruz-fashion/products/p04alfbxcvqre77p5qla",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "chiffon",
+        "createdAt": "2026-09-14T19:17:34.153Z",
+        "updatedAt": "2026-09-14T19:17:34.153Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa848678c6a8c6ef3a4d9d0",
+      "fullDoc": {
+        "_id": "6aa848678c6a8c6ef3a4d9d0",
+        "name": "Wedding & Party Wear Special",
+        "originalPrice": 8000,
+        "discountedPrice": 7000,
+        "description": "Three Piece Stitched Dress Chiffon Embroidered with Farshi Shalwar.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413477/behruz-fashion/products/yhdui9rwvwe49is14ln4.jpg",
+            "publicId": "behruz-fashion/products/yhdui9rwvwe49is14ln4",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "chiffon",
+        "createdAt": "2026-09-14T19:17:59.249Z",
+        "updatedAt": "2026-09-14T19:17:59.249Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa848f28c6a8c6ef3a4d9d1",
+      "fullDoc": {
+        "_id": "6aa848f28c6a8c6ef3a4d9d1",
+        "name": "Pure Silk Cut Work",
+        "originalPrice": 6000,
+        "discountedPrice": 5000,
+        "description": "Beautiful Cutwork style 3 piece stitched with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413617/behruz-fashion/products/dherzoxrtyj8odutqj3c.jpg",
+            "publicId": "behruz-fashion/products/dherzoxrtyj8odutqj3c",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-14T19:20:18.361Z",
+        "updatedAt": "2026-09-14T19:20:18.361Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8491d8c6a8c6ef3a4d9d2",
+      "fullDoc": {
+        "_id": "6aa8491d8c6a8c6ef3a4d9d2",
+        "name": "Pure Silk Cut Work",
+        "originalPrice": 6000,
+        "discountedPrice": 5000,
+        "description": "Beautiful Cutwork style 3 piece stitched with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789413659/behruz-fashion/products/dhq7uvtqqvwqsykylrlj.jpg",
+            "publicId": "behruz-fashion/products/dhq7uvtqqvwqsykylrlj",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-14T19:21:01.052Z",
+        "updatedAt": "2026-09-14T19:21:01.052Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84a9cf18863c8d7fb7077",
+      "fullDoc": {
+        "_id": "6aa84a9cf18863c8d7fb7077",
+        "name": "Ethnic Inspired",
+        "originalPrice": 12000,
+        "discountedPrice": 7500,
+        "description": "Thread sequence work with plain chiffon Dupatta complete 4 piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414044/behruz-fashion/products/njqjfnw4qfgwcyb5wpeq.jpg",
+            "publicId": "behruz-fashion/products/njqjfnw4qfgwcyb5wpeq",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon & silk",
+        "createdAt": "2026-09-14T19:27:24.971Z",
+        "updatedAt": "2026-09-14T19:27:24.971Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84abef18863c8d7fb7078",
+      "fullDoc": {
+        "_id": "6aa84abef18863c8d7fb7078",
+        "name": "Ethnic Inspired",
+        "originalPrice": 12000,
+        "discountedPrice": 7500,
+        "description": "Thread sequence work with plain chiffon Dupatta complete 4 piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414077/behruz-fashion/products/g3e8uyjl3fxpgxsyofzz.jpg",
+            "publicId": "behruz-fashion/products/g3e8uyjl3fxpgxsyofzz",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon & silk",
+        "createdAt": "2026-09-14T19:27:58.922Z",
+        "updatedAt": "2026-09-14T19:27:58.922Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84bbcf18863c8d7fb7079",
+      "fullDoc": {
+        "_id": "6aa84bbcf18863c8d7fb7079",
+        "name": "Silk 3 piece designed",
+        "originalPrice": 5500,
+        "discountedPrice": 4800,
+        "description": "Shamoz Silk with organza Dupatta white thread three piece stitched.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414331/behruz-fashion/products/pi2wl1khaingyni7kfrs.jpg",
+            "publicId": "behruz-fashion/products/pi2wl1khaingyni7kfrs",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-14T19:32:12.003Z",
+        "updatedAt": "2026-09-14T19:32:12.003Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84be9f18863c8d7fb707a",
+      "fullDoc": {
+        "_id": "6aa84be9f18863c8d7fb707a",
+        "name": "Silk 3 piece designed",
+        "originalPrice": 5500,
+        "discountedPrice": 4800,
+        "description": "Shamoz Silk with organza Dupatta white thread three piece stitched.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414375/behruz-fashion/products/kxr6nuanepyek5t04yrn.jpg",
+            "publicId": "behruz-fashion/products/kxr6nuanepyek5t04yrn",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-14T19:32:57.129Z",
+        "updatedAt": "2026-09-14T19:32:57.129Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84c95f18863c8d7fb707b",
+      "fullDoc": {
+        "_id": "6aa84c95f18863c8d7fb707b",
+        "name": "Asim Jofa Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 6000,
+        "description": "Shamoz silk beautiful embroidery with chiffon Dupatta three piece stitched article.",
+        "sizes": [
+          "M",
+          "L",
+          "XL",
+          "S"
+        ],
+        "sizeStock": [
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "S",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414548/behruz-fashion/products/osbh5ubzuqcugvzyryza.jpg",
+            "publicId": "behruz-fashion/products/osbh5ubzuqcugvzyryza",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz silk",
+        "createdAt": "2026-09-14T19:35:49.664Z",
+        "updatedAt": "2026-09-14T19:35:49.664Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84cf1f18863c8d7fb707c",
+      "fullDoc": {
+        "_id": "6aa84cf1f18863c8d7fb707c",
+        "name": "Asim Jofa Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 6000,
+        "description": "Shamoz silk beautiful embroidery with chiffon Dupatta three piece stitched article.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414640/behruz-fashion/products/gldzztuqwxfqyfosqfap.jpg",
+            "publicId": "behruz-fashion/products/gldzztuqwxfqyfosqfap",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz silk",
+        "createdAt": "2026-09-14T19:37:21.322Z",
+        "updatedAt": "2026-09-14T19:37:21.322Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84d10f18863c8d7fb707d",
+      "fullDoc": {
+        "_id": "6aa84d10f18863c8d7fb707d",
+        "name": "Asim Jofa Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 6000,
+        "description": "Shamoz silk beautiful embroidery with chiffon Dupatta three piece stitched article.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414671/behruz-fashion/products/aui61jk4pkcn1ey3kowo.jpg",
+            "publicId": "behruz-fashion/products/aui61jk4pkcn1ey3kowo",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz silk",
+        "createdAt": "2026-09-14T19:37:52.569Z",
+        "updatedAt": "2026-09-14T19:37:52.569Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84d92f18863c8d7fb707e",
+      "fullDoc": {
+        "_id": "6aa84d92f18863c8d7fb707e",
+        "name": "Wedding Special",
+        "originalPrice": 9000,
+        "discountedPrice": 7500,
+        "description": "Fabric Chiffon with farshi shalwar beautiful multi thread work specially party wear and wedding.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414801/behruz-fashion/products/re82tdswxun69sucwbng.jpg",
+            "publicId": "behruz-fashion/products/re82tdswxun69sucwbng",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:40:02.292Z",
+        "updatedAt": "2026-09-14T19:40:02.292Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84dc5f18863c8d7fb707f",
+      "fullDoc": {
+        "_id": "6aa84dc5f18863c8d7fb707f",
+        "name": "Wedding Special",
+        "originalPrice": 9000,
+        "discountedPrice": 7500,
+        "description": "Fabric Chiffon with farshi shalwar beautiful multi thread work specially party wear and wedding.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414852/behruz-fashion/products/fnxbya1w3ws2vdximsfy.jpg",
+            "publicId": "behruz-fashion/products/fnxbya1w3ws2vdximsfy",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:40:53.409Z",
+        "updatedAt": "2026-09-14T19:40:53.409Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84ddff18863c8d7fb7080",
+      "fullDoc": {
+        "_id": "6aa84ddff18863c8d7fb7080",
+        "name": "Wedding Special",
+        "originalPrice": 9000,
+        "discountedPrice": 7500,
+        "description": "Fabric Chiffon with farshi shalwar beautiful multi thread work specially party wear and wedding.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414878/behruz-fashion/products/vtjlru83p8p5pee0iinu.jpg",
+            "publicId": "behruz-fashion/products/vtjlru83p8p5pee0iinu",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:41:19.512Z",
+        "updatedAt": "2026-09-14T19:41:19.512Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84dfff18863c8d7fb7081",
+      "fullDoc": {
+        "_id": "6aa84dfff18863c8d7fb7081",
+        "name": "Wedding Special",
+        "originalPrice": 9000,
+        "discountedPrice": 7500,
+        "description": "Fabric Chiffon with farshi shalwar beautiful multi thread work specially party wear and wedding.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414910/behruz-fashion/products/yw1dgsqsmvlgkudgtqh4.jpg",
+            "publicId": "behruz-fashion/products/yw1dgsqsmvlgkudgtqh4",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:41:51.329Z",
+        "updatedAt": "2026-09-14T19:41:51.329Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84e14f18863c8d7fb7082",
+      "fullDoc": {
+        "_id": "6aa84e14f18863c8d7fb7082",
+        "name": "Wedding Special",
+        "originalPrice": 9000,
+        "discountedPrice": 7500,
+        "description": "Fabric Chiffon with farshi shalwar beautiful multi thread work specially party wear and wedding.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789414931/behruz-fashion/products/wogoqd5utkblkp0hniqe.jpg",
+            "publicId": "behruz-fashion/products/wogoqd5utkblkp0hniqe",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:42:12.099Z",
+        "updatedAt": "2026-09-14T19:42:12.099Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84ed1f18863c8d7fb7083",
+      "fullDoc": {
+        "_id": "6aa84ed1f18863c8d7fb7083",
+        "name": "kareena Kapoor inspired",
+        "originalPrice": 5500,
+        "discountedPrice": 4500,
+        "description": "Fabric Raw Silk with farshi shalwar gotta Pati with chiffon Dupatta",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789415120/behruz-fashion/products/ic2raq9vuu7djyj5mkmy.jpg",
+            "publicId": "behruz-fashion/products/ic2raq9vuu7djyj5mkmy",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Raw Silk",
+        "createdAt": "2026-09-14T19:45:21.263Z",
+        "updatedAt": "2026-09-14T19:45:21.263Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa84f55f18863c8d7fb7084",
+      "fullDoc": {
+        "_id": "6aa84f55f18863c8d7fb7084",
+        "name": "Newly color launched",
+        "originalPrice": 12500,
+        "discountedPrice": 9000,
+        "description": "Newly colors launched beautiful chiffon heavy embroidery shirt with heavy coat.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789415252/behruz-fashion/products/ipvirvhwtiwtxoojvu4i.jpg",
+            "publicId": "behruz-fashion/products/ipvirvhwtiwtxoojvu4i",
+            "isCover": true
+          },
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789415252/behruz-fashion/products/seuaphmsdsuhloryhdfu.jpg",
+            "publicId": "behruz-fashion/products/seuaphmsdsuhloryhdfu",
+            "isCover": false
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-14T19:47:33.654Z",
+        "updatedAt": "2026-09-14T19:47:33.654Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8af31bc287e6cb95b49df",
+      "fullDoc": {
+        "_id": "6aa8af31bc287e6cb95b49df",
+        "name": "Kaftan Agha Noor Inspired",
+        "originalPrice": 8500,
+        "discountedPrice": 6500,
+        "description": "Agha Noor inspired beautiful embroidery three piece stitched . Beautiful kaftan agha Noor inspired full embroidery color embroidery with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789439792/behruz-fashion/products/dpo6w67vo5mrrcdivqdp.jpg",
+            "publicId": "behruz-fashion/products/dpo6w67vo5mrrcdivqdp",
+            "isCover": true
+          },
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789439792/behruz-fashion/products/rgwivxzqrm7tmophhdvf.jpg",
+            "publicId": "behruz-fashion/products/rgwivxzqrm7tmophhdvf",
+            "isCover": false
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:36:33.342Z",
+        "updatedAt": "2026-09-15T02:36:33.342Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8af52369903927774779f",
+      "fullDoc": {
+        "_id": "6aa8af52369903927774779f",
+        "name": "Kaftan Agha Noor Inspired",
+        "originalPrice": 8500,
+        "discountedPrice": 6500,
+        "description": "Agha Noor inspired beautiful embroidery three piece stitched . Beautiful kaftan agha Noor inspired full embroidery color embroidery with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789439826/behruz-fashion/products/hhsn0m8vuzcnvuqk6cye.jpg",
+            "publicId": "behruz-fashion/products/hhsn0m8vuzcnvuqk6cye",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:37:06.992Z",
+        "updatedAt": "2026-09-15T02:37:06.992Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8b04536990392777477a0",
+      "fullDoc": {
+        "_id": "6aa8b04536990392777477a0",
+        "name": "Kaftan New Launched",
+        "originalPrice": 7200,
+        "discountedPrice": 6500,
+        "description": "Designed article beautiful embroidery three piece stitched. Launched new kaftan full embroidery With chiffon Dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789440068/behruz-fashion/products/tn6ltp3taoxk9hwhckcm.jpg",
+            "publicId": "behruz-fashion/products/tn6ltp3taoxk9hwhckcm",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:41:09.450Z",
+        "updatedAt": "2026-09-15T02:41:09.450Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8b07536990392777477a1",
+      "fullDoc": {
+        "_id": "6aa8b07536990392777477a1",
+        "name": "Kaftan New Launched",
+        "originalPrice": 7200,
+        "discountedPrice": 6500,
+        "description": "Designer article beautiful embroidery three piece stitched. Launched new kaftan full embroidery With chiffon Dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789440116/behruz-fashion/products/r1a6lyighohm8ewfez32.jpg",
+            "publicId": "behruz-fashion/products/r1a6lyighohm8ewfez32",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:41:57.517Z",
+        "updatedAt": "2026-09-15T02:41:57.517Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8b10f36990392777477a2",
+      "fullDoc": {
+        "_id": "6aa8b10f36990392777477a2",
+        "name": "New Kaftan",
+        "originalPrice": 7500,
+        "discountedPrice": 6000,
+        "description": "Designer article beautiful embroidery three piece stitched. Launched New kaftan silk fully embroidery with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789440270/behruz-fashion/products/nbhe8ugiai06cwe3sygk.jpg",
+            "publicId": "behruz-fashion/products/nbhe8ugiai06cwe3sygk",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:44:31.053Z",
+        "updatedAt": "2026-09-15T02:44:31.053Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8b21d36990392777477a4",
+      "fullDoc": {
+        "_id": "6aa8b21d36990392777477a4",
+        "name": "Designer Article",
+        "originalPrice": 6000,
+        "discountedPrice": 4800,
+        "description": "Fabric Shamoz Silk kaftan style with chiffon Dupatta three piece stitched article. Beautiful silk 3 piece stitched dress with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789440540/behruz-fashion/products/egdsgqif58p2wykuexza.jpg",
+            "publicId": "behruz-fashion/products/egdsgqif58p2wykuexza",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:49:01.399Z",
+        "updatedAt": "2026-09-15T02:49:01.399Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8b23436990392777477a5",
+      "fullDoc": {
+        "_id": "6aa8b23436990392777477a5",
+        "name": "Designer Article",
+        "originalPrice": 6000,
+        "discountedPrice": 4800,
+        "description": "Fabric Shamoz Silk kaftan style with chiffon Dupatta three piece stitched article. Beautiful silk 3 piece stitched dress with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 4
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789440564/behruz-fashion/products/rfffadaxlrikkmfxkca4.jpg",
+            "publicId": "behruz-fashion/products/rfffadaxlrikkmfxkca4",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:49:24.594Z",
+        "updatedAt": "2026-09-15T10:21:34.158Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8b24e36990392777477a6",
+      "fullDoc": {
+        "_id": "6aa8b24e36990392777477a6",
+        "name": "Designer Article",
+        "originalPrice": 6000,
+        "discountedPrice": 4800,
+        "description": "Fabric Shamoz Silk kaftan style with chiffon Dupatta three piece stitched article. Beautiful silk 3 piece stitched dress with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789440589/behruz-fashion/products/luevqv86gvhzs7otc7mt.jpg",
+            "publicId": "behruz-fashion/products/luevqv86gvhzs7otc7mt",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:49:50.441Z",
+        "updatedAt": "2026-09-15T02:49:50.441Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8b26f36990392777477a7",
+      "fullDoc": {
+        "_id": "6aa8b26f36990392777477a7",
+        "name": "Designer Article",
+        "originalPrice": 6000,
+        "discountedPrice": 4800,
+        "description": "Fabric Shamoz Silk kaftan style with chiffon Dupatta three piece stitched article. Beautiful silk 3 piece stitched dress with chiffon dupatta.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789440621/behruz-fashion/products/alnudt7bovyynqr2rh9u.jpg",
+            "publicId": "behruz-fashion/products/alnudt7bovyynqr2rh9u",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T02:50:23.865Z",
+        "updatedAt": "2026-09-15T02:50:23.865Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8d98942f594baa53828d3",
+      "fullDoc": {
+        "_id": "6aa8d98942f594baa53828d3",
+        "name": "Chiffoon Launched Designer",
+        "originalPrice": 9500,
+        "discountedPrice": 6500,
+        "description": "Fabric chiffon heavy embroidery designer article three piece stitched most viral.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789450633/behruz-fashion/products/qsprj25cbqylvkqwdpwh.jpg",
+            "publicId": "behruz-fashion/products/qsprj25cbqylvkqwdpwh",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "chiffon",
+        "createdAt": "2026-09-15T05:37:13.962Z",
+        "updatedAt": "2026-09-15T05:37:13.962Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8d9a342f594baa53828d4",
+      "fullDoc": {
+        "_id": "6aa8d9a342f594baa53828d4",
+        "name": "Chiffoon Launched Designer",
+        "originalPrice": 9500,
+        "discountedPrice": 6500,
+        "description": "Fabric chiffon heavy embroidery designer article three piece stitched most viral.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789450658/behruz-fashion/products/pom2ox1odpjghiqnu16b.jpg",
+            "publicId": "behruz-fashion/products/pom2ox1odpjghiqnu16b",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "chiffon",
+        "createdAt": "2026-09-15T05:37:39.050Z",
+        "updatedAt": "2026-09-15T05:37:39.050Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8d9b942f594baa53828d5",
+      "fullDoc": {
+        "_id": "6aa8d9b942f594baa53828d5",
+        "name": "Chiffoon Launched Designer",
+        "originalPrice": 9500,
+        "discountedPrice": 6500,
+        "description": "Fabric chiffon heavy embroidery designer article three piece stitched most viral.",
+        "sizes": [
+          "M",
+          "L",
+          "S"
+        ],
+        "sizeStock": [
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "S",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789450680/behruz-fashion/products/nqsm1qe3yviqxttv4bow.jpg",
+            "publicId": "behruz-fashion/products/nqsm1qe3yviqxttv4bow",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "chiffon",
+        "createdAt": "2026-09-15T05:38:01.256Z",
+        "updatedAt": "2026-09-15T05:38:01.256Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8d9cf42f594baa53828d6",
+      "fullDoc": {
+        "_id": "6aa8d9cf42f594baa53828d6",
+        "name": "Chiffoon Launched Designer",
+        "originalPrice": 9500,
+        "discountedPrice": 6500,
+        "description": "Fabric chiffon heavy embroidery designer article three piece stitched most viral.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789450703/behruz-fashion/products/u59wrjqwr9fyyvovydkv.jpg",
+            "publicId": "behruz-fashion/products/u59wrjqwr9fyyvovydkv",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "chiffon",
+        "createdAt": "2026-09-15T05:38:23.968Z",
+        "updatedAt": "2026-09-15T05:38:23.968Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8daad42f594baa53828d7",
+      "fullDoc": {
+        "_id": "6aa8daad42f594baa53828d7",
+        "name": "Lulusar Kaftan designs",
+        "originalPrice": 7500,
+        "discountedPrice": 5000,
+        "description": "lulusar Kaftan designs in 5 Different designs in silk fabric.",
+        "sizes": [
+          "S",
+          "M",
+          "XL",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789450925/behruz-fashion/products/qdakgwzeyh3rl5icp5uh.jpg",
+            "publicId": "behruz-fashion/products/qdakgwzeyh3rl5icp5uh",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T05:42:05.899Z",
+        "updatedAt": "2026-09-15T05:42:05.899Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8dacd42f594baa53828d8",
+      "fullDoc": {
+        "_id": "6aa8dacd42f594baa53828d8",
+        "name": "Lulusar Kaftan designs",
+        "originalPrice": 7500,
+        "discountedPrice": 4994,
+        "description": "lulusar Kaftan designs in 5 Different designs in silk fabric.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789450956/behruz-fashion/products/kogsdshlaqipvpfdkxiu.jpg",
+            "publicId": "behruz-fashion/products/kogsdshlaqipvpfdkxiu",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T05:42:37.194Z",
+        "updatedAt": "2026-09-15T05:43:14.651Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8db2142f594baa53828d9",
+      "fullDoc": {
+        "_id": "6aa8db2142f594baa53828d9",
+        "name": "Lulusar Kaftan designs",
+        "originalPrice": 7500,
+        "discountedPrice": 5000,
+        "description": "lulusar Kaftan designs in 5 Different designs in silk fabric.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789451040/behruz-fashion/products/um8mbtxjkrasylsnn2ko.jpg",
+            "publicId": "behruz-fashion/products/um8mbtxjkrasylsnn2ko",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T05:44:01.341Z",
+        "updatedAt": "2026-09-15T05:44:01.341Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8dc97b6ff043b2c134be5",
+      "fullDoc": {
+        "_id": "6aa8dc97b6ff043b2c134be5",
+        "name": "Lulusar Kaftan designs",
+        "originalPrice": 7500,
+        "discountedPrice": 5200,
+        "description": "lulusar Kaftan designs in 5 Different designs in silk fabric.",
+        "sizes": [
+          "S",
+          "L",
+          "M",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789451414/behruz-fashion/products/xnnnncd3hrqjetpsvhtx.jpg",
+            "publicId": "behruz-fashion/products/xnnnncd3hrqjetpsvhtx",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T05:50:15.064Z",
+        "updatedAt": "2026-09-15T05:50:15.064Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8dcbab6ff043b2c134be6",
+      "fullDoc": {
+        "_id": "6aa8dcbab6ff043b2c134be6",
+        "name": "Lulusar Kaftan designs",
+        "originalPrice": 7500,
+        "discountedPrice": 5000,
+        "description": "lulusar Kaftan designs in 5 Different designs in silk fabric.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789451449/behruz-fashion/products/ldietagz2olim16xudlb.jpg",
+            "publicId": "behruz-fashion/products/ldietagz2olim16xudlb",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T05:50:50.037Z",
+        "updatedAt": "2026-09-15T05:50:50.037Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8df0bc408abca003527fb",
+      "fullDoc": {
+        "_id": "6aa8df0bc408abca003527fb",
+        "name": "Lulusar designs",
+        "originalPrice": 5500,
+        "discountedPrice": 4200,
+        "description": "Lulusar designs with plazo three piece stitched article in silk fabric.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789452042/behruz-fashion/products/ofony4ylj5kdwnqmqg3c.jpg",
+            "publicId": "behruz-fashion/products/ofony4ylj5kdwnqmqg3c",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T06:00:43.321Z",
+        "updatedAt": "2026-09-15T06:00:43.321Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8df49c408abca003527fc",
+      "fullDoc": {
+        "_id": "6aa8df49c408abca003527fc",
+        "name": "Lulusar designs",
+        "originalPrice": 5500,
+        "discountedPrice": 4200,
+        "description": "Lulusar designs with plazo three piece stitched article in silk fabric",
+        "sizes": [
+          "S",
+          "M",
+          "XL",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789452104/behruz-fashion/products/w316vja0k9tggvik9zyi.jpg",
+            "publicId": "behruz-fashion/products/w316vja0k9tggvik9zyi",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T06:01:45.635Z",
+        "updatedAt": "2026-09-15T06:01:45.635Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8df64c408abca003527fd",
+      "fullDoc": {
+        "_id": "6aa8df64c408abca003527fd",
+        "name": "Lulusar designs",
+        "originalPrice": 5500,
+        "discountedPrice": 4200,
+        "description": "Lulusar designs with plazo three piece stitched article in silk fabric.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789452130/behruz-fashion/products/z2qylyr76fjqkq4ozreh.jpg",
+            "publicId": "behruz-fashion/products/z2qylyr76fjqkq4ozreh",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk",
+        "createdAt": "2026-09-15T06:02:12.358Z",
+        "updatedAt": "2026-09-15T06:02:12.358Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8e04ec408abca003527fe",
+      "fullDoc": {
+        "_id": "6aa8e04ec408abca003527fe",
+        "name": "Crush Silk Kaftan",
+        "originalPrice": 8000,
+        "discountedPrice": 6000,
+        "description": "Beautiful launched Crush silk designer article.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789452366/behruz-fashion/products/gkbdvfzohrwdenyy5zch.jpg",
+            "publicId": "behruz-fashion/products/gkbdvfzohrwdenyy5zch",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Crush Silk",
+        "createdAt": "2026-09-15T06:06:06.891Z",
+        "updatedAt": "2026-09-15T06:06:06.891Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8f55e9bccdb62f03b6349",
+      "fullDoc": {
+        "_id": "6aa8f55e9bccdb62f03b6349",
+        "name": "Hussain Rehar Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 6500,
+        "description": "Beautiful chiffon heavy embroidery outfit  three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789457757/behruz-fashion/products/xbblvpcrsbiluefv6kbj.jpg",
+            "publicId": "behruz-fashion/products/xbblvpcrsbiluefv6kbj",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-15T07:35:58.446Z",
+        "updatedAt": "2026-09-15T07:35:58.446Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8f57c9bccdb62f03b634a",
+      "fullDoc": {
+        "_id": "6aa8f57c9bccdb62f03b634a",
+        "name": "Hussain Rehar Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 6500,
+        "description": "Beautiful chiffon heavy embroidery outfit  three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789457787/behruz-fashion/products/xzkxhkfggc7aif11i2mb.jpg",
+            "publicId": "behruz-fashion/products/xzkxhkfggc7aif11i2mb",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-15T07:36:28.085Z",
+        "updatedAt": "2026-09-15T07:36:28.085Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8f5969bccdb62f03b634b",
+      "fullDoc": {
+        "_id": "6aa8f5969bccdb62f03b634b",
+        "name": "Hussain Rehar Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 6500,
+        "description": "Beautiful chiffon heavy embroidery outfit  three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789457813/behruz-fashion/products/vlzmuxjmq104mwsjq8vb.jpg",
+            "publicId": "behruz-fashion/products/vlzmuxjmq104mwsjq8vb",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-15T07:36:54.148Z",
+        "updatedAt": "2026-09-15T07:36:54.148Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8f6f59bccdb62f03b634c",
+      "fullDoc": {
+        "_id": "6aa8f6f59bccdb62f03b634c",
+        "name": "Hussain Rehar Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 6500,
+        "description": "Beautiful chiffon heavy embroidery outfit  three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789458165/behruz-fashion/products/qk0cfxchppizs6zdeyvm.jpg",
+            "publicId": "behruz-fashion/products/qk0cfxchppizs6zdeyvm",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-15T07:42:45.919Z",
+        "updatedAt": "2026-09-15T07:42:45.919Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8f72b9bccdb62f03b634d",
+      "fullDoc": {
+        "_id": "6aa8f72b9bccdb62f03b634d",
+        "name": "Crush Silk Kaftan",
+        "originalPrice": 8000,
+        "discountedPrice": 6000,
+        "description": "Beautiful launched Crush silk designer article.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789458218/behruz-fashion/products/wib85qmnxyl3m3oxrubq.jpg",
+            "publicId": "behruz-fashion/products/wib85qmnxyl3m3oxrubq",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Crush Silk",
+        "createdAt": "2026-09-15T07:43:39.194Z",
+        "updatedAt": "2026-09-15T07:43:39.194Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8f79f9bccdb62f03b634e",
+      "fullDoc": {
+        "_id": "6aa8f79f9bccdb62f03b634e",
+        "name": "Hussain Rehar Inspired",
+        "originalPrice": 10500,
+        "discountedPrice": 6500,
+        "description": "Beautiful chiffon heavy embroidery outfit  three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789458335/behruz-fashion/products/jqblctkotj8mm4byzg15.jpg",
+            "publicId": "behruz-fashion/products/jqblctkotj8mm4byzg15",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Chiffon",
+        "createdAt": "2026-09-15T07:45:35.893Z",
+        "updatedAt": "2026-09-15T07:45:35.893Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8fb38b5498c44be8d09c0",
+      "fullDoc": {
+        "_id": "6aa8fb38b5498c44be8d09c0",
+        "name": "kaftan Style",
+        "originalPrice": 6500,
+        "discountedPrice": 5500,
+        "description": "Thread sequence Work with chiffon Dupatta three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789459255/behruz-fashion/products/imcgqb9vbkvhzs8bsyg2.jpg",
+            "publicId": "behruz-fashion/products/imcgqb9vbkvhzs8bsyg2",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Kaftan",
+        "createdAt": "2026-09-15T08:00:56.848Z",
+        "updatedAt": "2026-09-15T08:00:56.848Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8fb8db5498c44be8d09c1",
+      "fullDoc": {
+        "_id": "6aa8fb8db5498c44be8d09c1",
+        "name": "Kaftan Style",
+        "originalPrice": 6500,
+        "discountedPrice": 5500,
+        "description": "Thread sequence Work with chiffon Dupatta three piece stitched dress.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 4
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789459339/behruz-fashion/products/py5gvgg7yium9u03enyr.jpg",
+            "publicId": "behruz-fashion/products/py5gvgg7yium9u03enyr",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Shamoz Silk Kaftan",
+        "createdAt": "2026-09-15T08:02:21.208Z",
+        "updatedAt": "2026-09-15T10:24:12.731Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8fc87b5498c44be8d09c2",
+      "fullDoc": {
+        "_id": "6aa8fc87b5498c44be8d09c2",
+        "name": "Best seller Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 6200,
+        "description": "Kaftan adorned with vibrant colorful embroidery",
+        "sizes": [
+          "S",
+          "XL",
+          "L",
+          "M"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789459591/behruz-fashion/products/fkjqpvoopqn4tbbebce5.jpg",
+            "publicId": "behruz-fashion/products/fkjqpvoopqn4tbbebce5",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Pure Silk",
+        "createdAt": "2026-09-15T08:06:31.951Z",
+        "updatedAt": "2026-09-15T08:06:31.951Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8fca3b5498c44be8d09c3",
+      "fullDoc": {
+        "_id": "6aa8fca3b5498c44be8d09c3",
+        "name": "Best seller Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 6200,
+        "description": "Kaftan adorned with vibrant colourful embroidery.",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 4
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789459618/behruz-fashion/products/r4yugiilzfsgouks3x36.jpg",
+            "publicId": "behruz-fashion/products/r4yugiilzfsgouks3x36",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Pure Silk",
+        "createdAt": "2026-09-15T08:06:59.220Z",
+        "updatedAt": "2026-09-15T10:23:25.738Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "products",
+      "docId": "6aa8fcbfb5498c44be8d09c4",
+      "fullDoc": {
+        "_id": "6aa8fcbfb5498c44be8d09c4",
+        "name": "Best seller Kaftan",
+        "originalPrice": 6500,
+        "discountedPrice": 6200,
+        "description": "Kaftan adorned with vibrant colourful embroidery",
+        "sizes": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "sizeStock": [
+          {
+            "size": "S",
+            "stock": 5
+          },
+          {
+            "size": "M",
+            "stock": 5
+          },
+          {
+            "size": "L",
+            "stock": 5
+          },
+          {
+            "size": "XL",
+            "stock": 5
+          }
+        ],
+        "images": [
+          {
+            "url": "https://res.cloudinary.com/ih90snat/image/upload/v1789459646/behruz-fashion/products/i8cn6skbnv1imemdmopx.jpg",
+            "publicId": "behruz-fashion/products/i8cn6skbnv1imemdmopx",
+            "isCover": true
+          }
+        ],
+        "status": "active",
+        "isFeatured": false,
+        "fabric": "Pure Silk",
+        "createdAt": "2026-09-15T08:07:27.179Z",
+        "updatedAt": "2026-09-15T08:07:27.179Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "orders",
+      "docId": "6aa91c2e06ff22c23c636168",
+      "fullDoc": {
+        "_id": "6aa91c2e06ff22c23c636168",
+        "orderNumber": "BFH-2609-CA9945",
+        "customerAccessToken": "465ed08ca64943d078d7281556f4666d91f87765624deea7",
+        "isStockRestocked": false,
+        "customer": {
+          "name": "Muhammad Faisal Rafique",
+          "phone": "03088633686",
+          "email": "bilalrafique271@gmail.com",
+          "country": "Pakistan",
+          "province": "Punjab",
+          "city": "Lahore",
+          "address": "House no 36 street no 19 near muhammadi hospital sanat nagar Lahore"
+        },
+        "items": [
+          {
+            "productId": "6aa8b23436990392777477a5",
+            "name": "Designer Article",
+            "image": "https://res.cloudinary.com/ih90snat/image/upload/v1789440564/behruz-fashion/products/rfffadaxlrikkmfxkca4.jpg",
+            "size": "S",
+            "quantity": 1,
+            "price": 4800,
+            "itemTotal": 4800
+          }
+        ],
+        "pricing": {
+          "subtotal": 4800,
+          "shippingFee": 350,
+          "shippingType": "punjab",
+          "total": 5150,
+          "advanceAmount": 1000,
+          "remainingAmount": 4150
+        },
+        "shipping": {
+          "country": "Pakistan",
+          "province": "Punjab",
+          "deliveryEstimate": "3–5 business days across Pakistan",
+          "status": "pending"
+        },
+        "payment": {
+          "method": "cash_on_delivery",
+          "status": "pending",
+          "advanceAmount": 1000,
+          "advancePaymentStatus": "pending"
+        },
+        "orderStatus": "awaiting_advance",
+        "createdAt": "2026-09-15T10:21:34.592Z",
+        "updatedAt": "2026-09-15T10:21:34.592Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "orders",
+      "docId": "6aa91c9e06ff22c23c636169",
+      "fullDoc": {
+        "_id": "6aa91c9e06ff22c23c636169",
+        "orderNumber": "BFH-2609-6548AF",
+        "customerAccessToken": "0b2502076eb55ac3d66851eb1483a9ef8f72470052c968e9",
+        "isStockRestocked": false,
+        "customer": {
+          "name": "Muhammad Faisal Rafique",
+          "phone": "03088633686",
+          "email": "bilalrafique2006@gmail.com",
+          "country": "Pakistan",
+          "province": "Punjab",
+          "city": "Lahore",
+          "address": "House no 36 street no 19 near muhammadi hospital sanat nagar Lahore"
+        },
+        "items": [
+          {
+            "productId": "6aa8fca3b5498c44be8d09c3",
+            "name": "Best seller Kaftan",
+            "image": "https://res.cloudinary.com/ih90snat/image/upload/v1789459618/behruz-fashion/products/r4yugiilzfsgouks3x36.jpg",
+            "size": "S",
+            "quantity": 1,
+            "price": 6200,
+            "itemTotal": 6200
+          }
+        ],
+        "pricing": {
+          "subtotal": 6200,
+          "shippingFee": 350,
+          "shippingType": "punjab",
+          "total": 6550,
+          "advanceAmount": 1000,
+          "remainingAmount": 5550
+        },
+        "shipping": {
+          "country": "Pakistan",
+          "province": "Punjab",
+          "deliveryEstimate": "3–5 business days across Pakistan",
+          "status": "pending"
+        },
+        "payment": {
+          "method": "cash_on_delivery",
+          "status": "pending",
+          "advanceAmount": 1000,
+          "advancePaymentStatus": "pending"
+        },
+        "orderStatus": "awaiting_advance",
+        "createdAt": "2026-09-15T10:23:26.154Z",
+        "updatedAt": "2026-09-15T10:23:26.154Z",
+        "__v": 0
+      }
+    },
+    {
+      "collection": "orders",
+      "docId": "6aa91ccd06ff22c23c63616a",
+      "fullDoc": {
+        "_id": "6aa91ccd06ff22c23c63616a",
+        "orderNumber": "BFH-2609-40FFA0",
+        "customerAccessToken": "3663037c617aec9a115ed45321b52df47dae773dcfa56af0",
+        "isStockRestocked": false,
+        "customer": {
+          "name": "Muhammad Faisal Rafique",
+          "phone": "03088633686",
+          "email": "bilalrafique275@gmail.com",
+          "country": "Pakistan",
+          "province": "Punjab",
+          "city": "Lahore",
+          "address": "House no 36 street no 19 near muhammadi hospital sanat nagar Lahore"
+        },
+        "items": [
+          {
+            "productId": "6aa8fb8db5498c44be8d09c1",
+            "name": "Kaftan Style",
+            "image": "https://res.cloudinary.com/ih90snat/image/upload/v1789459339/behruz-fashion/products/py5gvgg7yium9u03enyr.jpg",
+            "size": "L",
+            "quantity": 1,
+            "price": 5500,
+            "itemTotal": 5500
+          }
+        ],
+        "pricing": {
+          "subtotal": 5500,
+          "shippingFee": 350,
+          "shippingType": "punjab",
+          "total": 5850,
+          "advanceAmount": 1000,
+          "remainingAmount": 4850
+        },
+        "shipping": {
+          "country": "Pakistan",
+          "province": "Punjab",
+          "deliveryEstimate": "3–5 business days across Pakistan",
+          "status": "pending"
+        },
+        "payment": {
+          "method": "cash_on_delivery",
+          "status": "pending",
+          "advanceAmount": 1000,
+          "advancePaymentStatus": "pending"
+        },
+        "orderStatus": "awaiting_advance",
+        "createdAt": "2026-09-15T10:24:13.147Z",
+        "updatedAt": "2026-09-15T10:24:13.147Z",
+        "__v": 0
+      }
+    }
+  ]
+}

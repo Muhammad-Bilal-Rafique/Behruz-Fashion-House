@@ -35,6 +35,6 @@ export const DEFAULT_STORE_SETTINGS: SerializedSettings = {
   deliveryEstimate: "3–5 business days across Pakistan",
   whatsappNumber: "923354623733",
   whatsappDisplayNumber: "0335-4623733",
-  supportEmail: "support@behruzfashion.com",
+  supportEmail: "behruzfashionhouse@gmail.com",
   shopAddress: "City Tower, Shop 3, 1st Floor, Gulshan-e-Ravi, Lahore",
 };

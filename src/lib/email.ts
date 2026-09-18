@@ -12,7 +12,7 @@ function getAdminEmail(): string {
   return (
     process.env.ADMIN_EMAIL?.trim() ||
     process.env.ADMIN_GMAIL?.trim() ||
-    "bilalrafique2006@gmail.com"
+    "behruzfashionhouse@gmail.com"
   );
 }
 

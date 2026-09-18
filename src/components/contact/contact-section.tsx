@@ -18,6 +18,8 @@ import {
 } from "@/components/shared/social-icons";
 
 export function ContactSection() {
+  const settings = useStoreSettings();
+  const contactEmail = settings.supportEmail || "behruzfashionhouse@gmail.com";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -145,11 +147,11 @@ export function ContactSection() {
                     Email Inquiries
                   </span>
                   <a
-                    href="mailto:fahadmalik8689@gmail.com"
+                    href={`mailto:${contactEmail}`}
                     className="text-sm sm:text-base font-normal text-foreground hover:text-primary transition-colors duration-200"
-                    aria-label="Email fahadmalik8689@gmail.com"
+                    aria-label={`Email ${contactEmail}`}
                   >
-                    fahadmalik8689@gmail.com
+                    {contactEmail}
                   </a>
                 </div>
               </div>

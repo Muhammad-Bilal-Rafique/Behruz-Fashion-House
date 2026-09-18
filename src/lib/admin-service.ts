@@ -17,13 +17,23 @@ function normalizeIdentifier(identifier: string): string {
 export async function ensureAdminSeeded(): Promise<IAdmin | null> {
   await connectDB();
   let admin = await Admin.findOne().sort({ createdAt: 1 });
+  const initialEmail = (
+    process.env.ADMIN_INITIAL_EMAIL ||
+    process.env.ADMIN_GMAIL ||
+    "behruzfashionhouse@gmail.com"
+  )
+    ?.trim()
+    .toLowerCase();
 
   if (admin) {
+    if (initialEmail && admin.email !== initialEmail) {
+      admin.email = initialEmail;
+      await admin.save();
+    }
     return admin;
   }
 
-  const initialEmail = process.env.ADMIN_INITIAL_EMAIL?.trim().toLowerCase();
-  const initialPassword = process.env.ADMIN_INITIAL_PASSWORD;
+  const initialPassword = process.env.ADMIN_INITIAL_PASSWORD || "AdminSecure2026!";
 
   if (initialEmail && initialPassword) {
     const passwordHash = await bcrypt.hash(initialPassword, 10);
