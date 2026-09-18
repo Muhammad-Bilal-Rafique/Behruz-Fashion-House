@@ -5,13 +5,16 @@ const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 // Configurable sender and admin notification emails
 function getFromEmail(): string {
-  return process.env.EMAIL_FROM?.trim() || "Behruz Fashion House <onboarding@resend.dev>";
+  return (
+    process.env.EMAIL_FROM?.trim() ||
+    "Behruz Fashion House <orders@behruzfashionhouse.com>"
+  );
 }
 
 function getAdminEmail(): string {
   return (
-    process.env.ADMIN_EMAIL?.trim() ||
     process.env.ADMIN_GMAIL?.trim() ||
+    process.env.ADMIN_EMAIL?.trim() ||
     "behruzfashionhouse@gmail.com"
   );
 }
